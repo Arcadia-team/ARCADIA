@@ -4437,12 +4437,6 @@ textarea.form-control-lg {
   overflow-y: visible;
 }
 
-.navbar-light .navbar-brand {
-  color: rgba(0, 0, 0, 0.9);
-}
-.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
-  color: rgba(0, 0, 0, 0.9);
-}
 .navbar-light .navbar-nav .nav-link {
   color: rgba(0, 0, 0, 0.55);
 }
@@ -7833,11 +7827,6 @@ textarea.form-control-lg {
 .bg-danger {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
-}
-
-.bg-light {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-dark {
@@ -11379,3 +11368,32 @@ footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+
+
+/* ----------------- Boostrap css cambios -----------------------------*/
+.bg-light {
+  --bs-bg-opacity: 1;
+  background-color: rgba(179,55,183, var(--bs-bg-opacity)) !important;
+}
+
+.navbar-light .navbar-brand {
+  color: rgba(255,255,0,0.9);
+}
+.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
+  color: rgba(16, 24, 120, 0.9);
+}
+
+/*-------------------Css Original de ARCADIA (no boostrap)-----------  */
+
+/* ---- Fuente arcade ----- */
+
+@font-face {
+  font-family: "arcadeFont";
+  src: url("../assets/fonts/arcade-font.ttf");
+}
+
+.title-navbar {
+  font-family: "arcadeFont";
+  font-size: 180%;
+}
+
