@@ -51,7 +51,7 @@
   --bs-dark-rgb: 33, 37, 41;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-body-color-rgb: 33, 37, 41;
+  --bs-body-    or-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -2355,7 +2355,7 @@ progress {
 .form-control-lg {
   min-height: calc(1.5em + 2rem + 2px);
   padding: 1rem 1.25rem;
-  font-size: 1.25rem;
+  font-size: 0.9rem;
   border-radius: 0.3rem;
 }
 .form-control-lg::-webkit-file-upload-button {
@@ -3482,7 +3482,7 @@ textarea.form-control-lg {
 
 .btn-lg, .btn-group-lg > .btn {
   padding: 1rem 1.25rem;
-  font-size: 1.25rem;
+  font-size: 0.9rem;
   border-radius: 0.3rem;
 }
 
@@ -11373,14 +11373,14 @@ footer.footer {
 /* ----------------- Boostrap css cambios -----------------------------*/
 .bg-light {
   --bs-bg-opacity: 1;
-  background-color: rgba(223,112,255, var(--bs-bg-opacity)) !important;
+  background-color: rgba(0,0,0, var(--bs-bg-opacity)) !important;
 }
 
 .navbar-light .navbar-brand {
-  color: rgba(255,255,0,0.9);
+  color: rgba(240,255,0,0.9);
 }
 .navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
-  color: rgba(16, 24, 120, 0.9);
+  color: rgba(3, 40, 141, 0.9);
 }
 
 /*-------------------Css Original de ARCADIA (no boostrap)-----------  */
@@ -11394,6 +11394,5 @@ footer.footer {
 
 .title-navbar {
   font-family: "arcadeFont";
-  font-size: 180%;
 }
 
