@@ -4398,10 +4398,12 @@ textarea.form-control-lg {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(0, 0, 0, 0.55);
+  color: rgba(0, 0, 0, 0.7);
 }
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-  color: rgba(0, 0, 0, 0.7);
+  transition: 0.2s;
+  color: rgba(3, 40, 141, 0.9);
+  
 }
 .navbar-light .navbar-nav .nav-link.disabled {
   color: rgba(0, 0, 0, 0.3);
@@ -11337,7 +11339,8 @@ footer.footer {
   color: rgba(240,255,0,0.9);
 }
 .navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
-  color: rgba(3, 40, 141, 0.9);
+  transition: 0.2s;
+  color: rgba(3, 40, 141, 0.8);
 }
 
 /* ----------------------------- botones ------------------------------------------*/
@@ -11350,17 +11353,20 @@ footer.footer {
 }
 .btn-success:hover {
   background-image:url("../assets/img/login-hover.png");
+  transition: 0.2s;
 }
 .btn-check:focus + .btn-success, .btn-success:focus {
-  background-image:url("../assets/img/login-adaptado.png");
+  transition: 0.2s;
+  background-image:url("../assets/img/login-hover.png");
 }
 .btn-check:checked + .btn-success, .btn-check:active + .btn-success, .btn-success:active, .btn-success.active, .show > .btn-success.dropdown-toggle {
-  
+  transition: 0.3s;
+  background-image:url("../assets/img/login-pulsado.png");
 }
 
 .btn-success:disabled, .btn-success.disabled {
-  
-  
+  transition: 0.2s;
+  background-image:url("../assets/img/login-adaptado.png");
 }
 
 /*-------------------Css Original de ARCADIA (no boostrap)-----------  */
