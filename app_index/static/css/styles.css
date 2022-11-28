@@ -11401,7 +11401,7 @@ footer.footer {
 .fototetris{
   background-image: url('../assets/img/tetris.png');
   background-repeat: no-repeat;
-  width: 25%;
+  width: 45%;
   margin: auto;
   cursor:pointer;
 }
@@ -11420,6 +11420,10 @@ footer.footer {
   cursor:pointer;
 }
 
+.fondoPurpura2{
+  background-color: #443957;
+}
+
 .letrasamarillas{
   color:yellow;
   cursor:pointer;
@@ -11434,10 +11438,13 @@ footer.footer {
 }
 
 .num1ranking{
-height: 3em;
-width: 5em;
+  height: 3em;
+  width: 10em;
+}
+.fondoBlanco{
+  background-color: white;
 }
 
-.tablaRanking2{
-  padding-bottom: 100px;
+.espaciotabla{
+  margin-bottom: 2em;
 }
