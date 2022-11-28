@@ -11287,8 +11287,8 @@ textarea.form-control-lg {
   }
 }
 .features-icons {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 .features-icons .features-icons-item {
   max-width: 20rem;
@@ -11378,4 +11378,66 @@ header.masthead h1, header.masthead .h1 {
 footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+@font-face {
+  font-family: MyFirstFont;
+  src: url('../assets/fonts/arcadefont.ttf');
+}
+
+.fontarcade {
+  font-family: myFirstFont;
+  color:
+}
+
+.fotopacman{
+  background-image: url('../assets/img/pacman.png');
+  background-repeat: no-repeat;
+  width: 50%;
+  margin: auto;
+  cursor:pointer;
+
+}
+.fototetris{
+  background-image: url('../assets/img/tetris.png');
+  background-repeat: no-repeat;
+  width: 25%;
+  margin: auto;
+  cursor:pointer;
+}
+.fotosnake{
+  height:100%;
+  background-image: url('../assets/img/snake.png');
+  background-repeat: no-repeat;
+  width: 50%;
+  margin: auto;
+  cursor:pointer;
+}
+
+.fondoPurpura{
+  background-color: #443957;
+  height: 12em;
+  cursor:pointer;
+}
+
+.letrasamarillas{
+  color:yellow;
+  cursor:pointer;
+}
+
+.homeJuegosPopulares{
+  margin-bottom: 0.7em;
+}
+
+.borde3px{
+  border: 3px solid black;
+}
+
+.num1ranking{
+height: 3em;
+width: 5em;
+}
+
+.tablaRanking2{
+  padding-bottom: 100px;
 }
