@@ -11336,11 +11336,11 @@ footer.footer {
 }
 
 .navbar-light .navbar-brand {
-  color: rgba(240,255,0,0.9);
+  color: rgba(0, 0, 0, 0.8);
 }
 .navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
   transition: 0.2s;
-  color: rgba(3, 40, 141, 0.8);
+  text-shadow: yellow 1px 0 1px;  
 }
 
 /* ----------------------------- botones ------------------------------------------*/
