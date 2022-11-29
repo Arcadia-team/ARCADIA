@@ -11371,14 +11371,15 @@ footer.footer {
 
 /*-------------------Css Original de ARCADIA (no boostrap)-----------  */
 
-/* ---- Fuente arcade ----- */
+/* ---- Fuentes arcade ----- */
 
 @font-face {
   font-family: "arcadeFont";
   src: url("../assets/fonts/arcade-font.ttf");
 }
 
-.title-navbar {
-  font-family: "arcadeFont";
+@font-face {
+  font-family: "arcadeFontTitle";
+  src: url("../assets/fonts/ka1.ttf");
 }
 
