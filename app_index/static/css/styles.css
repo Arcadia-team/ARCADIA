@@ -11370,7 +11370,12 @@ footer.footer {
 }
 
 /*-------------------Css Original de ARCADIA (no boostrap)-----------  */
-
+/* Logins inputs */
+.inputs:focus {
+  background-color:  rgba(3, 40, 141,0.4);
+  border: none;
+  color: white;
+}
 /* ---- Fuentes arcade ----- */
 
 @font-face {
@@ -11381,5 +11386,13 @@ footer.footer {
 @font-face {
   font-family: "arcadeFontTitle";
   src: url("../assets/fonts/ka1.ttf");
+}
+@font-face {
+  font-family: "arcade-min";
+  src: url("../assets/fonts/arcade-min.ttf");
+}
+@font-face {
+  font-family: "sega";
+  src: url("../assets/fonts/sega.ttf");
 }
 
