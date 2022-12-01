@@ -11417,7 +11417,6 @@ footer.footer {
 .fondoPurpura{
   background-color: #443957;
   height: 12em;
-  cursor:pointer;
 }
 
 .fondoPurpura2{
@@ -11426,7 +11425,7 @@ footer.footer {
 
 .letrasamarillas{
   color:yellow;
-  cursor:pointer;
+  text-align: center;
 }
 
 .homeJuegosPopulares{
@@ -11438,13 +11437,27 @@ footer.footer {
 }
 
 .num1ranking{
-  height: 3em;
+  height: 6em;
   width: 10em;
+
 }
+
 .fondoBlanco{
   background-color: white;
 }
 
-.espaciotabla{
-  margin-bottom: 2em;
+.alturadiv{
+  margin-top:2em;
+  height:32em;
+  margin-bottom:2em;
 }
+
+.tamañotablas{
+  height:4em;
+  width:20em;
+  text-align:center;
+}
+
+
+
+

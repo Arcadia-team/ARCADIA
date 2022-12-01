@@ -9,3 +9,6 @@ def juegos(request):
 
 def rankings(request):
     return render (request, "rankings.html")
+
+def test(request):
+    return render (request, "test.html")
