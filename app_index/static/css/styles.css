@@ -11370,11 +11370,17 @@ footer.footer {
 }
 
 /*-------------------Css Original de ARCADIA (no boostrap)-----------  */
+.inputs{
+  font-family: "arcadeFont";
+  font-size: x-small;
+  border-radius: 0%;
+}
 /* Logins inputs */
 .inputs:focus {
   background-color:  rgba(3, 40, 141,0.4);
   border: none;
   color: white;
+  
 }
 /* ---- Fuentes arcade ----- */
 
