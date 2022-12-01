@@ -1,17 +1,13 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" data-a11y-animated-images="system">
+<html data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" data-a11y-animated-images="system">
   <head>
     <meta charset="utf-8">
     <title>Login</title>
     <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
     <!-- CSS -->
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
-
-    <style>
-      
-    </style>
 
     <link rel="stylesheet" href="https://github.githubassets.com/assets/light-719f1193e0c0.css" />
     <link rel="stylesheet" href="https://github.githubassets.com/assets/dark-0c343b529849.css" />
@@ -69,7 +65,7 @@
 
           <p style=" border-radius: 0px; font-size: 65%;font-family: arcadeFont;" class="login-callout mt-3">
             New to Arcadia?
-              <a style="font-family: arcadeFont;"href="#"> Create account</a>
+              <a style="font-family: arcadeFont;"href="{% url 'signup' %}"> Create account</a>
           </p>
         </div>
     </main>
