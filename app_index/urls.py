@@ -6,5 +6,5 @@ urlpatterns = [
     path('', inicio, name="inicio"),
     path('juegos', juegos, name="juegos"),
     path('rankings', rankings, name="rankings"),
-    path('test', test, name="test"),
+    path('ranking', ranking, name="ranking"),
 ]
