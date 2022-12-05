@@ -5,6 +5,7 @@
 
 .signup-input{
     background-color:#000000;
+    color:white;
 }
 
 .signup-input:focus{
@@ -12,17 +13,17 @@
     color:white;
 }
 
-.signup-submit-button{
-    color:#627597;
+.signup-submit-button{ 
     background:black;
-    border: solid 1px #627597;
     font-family: arcadeFont; 
     font-size: 70%;
+    border: solid 1px rgba(249, 138, 249, 0.8);
+    color:rgba(249, 138, 249, 0.8);
 }
 .signup-submit-button:hover{
     transition: 0.25s;
-    border: solid 1px rgba(249, 138, 249, 0.8);
-    color:rgba(249, 138, 249, 0.8);
+    border: solid 1px #627597;
+    color: #627597;;
 }
 
 
