@@ -11375,9 +11375,10 @@ footer.footer {
 /* Signup - label and inputs*/
 
 .labels-signup{
-  font-family:arcadeFont !important;
-  color:#C9D1D9;
-  font-size: 60%;
+  font-family:arcadeFont;
+  color: #627597;
+  font-size: 65%;
+  padding-bottom: 2%;
 }
 
 
