@@ -11387,7 +11387,6 @@ footer.footer {
 
 .fontarcade {
   font-family: myFirstFont;
-  color:
 }
 
 .fotopacman{
@@ -11403,7 +11402,7 @@ footer.footer {
   background-repeat: no-repeat;
   width: 45%;
   margin: auto;
-  cursor:pointer;
+  cursor: pointer;
 }
 .fotosnake{
   height:100%;
@@ -11411,7 +11410,17 @@ footer.footer {
   background-repeat: no-repeat;
   width: 50%;
   margin: auto;
+  cursor: pointer;
+}
+
+.fotoprimero{
+  background-image: url('../assets/img/primero.png');
+  background-repeat: no-repeat;
+  margin: auto;
   cursor:pointer;
+  height: 6em;
+  width: 5em;
+
 }
 
 .fondoPurpura{
@@ -11439,7 +11448,6 @@ footer.footer {
 .num1ranking{
   height: 6em;
   width: 10em;
-
 }
 
 .fondoBlanco{
@@ -11456,8 +11464,31 @@ footer.footer {
   height:4em;
   width:20em;
   text-align:center;
+} 
+
+.tamañotablas2{
+  height:4em;
+  width:28em;
+  text-align:center;
 }
 
+.tamañotablas3{
+  height:4em;
+  width:5em;
+  text-align:center;
+}
 
+.tamañotablas4{
+  height:4em;
+  width:16em;
+  text-align:center;
+}
 
+.letraspacman{
+  text-align:center;
+}
 
+.banderas{
+  height:5em;
+  width:5em;
+}
