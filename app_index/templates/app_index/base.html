@@ -36,6 +36,11 @@
             </div>
         </nav>
         
+        <section style="background-color: rgba(215, 16, 255, 0.5);text-align: center;">
+            {% if mensaje %}
+                <span style="font-weight: bold; font-size: 105%;"> {{mensaje}} </span>
+            {% endif %}
+        </section>
 
         {% block contenido_no_heredado %}
 

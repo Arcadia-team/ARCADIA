@@ -6,7 +6,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from app_index.forms import UserSignupForm
+from app_index.forms import SignUpForm
 
 
 # Create your views here.
@@ -22,14 +22,17 @@ def login(request):
 # Register
 def signup(request):
     if request.method == 'POST':
-        form = UserSignupForm(request.POST)
+        form = SignUpForm(request.POST)
         
         if form.is_valid():
             form.save()
             mensaje = "Usuario creado, ¡Bienvenido a Arcadia!" 
-            return render(request,"app_index/login.html",{"mensaje":mensaje})
+        else:
+            mensaje="Ha ocurrido un error, comprueba que has introducido correctamente los campos."
+        
+        return render(request,"app_index/index.html",{"mensaje":mensaje})
             
     else: 
-        form = UserSignupForm()
+        form = SignUpForm()
         return render(request, "app_index/signup.html",{"form":form})
     
