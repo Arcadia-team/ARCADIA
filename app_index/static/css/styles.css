@@ -11414,13 +11414,31 @@ footer.footer {
 }
 
 .fotoprimero{
-  background-image: url('../assets/img/primero.png');
+  background-image: url('../assets/img/copadorada.png');
   background-repeat: no-repeat;
   margin: auto;
   cursor:pointer;
   height: 6em;
   width: 5em;
-
+  margin-top:0.5em;
+}
+.fotosegundo{
+  background-image: url('../assets/img/copaplateada.png');
+  background-repeat: no-repeat;
+  margin: auto;
+  cursor:pointer;
+  height: 6em;
+  width: 5em;
+  margin-top:0.5em;
+}
+.fototercero{
+  background-image: url('../assets/img/copabronce.png');
+  background-repeat: no-repeat;
+  margin: auto;
+  cursor:pointer;
+  height: 6em;
+  width: 5em;
+  margin-top:0.5em;
 }
 
 .fondoPurpura{
@@ -11489,6 +11507,14 @@ footer.footer {
 }
 
 .banderas{
-  height:5em;
-  width:5em;
+  height:3em;
+  width:3em;
+}
+
+.fondopurpura3{
+  height:31em;
+  background-color: #443957;
+}
+.margintop10{
+  padding-top:30em;
 }
