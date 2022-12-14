@@ -18,5 +18,5 @@ class LoginForm(AuthenticationForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['username'].widget.attrs.update({"autofocus": False, 'class': 'inputs form-control input-block js-login-field'})
+        self.fields['username'].widget.attrs.update({'class': 'inputs form-control input-block js-login-field'})
         self.fields['password'].widget.attrs.update({'class': 'inputs form-control form-control input-block js-password-field'}) 
