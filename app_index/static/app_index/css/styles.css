@@ -11420,3 +11420,151 @@ footer.footer {
   src: url("../assets/fonts/sega.ttf");
 }
 
+/* Index + rankings (Juanfrancisco) */
+
+.fotopacman{
+  background-image: url('../assets/img/pacman.png');
+  background-repeat: no-repeat;
+  width: 50%;
+  margin: auto;
+  cursor:pointer;
+
+}
+.fototetris{
+  background-image: url('../assets/img/tetris.png');
+  background-repeat: no-repeat;
+  width: 45%;
+  margin: auto;
+  cursor: pointer;
+}
+.fotosnake{
+  height:100%;
+  background-image: url('../assets/img/snake.png');
+  background-repeat: no-repeat;
+  width: 50%;
+  margin: auto;
+  cursor: pointer;
+}
+
+.fotoprimero{
+  background-image: url('../assets/img/copadorada.png');
+  background-repeat: no-repeat;
+  margin: auto;
+  cursor:pointer;
+  height: 6em;
+  width: 5em;
+  margin-top:0.5em;
+}
+.fotosegundo{
+  background-image: url('../assets/img/copaplateada.png');
+  background-repeat: no-repeat;
+  margin: auto;
+  cursor:pointer;
+  height: 6em;
+  width: 5em;
+  margin-top:0.5em;
+}
+.fototercero{
+  background-image: url('../assets/img/copabronce.png');
+  background-repeat: no-repeat;
+  margin: auto;
+  cursor:pointer;
+  height: 6em;
+  width: 5em;
+  margin-top:0.5em;
+}
+
+.fondoPurpura{
+  background-color: #443957;
+  height: 12em;
+}
+
+.fondoPurpura2{
+  background-color: #443957;
+}
+
+.letrasamarillas{
+  color:yellow;
+  text-align: center;
+}
+
+.homeJuegosPopulares{
+  margin-bottom: 0.7em;
+}
+
+.borde3px{
+  border: 3px solid black;
+}
+
+.num1ranking{
+  height: 6em;
+  width: 10em;
+}
+
+.fondoBlanco{
+  background-color: white;
+}
+
+.alturadiv{
+  margin-top:2em;
+  height:32em;
+  margin-bottom:2em;
+}
+
+.alturadiv2{
+  margin-top:2em;
+  height:29em;
+  margin-bottom:2em;
+}
+
+.tamañotablas{
+  height:4em;
+  width:20em;
+  text-align:center;
+} 
+
+.tamañotablas2{
+  height:4em;
+  width:32em;
+  text-align:center;
+}
+
+.tamañotablas3{
+  height:4em;
+  width:5em;
+  text-align:center;
+}
+
+.tamañotablas4{
+  height:4em;
+  width:16em;
+  text-align:center;
+}
+
+.letraspacman{
+  text-align:center;
+}
+
+.banderas{
+  height:3em;
+  width:3em;
+}
+
+.fondopurpura3{
+  height:31em;
+  background-color: #443957;
+}
+.margintop10{
+  padding-top:30em;
+}
+
+.marginbottom{
+  margin-bottom: 2em;
+}
+.margintop{
+  padding: 5em;
+}
+
+.paddingtitulotabla{
+  padding:1em;
+}
