@@ -1,5 +1,0 @@
-Login-background
-
-input -tamaño cuando esta en focus
-
-Signup css.

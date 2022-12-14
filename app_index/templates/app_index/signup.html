@@ -68,10 +68,10 @@
       </typing-effect>
 
       <!-- Formulario -->
-    <form class="position-relative js-octocaptcha-parent"  action="{% url 'signup' %}" method="post">
+    <form class="position-relative js-octocaptcha-parent" method="post">
       {% csrf_token %}
       <div class="js-continue-step-container signup-continue-step-container mt-4">
-        
+
         <!-- Username inputs -->
         <div class="js-continue-step-container signup-continue-step-container">
           <div class="mt-4">
@@ -81,13 +81,13 @@
           </div>
           <div class="d-flex flex-items-center flex-column flex-sm-row">
             <div class="d-flex flex-items-center width-full">
-              <input id="login" class="form-control js-continue-input js-continue-focus-target signup-input form-control input-block flex-1 border-0 rounded-0 p-0 box-shadow-none color-text-white f4 text-mono" required="required" autocomplete="username" aria-describedby="login-err" type="text" name="user[login]" />
+              {{form.username}}
             </div>
           </div>
         </div>
         
-      <br>
-      <!-- Label -->
+        <br>
+        <!-- Label -->
         <div>
           <label for="email" class="labels-signup">
             Enter your email
@@ -97,7 +97,7 @@
         <!-- Input -->
         <div class="d-flex flex-items-center flex-column flex-sm-row">
           <div class="d-flex flex-items-center width-full">
-            <input id="email" class=" signup-input form-control input-block flex-1 border-0 rounded-0 p-0 box-shadow-none color-text-white f4 text-mono"/>
+            {{form.email}}
           </div>
         </div>
         
@@ -112,9 +112,7 @@
       <!-- Passwords input -->
       <div class="d-flex flex-items-center flex-column flex-sm-row">
         <div class="d-flex flex-items-center width-full">
-          <visible-password class="flex-1 d-flex flex-items-center mr-3">
-            <input class="form-control js-continue-input js-continue-focus-target signup-input form-control input-block flex-1 border-0 rounded-0 p-0 box-shadow-none color-text-white f4 text-mono" required="required" passwordrules="minlength: 15; allowed: unicode;" autocomplete="new-password" data-target="visible-password.input" aria-describedby="password-err" type="password" name="user[password]" />
-          </visible-password>
+          {{form.password1}}
         </div>
       </div>
       
@@ -128,15 +126,12 @@
       <!-- Passwords input -->
       <div class="d-flex flex-items-center flex-column flex-sm-row">
         <div class="d-flex flex-items-center width-full">
-          <visible-password class="flex-1 d-flex flex-items-center mr-3">
-            <input class="form-control js-continue-input js-continue-focus-target signup-input form-control input-block flex-1 border-0 rounded-0 p-0 box-shadow-none color-text-white f4 text-mono" required="required" passwordrules="minlength: 15; allowed: unicode;" autocomplete="new-password" data-target="visible-password.input" aria-describedby="password-err" type="password" name="user[password]" />
-          </visible-password>
+          {{form.password2}}
         </div>
       </div>
-        
       
       <br>
-      <button name="button" type="submit" class=" signup-submit-button width-full py-2 js-octocaptcha-form-submit" data-optimizely-event="click.signup_continue.create_account" data-disable-invalid="true" disabled="disabled">Create account</button>
+      <input type="submit" value="Create account" class="signup-submit-button width-full py-2 js-octocaptcha-form-submit" />
     
     </div> 
     </form>  
