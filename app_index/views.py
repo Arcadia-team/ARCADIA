@@ -54,3 +54,16 @@ def login_request(request):
     else:   
         form = LoginForm()
         return render(request, "app_index/login.html",{"form":form})
+
+
+#GAMES
+def games(request):
+    return render(request, "app_index/games.html")
+
+#RANKINGS - General
+def rankings(request):
+    return render(request, "app_index/rankings.html")
+
+#RANKING - POR JUEGO
+def ranking(request):
+    return render(request, "app_index/ranking.html")

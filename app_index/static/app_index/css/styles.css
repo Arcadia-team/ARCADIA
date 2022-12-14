@@ -4414,7 +4414,7 @@ textarea.form-control-lg {
 }
 .navbar-light .navbar-toggler {
   color: rgba(0, 0, 0, 0.55);
-  border-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(211, 28, 28, 0.1);
 }
 .navbar-light .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -11332,7 +11332,7 @@ footer.footer {
 /* ----------------- Boostrap css cambios -----------------------------*/
 .bg-light {
   --bs-bg-opacity: 1;
-  background-color: rgba(0,0,0, var(--bs-bg-opacity)) !important;
+  background-color: rgba(4,13,33, var(--bs-bg-opacity)) !important;
 }
 
 .navbar-light .navbar-brand {
@@ -11489,7 +11489,8 @@ footer.footer {
 }
 
 .homeJuegosPopulares{
-  margin-bottom: 0.7em;
+  margin-bottom: 2.7em;
+  color: rgba(215, 16, 255, 0.6);
 }
 
 .borde3px{
