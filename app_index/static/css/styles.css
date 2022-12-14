@@ -666,7 +666,7 @@ progress {
   }
 }
 .row {
-  --bs-gutter-x: 1.5rem;
+  /*--bs-gutter-x: 1.5rem; */
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
@@ -11478,6 +11478,12 @@ footer.footer {
   margin-bottom:2em;
 }
 
+.alturadiv2{
+  margin-top:2em;
+  height:29em;
+  margin-bottom:2em;
+}
+
 .tamañotablas{
   height:4em;
   width:20em;
@@ -11486,7 +11492,7 @@ footer.footer {
 
 .tamañotablas2{
   height:4em;
-  width:28em;
+  width:32em;
   text-align:center;
 }
 
@@ -11517,4 +11523,15 @@ footer.footer {
 }
 .margintop10{
   padding-top:30em;
+}
+
+.marginbottom{
+  margin-bottom: 2em;
+}
+.margintop{
+  padding: 5em;
+}
+
+.paddingtitulotabla{
+  padding:1em;
 }
