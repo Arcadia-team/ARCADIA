@@ -11332,7 +11332,7 @@ footer.footer {
 /* ----------------- Boostrap css cambios -----------------------------*/
 .bg-light {
   --bs-bg-opacity: 1;
-  background-color: rgba(4,13,33, var(--bs-bg-opacity)) !important;
+  background-color: rgb(12,22,45);
 }
 
 .navbar-light .navbar-brand {
@@ -11490,7 +11490,8 @@ footer.footer {
 
 .homeJuegosPopulares{
   margin-bottom: 2.7em;
-  color: rgba(215, 16, 255, 0.6);
+  color: rgba(249, 138, 249, 0.8)
+  
 }
 
 .borde3px{
