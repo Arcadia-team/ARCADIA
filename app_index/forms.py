@@ -5,14 +5,18 @@ from django.contrib.auth.models import User
 
 #Register
 class SignUpForm(UserCreationForm):    
-    username = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class':'form-control js-continue-input js-continue-focus-target signup-input form-control input-block flex-1 border-0 rounded-0 p-0 box-shadow-none color-text-white f4 text-mono'}))
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'signup-input form-control input-block flex-1 border-0 rounded-0 p-0 box-shadow-none color-text-white f4 text-mono'}))
-    password1 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'class':'form-control js-continue-input js-continue-focus-target signup-input form-control input-block flex-1 border-0 rounded-0 p-0 box-shadow-none color-text-white f4 text-mono'}))
-    password2 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'class':'form-control js-continue-input js-continue-focus-target signup-input form-control input-block flex-1 border-0 rounded-0 p-0 box-shadow-none color-text-white f4 text-mono'}))
     class Meta:
         model = User
         fields = ['username','email','password1','password2']
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
+        self.fields['username'].widget.attrs.update({'class':'form-control js-continue-input js-continue-focus-target signup-input form-control input-block flex-1 border-0 rounded-0 p-0 box-shadow-none color-text-white f4 text-mono'})
+        self.fields['email'].widget.attrs.update({'class':'signup-input form-control input-block flex-1 border-0 rounded-0 p-0 box-shadow-none color-text-white f4 text-mono'})
+        self.fields['password1'].widget.attrs.update({'class':'form-control js-continue-input js-continue-focus-target signup-input form-control input-block flex-1 border-0 rounded-0 p-0 box-shadow-none color-text-white f4 text-mono'})
+        self.fields['password2'].widget.attrs.update({'class':'form-control js-continue-input js-continue-focus-target signup-input form-control input-block flex-1 border-0 rounded-0 p-0 box-shadow-none color-text-white f4 text-mono'})
+            
 #LOGIN
 class LoginForm(AuthenticationForm):
 

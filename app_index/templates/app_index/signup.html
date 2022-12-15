@@ -48,9 +48,7 @@
         </div>
       </header>
     </div>
-
-
-
+ 
   <div class= "application-main d-flex flex-auto flex-column">
       
   <main class="js-warp-hide bg-gray-dark-mktg d-flex flex-auto flex-column overflow-hidden position-relative">
@@ -59,6 +57,13 @@
       
 <div class="js-continue-container width-full z-1 signup-text-suggester">
   <div class="m-4 p-4 f4 color-shadow-small bg-gray-800-mktg rounded-2 signup-content-container">
+
+    <section style="font-size: 95%; margin-bottom:3%; background-color: rgba(4,13,33,1); color: #627597;; text-align: center;">
+      {% if mensaje %}
+          <span style="font-weight: bold; font-size: 105%;"> {{mensaje}} </span>
+      {% endif %}
+    </section>
+
       <h1 class="sr-only">Welcome to Arcadia! Let's begin the adventure</h1>
       <typing-effect 
         data-lines='["Welcome to Arcadia!", "Let’s begin the adventure"]'
@@ -84,6 +89,7 @@
               {{form.username}}
             </div>
           </div>
+          <div style="color: #627597">{{form.username.help_text}}</div>
         </div>
         
         <br>
@@ -99,29 +105,31 @@
           <div class="d-flex flex-items-center width-full">
             {{form.email}}
           </div>
+          <div style="color: #627597">{{form.email.help_text}}</div>
         </div>
         
-
-      <!-- Password label -->
-      <div class="mt-4">
-        <label for="password" class="labels-signup">
-          Create a password
-        </label>
-      </div>
-      
-      <!-- Passwords input -->
-      <div class="d-flex flex-items-center flex-column flex-sm-row">
-        <div class="d-flex flex-items-center width-full">
-          {{form.password1}}
+        
+        <!-- Password label -->
+        <div class="mt-4">
+          <label for="password" class="labels-signup">
+            Create a password
+          </label>
         </div>
-      </div>
-      
-      <!-- Password label -->
-      <div class="mt-4">
-        <label for="password" class="labels-signup">
-          Repeat the password
-        </label>
-      </div>
+        
+        <!-- Passwords input -->
+        <div class="d-flex flex-items-center flex-column flex-sm-row">
+          <div class="d-flex flex-items-center width-full">
+            {{form.password1}}
+          </div>
+        </div>
+        <div style="padding-left: 4%; padding-top: 2%; color: #627597">{{form.password1.help_text}}</div>
+        
+        <!-- Password label -->
+        <div class="mt-4">
+          <label for="password" class="labels-signup">
+            Repeat the password
+          </label>
+        </div>
       
       <!-- Passwords input -->
       <div class="d-flex flex-items-center flex-column flex-sm-row">
@@ -129,13 +137,15 @@
           {{form.password2}}
         </div>
       </div>
+      <div style="color: #627597">{{form.password2.help_text}}</div>
+      
       
       <br>
       <input type="submit" value="Create account" class="signup-submit-button width-full py-2 js-octocaptcha-form-submit" />
-    
+      
     </div> 
-    </form>  
-  </div>
+  </form>  
+</div>
   
 </div>
     </div>

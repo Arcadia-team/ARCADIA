@@ -16,20 +16,18 @@ def inicio(request):
 
 # Register
 def signup_request(request):
+    mensaje=""
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         
         if form.is_valid():
             form.save()
-            mensaje = "Usuario creado, ¡Bienvenido a Arcadia!" 
-        else:
-            mensaje="Ha ocurrido un error, comprueba que has introducido correctamente los campos."
+            return render(request,"app_index/index.html",{"mensaje":"Usuario creado, ¡Bienvenido a Arcadia!"})
         
-        return render(request,"app_index/index.html",{"mensaje":mensaje})
-            
-    else: 
-        form = SignUpForm()
-        return render(request, "app_index/signup.html",{"form":form})
+        mensaje="Please check your signup credentials and try again!"  
+     
+    form = SignUpForm()
+    return render(request, "app_index/signup.html",{"form":form, "mensaje":mensaje})
     
 
 # Login
