@@ -21,6 +21,17 @@ class SignUpForm(UserCreationForm):
 class LoginForm(AuthenticationForm):
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['username'].widget.attrs.update({'class': 'inputs form-control input-block js-login-field'})
-        self.fields['password'].widget.attrs.update({'class': 'inputs form-control form-control input-block js-password-field'}) 
+        super(LoginForm, self).__init__(*args, **kwargs)
+        
+        # Username input
+        self.fields['username'].widget.attrs.update({
+        'style':'background-color:#0D1117; color: #C9D1D9;',
+        'class': 'form-control input-block js-login-field', 
+        'id':'login_field',
+        'name':'login',
+        'autocorrect':'off'})
+
+        # Password input
+        self.fields['password'].widget.attrs.update({
+            'class':'form-control input-block js-password-field',
+            'style':'background-color:#0D1117; color: #C9D1D9;'}) 
