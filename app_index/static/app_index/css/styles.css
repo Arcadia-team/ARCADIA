@@ -11343,7 +11343,7 @@ footer.footer {
   text-shadow: yellow 1px 0 1px;  
 }
 
-/* ----------------------------- botones ------------------------------------------*/
+/* ----------------------------- boton login ------------------------------------------*/
 
 .btn-success {
   color: #fff;
@@ -11369,6 +11369,24 @@ footer.footer {
   background-image:url("../assets/img/login.png");
 }
 
+/* ----------------------------- boton logout ------------------------------------------*/
+
+.btn-success-logout {
+  color: #fff;
+  background-image:url("../assets/img/logout.png");
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+.btn-check-logout:checked + .btn-success-logout, .btn-check-logout:active + .btn-success-logout, .btn-success-logout:active {
+  transition: 0.3s;
+  background-image:url("../assets/img/logout-pulsado.png");
+}
+
+.btn-success-logout:disabled {
+  transition: 0.2s;
+  background-image:url("../assets/img/logout.png");
+}
 /*-------------------Css Original de ARCADIA (no frameworks)-----------  */
 
 

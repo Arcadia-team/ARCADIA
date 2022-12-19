@@ -54,6 +54,15 @@ def login_request(request):
         return render(request, "app_index/login.html",{"form":form})
 
 
+# Logout
+def logout_request(request):
+    pass
+
+
+
+
+
+
 #GAMES
 def games(request):
     return render(request, "app_index/games.html")
