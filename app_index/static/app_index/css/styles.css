@@ -11347,7 +11347,7 @@ footer.footer {
 
 .btn-success {
   color: #fff;
-  background-image:url("../assets/img/login-adaptado.png");
+  background-image:url("../assets/img/login.png");
   background-repeat:no-repeat;
   background-position:center;
 }
@@ -11366,7 +11366,7 @@ footer.footer {
 
 .btn-success:disabled, .btn-success.disabled {
   transition: 0.2s;
-  background-image:url("../assets/img/login-adaptado.png");
+  background-image:url("../assets/img/login.png");
 }
 
 /*-------------------Css Original de ARCADIA (no frameworks)-----------  */
