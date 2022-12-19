@@ -11351,14 +11351,7 @@ footer.footer {
   background-repeat:no-repeat;
   background-position:center;
 }
-.btn-success:hover {
-  background-image:url("../assets/img/login-hover.png");
-  transition: 0.2s;
-}
-.btn-check:focus + .btn-success, .btn-success:focus {
-  transition: 0.3s;
-  background-image:url("../assets/img/login-hover.png");
-}
+
 .btn-check:checked + .btn-success, .btn-check:active + .btn-success, .btn-success:active, .btn-success.active, .show > .btn-success.dropdown-toggle {
   transition: 0.3s;
   background-image:url("../assets/img/login-pulsado.png");
