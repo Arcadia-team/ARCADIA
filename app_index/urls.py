@@ -1,5 +1,5 @@
 from django.urls import path
-from app_index.views import inicio, login_request, signup_request, rankings, ranking, games
+from app_index.views import inicio, login_request, signup_request, rankings, ranking, games, tetris, bubbleshooter, snake
 
 
 urlpatterns = [
@@ -9,4 +9,7 @@ urlpatterns = [
     path('games/', games, name="games"),
     path('rankings/', rankings, name="rankings"),
     path('ranking/', ranking, name="ranking"),
+    path('tetris/', tetris, name="tetris"),
+    path('bubbleshooter/', bubbleshooter, name="bubbleshooter"),
+    path('snake/', snake, name="snake"),
 ]

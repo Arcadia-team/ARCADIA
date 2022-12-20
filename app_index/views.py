@@ -56,11 +56,21 @@ def login_request(request):
         return render(request, "app_index/login.html",{"form":form})
 
 
-#GAMES
+#GAMES - GENERAL
 def games(request):
     return render(request, "app_index/games.html")
 
-#RANKINGS - General
+#GAME - POR JUEGO
+def tetris(request):
+    return render(request, "app_index/tetris.html")
+
+def bubbleshooter(request):
+    return render(request, "app_index/bubbleshooter.html")
+
+def snake(request):
+    return render(request, "app_index/snake.html")
+
+#RANKINGS - GENERAL
 def rankings(request):
     return render(request, "app_index/rankings.html")
 

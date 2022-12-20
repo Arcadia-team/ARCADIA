@@ -11235,8 +11235,8 @@ textarea.form-control-lg {
   }
 }
 .features-icons {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 .features-icons .features-icons-item {
   max-width: 20rem;
@@ -11426,6 +11426,15 @@ footer.footer {
   background-image: url('../assets/img/pacman.png');
   background-repeat: no-repeat;
   width: 50%;
+  margin: auto;
+  cursor:pointer;
+
+}
+
+.fotobubbleshooter{
+  background-image: url('../assets/img/boobleshooterimagen.png');
+  background-repeat: no-repeat;
+  width: 20%;
   margin: auto;
   cursor:pointer;
 

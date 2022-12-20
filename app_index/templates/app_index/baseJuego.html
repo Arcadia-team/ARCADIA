@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="sp">
+    <head>
+		
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Landing Page - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+
+
+    </head>
+	
+    <body  onLoad="arcade();">
+        <section class=" text-center " id="pag" >
+
+				{% block juego %}
+
+				{% endblock juego %}
+
+        </section>
+
+		<style>
+		html{min-width:1100px;overflow:hidden;}
+		
+		#pag{
+			justify-content:center;
+			display:flex;
+		}
+		body{
+			background-size:cover;
+			background-repeat:no-repeat;
+			width:100%;
+			height:975px;
+			min-height:100vh;
+		}
+		#fondo{
+			display:flex;
+			justify-content:center;
+			z-index: 10;
+		}
+		#juego{
+			position:absolute;
+			justify-content:center;
+			align-items:top;
+			z-index: 5;
+		}
+		.inte{
+			position:absolute;
+		}
+		inte{
+			object-fit: cover;
+			transform:scaleX(1.15) scaleY(1.1);
+			margin-bottom:3.45%;
+		}
+		.vuelta{
+			background-image:url("{% static 'app_index/assets/img/botonbuscar2.png' %}");
+			background-size:cover;
+			background-repeat:no-repeat;
+			background-position:center;
+			z-index:5;
+			display:inline-block;
+			margin:1%;
+			width:10%;
+			height:12%;
+			position:absolute;	
+		}
+		.englose{
+			background-position:center;
+			background-repeat:repeat-x;
+			background-size:contain;
+			background-image:url("{% static 'app_index/assets/img/pared.jpg' %}");
+			border:inset grey 3px;
+			width:  755px;
+			z-index: 10;
+			
+		}
+		.ranking{
+			display:flex;
+			color:yellow;
+			position:absolute;
+			justify-content:center;
+			align-items:start;
+			height:60px;
+			width: 755px;
+			top:10px;
+		}
+		.ani{
+			text-align:center;
+			margin-top:1%;
+			font-size:32px;
+			font-family:Pixel Emulator;
+		}
+
+		.abajo{
+			height:60px;
+			width:900px;
+			display:flex;
+			position:relative;
+			margin-top:70px;
+			width: 755px;
+			}
+		.rank{
+			height:60px;
+			width:33%;
+			text-align:center;
+			color:yellow;
+			font-size:18px;
+		}
+		#a{
+			animation-name:subir;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+		}
+		#b{
+			animation-name:subir;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;}
+		#c{
+			animation-name:subir;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+		}
+		.vuelta:hover{
+			background-image:url("{% static 'app_index/assets/img/botonbuscar3.png' %}");
+			animation-name:subir;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+		}
+		.vuelta:active{
+			background-image:url("{% static 'app_index/assets/img/botonbuscar4.png' %}");
+		}
+		@keyframes subir{
+		  0%{transform:translateX(2px);}
+		  10%  {transform:translateX(4px);}
+		  20%  {transform:translateX(6px);}
+		  30%  {transform:translateX(8px);}
+		  40%  {transform:translateX(10px);}
+		  50%  {transform:translateX(12px);}
+		  60%  {transform:translateX(10px);}
+		  70%  {transform:translateX(8px);}
+		  80%  {transform:translateX(6px);}
+		  90%  {transform:translateX(4px);}
+		  100% {transform:translateX(2px);}
+		}
+		</style>
+		 <!-- Fondos aleatorios JS-->
+		<script type= "text/javascript">
+			var fondos=["{% static 'app_index/assets/img/arcade2.gif' %}","{% static 'app_index/assets/img/station.gif' %}","{% static 'app_index/assets/img/retro.gif' %}"];
+			var maquinas=["{% static 'app_index/assets/img/maquina33.png' %}","{% static 'app_index/assets/img/maquina1.png' %}"];
+			function arcade() {
+				var image = fondos[Math.floor(Math.random()*fondos.length)];
+				document.body.style.backgroundImage="url("+image+")";
+			}
+		</script>
+		<script>
+			var image = maquinas[Math.floor(Math.random()*maquinas.length)];
+			const fondo= document.getElementsByClassName("maquina");
+			fondo[0].src = image;
+		</script>
+		<!-- Play JS-->
+		<script>
+		function play() {
+			const video= document.getElementsByClassName("vid");
+			vid.play();
+			}
+		</script>
+		<script>
+			const fondito = fondo[0].getAttribute("src");
+			var clase = document.getElementsByClassName("englose");
+					if ( fondito == "{% static 'app_index/assets/img/maquina33.png' %}" ){
+						clase[0].style.transform="scale(0.9)";
+					}
+		</script>
+    </body>
+</html>

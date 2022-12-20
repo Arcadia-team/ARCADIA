@@ -1,0 +1,13 @@
+{% extends "app_index/baseJuego.html" %}
+
+{% load static %}
+
+{% block juego %}
+
+<link rel="stylesheet" href="{% static 'app_index/snake/css.css' %}">
+
+	<div class="score" id="score">0</div>
+	<canvas id="canvas" height="500px" width="500px"></canvas>
+
+<script type="application/javascript" src="{% static 'app_index/snake/js.js'%}"></script>
+{% endblock juego %}
