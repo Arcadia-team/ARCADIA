@@ -1,0 +1,115 @@
+{% extends "app_index/base.html" %}
+
+{% load static %}
+
+{% block contenido_no_heredado %}
+
+        <title>ARCADIA</title>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="text-center text-white">
+                            <!-- Page heading-->
+                            <h1 style="font-family: arcadeFont; font-size: 180%; padding-right: 16%;" class="mb-5"> Search your games! </h1>
+                            <!-- Signup form-->
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- * * SB Forms Contact Form * *-->
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- This form is pre-integrated with SB Forms.-->
+                            <!-- To make this form functional, sign up at-->
+                            <!-- https://startbootstrap.com/solution/contact-forms-->
+                            <!-- to get an API token!-->
+                            <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <!-- Email address input-->
+                                <div style="font-family: arcadeFont;"class="row">
+                                    <div class="col">
+                                        <input class="form-control form-control-lg" id="game-shearched" type="text" placeholder="Pacman..." />
+                                    </div>
+                                    <div class="col-auto"><button style="background-color: rgb(3, 40, 141); border: solid 2px black" class="btn btn-primary btn-lg disabled" id="search" type="submit">Search</button></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Icons Grid-->
+        <section class="features-icons bg-light text-center">
+            <div class="container">
+                <h1 style="font-family: arcadeFont;font-size: 180%;" class="homeJuegosPopulares">POPULAR GAMES</h1>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 fondoPurpura">
+                            <div class="features-icons-icon fotopacman"></div>
+                            <h3 class="letrasamarillas">Pacman</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 fondoPurpura">
+                            <div class="features-icons-icon d-flex fotosnake"></div>
+                            <h3 class="letrasamarillas">Snake</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-0 mb-lg-3 fondoPurpura">
+                            <div class="features-icons-icon d-flex fototetris"></div>
+                            <h3 class="letrasamarillas">Tetris</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+            <!-- Icons Grid-->
+            <div class="col-lg-6"></div>
+            <div class="col-lg-1">
+
+            </div>
+        <!-- Call to Action-->
+        <section class="call-to-action text-white text-center" id="signup">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+                        <!-- Signup form-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
+                            <!-- Email address input-->
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email Address is required.</div>
+                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email Address Email is not valid.</div>
+                                </div>
+                                <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+                            </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    <p>To activate this form, sign up at</p>
+                                    <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+{% endblock contenido_no_heredado %}   

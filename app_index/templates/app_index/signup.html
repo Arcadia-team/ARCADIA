@@ -1,0 +1,158 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="height-full">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'app_index/assets/favicon.ico' %}" />
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'app_index/css/styles.css' %}" rel="stylesheet" />
+    <!-- Css linked -->
+    <link rel="stylesheet" href="{% static 'app_index/css/style-signup/signup1.css' %}" />
+    <link rel="stylesheet" href="{% static 'app_index/css/style-signup/signup2.css' %}" />
+    <link rel="stylesheet" href="{% static 'app_index/css/style-signup/signup3.css' %}" />
+    
+    <!-- Java Script -->
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script1.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script2.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script3.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script4.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script5.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script6.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script7.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script8.js' %}"></script>
+  </head>
+
+
+<body class="logged-out env-production page-responsive height-full d-flex flex-column header-overlay" style="word-wrap: break-word;">
+  <div class="logged-out env-production page-responsive height-full d-flex flex-column header-overlay" style="word-wrap: break-word;">    
+    <div class="position-relative js-header-wrapper ">
+      
+      <!-- Header -->
+      <header class="js-warp-hide header-logged-out f4 py-3 z-2" >
+        <div class="container-xl d-lg-flex flex-items-center p-responsive">
+          <div class="d-flex flex-justify-between flex-items-center width-full">
+            <a href="{% url 'inicio' %}">
+              <img src="{% static 'app_index/assets/favicon.ico' %}" height="50px">
+            </a>
+
+              <div class="font-mktg">
+                <span style="font-family: arcadeFont; font-size: 65%;"class="mr-2 text-gray-mktg hide-sm">Already have an account?</span>
+                <a style=" text-decoration: none; font-family: arcadeFont; font-size: 65%; color: rgba(249, 138, 249, 0.8);" href="{% url 'login' %}">
+                  Sign in 
+                </a>
+              </div>
+          </div>
+        </div>
+      </header>
+    </div>
+ 
+  <div class= "application-main d-flex flex-auto flex-column">
+      
+  <main class="js-warp-hide bg-gray-dark-mktg d-flex flex-auto flex-column overflow-hidden position-relative">
+   
+    <div class="d-flex flex-auto flex-justify-center pt-12">
+      
+<div class="js-continue-container width-full z-1 signup-text-suggester">
+  <div class="m-4 p-4 f4 color-shadow-small bg-gray-800-mktg rounded-2 signup-content-container">
+
+    <section style="font-size: 95%; margin-bottom:3%; background-color: rgba(4,13,33,1); color: #627597;; text-align: center;">
+      {% if mensaje %}
+          <span style="font-weight: bold; font-size: 105%;"> {{mensaje}} </span>
+      {% endif %}
+    </section>
+
+      <h1 class="sr-only">Welcome to Arcadia! Let's begin the adventure</h1>
+      <typing-effect 
+        data-lines='["Welcome to Arcadia!", "Let’s begin the adventure"]'
+        class="js-signup-typed-welcome" style="font-size: 65%;">
+        <span data-target="typing-effect.content" style="font-family: arcadeFont;color:rgba(249, 138, 249, 0.8)" class="text-mono"></span>
+        <span data-target="typing-effect.cursor" class="typing-effect-cursor">|</span>
+      </typing-effect>
+
+      <!-- Formulario -->
+    <form class="position-relative js-octocaptcha-parent" method="post">
+      {% csrf_token %}
+      <div class="js-continue-step-container signup-continue-step-container mt-4">
+
+        <!-- Username inputs -->
+        <div class="js-continue-step-container signup-continue-step-container">
+          <div class="mt-4">
+            <label for="login" class="labels-signup">
+              Enter a username
+            </label>
+          </div>
+          <div class="d-flex flex-items-center flex-column flex-sm-row">
+            <div class="d-flex flex-items-center width-full">
+              {{form.username}}
+            </div>
+          </div>
+          <div style="color: #627597">{{form.username.help_text}}</div>
+        </div>
+        
+        <br>
+        <!-- Label -->
+        <div>
+          <label for="email" class="labels-signup">
+            Enter your email
+          </label>
+        </div>
+        
+        <!-- Input -->
+        <div class="d-flex flex-items-center flex-column flex-sm-row">
+          <div class="d-flex flex-items-center width-full">
+            {{form.email}}
+          </div>
+          <div style="color: #627597">{{form.email.help_text}}</div>
+        </div>
+        
+        
+        <!-- Password label -->
+        <div class="mt-4">
+          <label for="password" class="labels-signup">
+            Create a password
+          </label>
+        </div>
+        
+        <!-- Passwords input -->
+        <div class="d-flex flex-items-center flex-column flex-sm-row">
+          <div class="d-flex flex-items-center width-full">
+            {{form.password1}}
+          </div>
+        </div>
+        <div style="padding-left: 4%; padding-top: 2%; color: #627597">{{form.password1.help_text}}</div>
+        
+        <!-- Password label -->
+        <div class="mt-4">
+          <label for="password" class="labels-signup">
+            Repeat the password
+          </label>
+        </div>
+      
+      <!-- Passwords input -->
+      <div class="d-flex flex-items-center flex-column flex-sm-row">
+        <div class="d-flex flex-items-center width-full">
+          {{form.password2}}
+        </div>
+      </div>
+      <div style="color: #627597">{{form.password2.help_text}}</div>
+      
+      
+      <br>
+      <input type="submit" value="Create account" class="signup-submit-button width-full py-2 js-octocaptcha-form-submit" />
+      
+    </div> 
+  </form>  
+</div>
+  
+</div>
+    </div>
+  </main>
+  </div>
+
+  </div>
+</body>
+</html>
+
