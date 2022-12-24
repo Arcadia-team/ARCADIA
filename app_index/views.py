@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
+
+
 #Login y register:
 from django.contrib.auth.forms import AuthenticationForm
 from app_index.forms import LoginForm
@@ -7,7 +9,6 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.views import LogoutView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-
 from app_index.forms import SignUpForm
 
 
@@ -60,10 +61,6 @@ def logout_request(request):
     logout(request)
     return redirect(reverse('inicio'))
     
-
-#GAMES
-def games(request):
-    return render(request, "app_index/games.html")
 
 #RANKINGS - General
 def rankings(request):
