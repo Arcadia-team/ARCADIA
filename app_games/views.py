@@ -6,4 +6,4 @@ from django.urls import reverse, reverse_lazy
 
 #GAMES
 def games(request):
-    return render(request, "app_index/games.html")
+    return render(request, "app_games/games.html")
