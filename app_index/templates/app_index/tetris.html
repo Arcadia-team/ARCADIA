@@ -1,4 +1,4 @@
-{% extends "app_index/baseJuego.html" %}
+
 
 {% load static %}
 
@@ -15,29 +15,29 @@
         padding-bottom: 70px;
     }
 </style>
-<body>
-    <main>
-        <div class="container-fluid" >
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2 id="puntaje">Presiona <kbd>P</kbd> o pulsa el botón para comenzar</h2>
-                </div>
-                <div class="col-12 text-center">
-                    <canvas id="canvas"></canvas>
-                    <div class="mt-2">
-                        <button id="btnIniciar" class="btn btn-success"><i class="fas fa-play"></i></button>
-                        <button hidden id="btnPausar" class="btn btn-success"><i class="fas fa-pause"></i></button>
-                        <button id="btnIzquierda" class="btn btn-success"><i class="fas fa-arrow-left"></i></button>
-                        <button id="btnAbajo" class="btn btn-success"><i class="fas fa-arrow-down"></i></button>
-                        <button id="btnDerecha" class="btn btn-success"><i class="fas fa-arrow-right"></i></button>
-                        <button id="btnRotar" class="btn btn-success"><i class="fas fa-undo"></i></button>
-                        <button class="btn btn-danger" id="reset">Reset</button>
-                    </div>
+
+<main>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 id="puntaje">Presiona <kbd>P</kbd> o pulsa el botón para comenzar</h2>
+            </div>
+            <div class="col-12 text-center">
+                <canvas id="canvas"></canvas>
+                <div class="mt-2">
+                    <button id="btnIniciar" class="btn btn-success"><i class="fas fa-play"></i></button>
+                    <button hidden id="btnPausar" class="btn btn-success"><i class="fas fa-pause"></i></button>
+                    <button id="btnIzquierda" class="btn btn-success"><i class="fas fa-arrow-left"></i></button>
+                    <button id="btnAbajo" class="btn btn-success"><i class="fas fa-arrow-down"></i></button>
+                    <button id="btnDerecha" class="btn btn-success"><i class="fas fa-arrow-right"></i></button>
+                    <button id="btnRotar" class="btn btn-success"><i class="fas fa-undo"></i></button>
+                    <button class="btn btn-danger" id="reset">Reset</button>
                 </div>
             </div>
         </div>
-    </main>
-</body>
+    </div>
+</main>
+
 <!-- JS TETRIS -->
 <script type="application/javascript" src="{% static 'app_index/games/js/sweetalert2.min.js'%}"></script>
 <script type="application/javascript" src="{% static 'app_index/games/js/tetris.js'%}"></script>

@@ -11430,7 +11430,14 @@ footer.footer {
   cursor:pointer;
 
 }
+.fotopong{
+  background-image: url('../assets/img/fotopong.png');
+  background-repeat: no-repeat;
+  width: 25%;
+  margin: auto;
+  cursor:pointer;
 
+}
 .fotobubbleshooter{
   background-image: url('../assets/img/boobleshooterimagen.png');
   background-repeat: no-repeat;

@@ -70,6 +70,9 @@ def bubbleshooter(request):
 def snake(request):
     return render(request, "app_index/snake.html")
 
+def pong(request):
+    return render(request, "app_index/pong.html")
+
 #RANKINGS - GENERAL
 def rankings(request):
     return render(request, "app_index/rankings.html")

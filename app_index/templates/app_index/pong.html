@@ -1,0 +1,11 @@
+{% extends "app_index/plantillaBaseJuegos.html" %}
+{% load static %}
+{% block juego %}
+
+<link rel="stylesheet" href="{% static 'app_index/pong/css/styles.css' %}">
+
+<canvas class="bg-dark"></canvas>
+
+<script type="application/javascript" src="{% static 'app_index/pong/js/pong.js'%}"></script>
+
+{% endblock juego %}
