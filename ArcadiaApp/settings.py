@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'app_index',
     'app_games',
     'app_rankings',
+    'app_perfiles',
 ]
 
 MIDDLEWARE = [
