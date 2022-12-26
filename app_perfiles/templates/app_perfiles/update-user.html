@@ -1,0 +1,38 @@
+{% extends "app_index/base.html" %}
+
+{% load static %}
+
+{% block contenido_no_heredado %}   
+<title>Update User</title>
+
+
+<div class="title">Update user credentials</div>
+
+    {% if mensaje %}
+        <div class = "mensaje">
+            {{mensaje}}
+        </div>
+    {% endif %}
+
+
+<div>
+    <div >
+        <form method="POST">
+            <div>Modifique su perfil</div>
+            <div>
+                <p>Datos de {{ object.username }}</p>
+                
+                {% csrf_token %}
+                {{ form.as_p }}
+            </div>
+            <input type="submit"  value="Actualizar">
+        </form>
+    </div>
+
+</div>
+
+
+    
+<br><br>
+
+{% endblock contenido_no_heredado %}   
