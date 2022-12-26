@@ -51,8 +51,16 @@
           <div style="border-radius: 0;" class="auth-form-body mt-3">
             <form method="post">
               {% csrf_token %}
+
+              {% if mensaje %}
+                <section style="font-size: 95%; margin-bottom:6%; background-color: #0D1117; color:#C9D1D9; text-align: center;">
+                  <span style="font-weight: bold; font-size: 105%;"> {{mensaje}} </span>
+                </section>
+              {% endif %}
+
               <label for="login_field" style="font-family: arcadeFont;font-size: 80%;"> Username </label>
-                {{form.username}}                
+                {{form.username}}       
+                      
               <!-- Password--> 
               <div class="position-relative">
                 <label for="password" style="font-family: arcadeFont;font-size: 80% "> Password </label> 

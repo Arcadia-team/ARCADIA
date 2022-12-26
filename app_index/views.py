@@ -45,15 +45,14 @@ def login_request(request):
             if user: #Comprueba que exista el usuario en la database
                 login(request, user)
                 return redirect(reverse('inicio'))
-            else: 
-                return render(request, "app_index/index.html",{"mensaje":"Datos incorrectos"})
-        
-        else: 
-            return render(request, "app_index/index.html",{"mensaje":"Formulario inválido"})
-                
-      
+            
+        form = LoginForm()
+        return render(request, "app_index/login.html",{"form":form, "mensaje":"Incorrect data"})
+    
+    #Sino es POST:         
     form = LoginForm()
     return render(request, "app_index/login.html",{"form":form})
+    
 
 
 # Logout
@@ -62,10 +61,4 @@ def logout_request(request):
     return redirect(reverse('inicio'))
     
 
-#RANKINGS - General
-def rankings(request):
-    return render(request, "app_index/rankings.html")
 
-#RANKING - POR JUEGO
-def ranking(request):
-    return render(request, "app_index/ranking.html")

@@ -58,11 +58,11 @@
 <div class="js-continue-container width-full z-1 signup-text-suggester">
   <div class="m-4 p-4 f4 color-shadow-small bg-gray-800-mktg rounded-2 signup-content-container">
 
-    <section style="font-size: 95%; margin-bottom:3%; background-color: rgba(4,13,33,1); color: #627597;; text-align: center;">
-      {% if mensaje %}
-          <span style="font-weight: bold; font-size: 105%;"> {{mensaje}} </span>
-      {% endif %}
-    </section>
+    {% if mensaje %}
+      <section style="font-size: 95%; margin-bottom:3%; background-color: rgba(4,13,33,1); color: #627597;; text-align: center;">
+        <span style="font-weight: bold; font-size: 105%;"> {{mensaje}} </span>
+      </section>
+    {% endif %}
 
       <h1 class="sr-only">Welcome to Arcadia! Let's begin the adventure</h1>
       <typing-effect 
