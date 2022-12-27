@@ -11585,7 +11585,7 @@ footer.footer {
 /* USER NAVBAR*/
 
 .username_navbar{
-
-
-  
+  display: inline; 
+  text-decoration: none; 
+  font-size: 90%;
 }
