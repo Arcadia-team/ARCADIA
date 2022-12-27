@@ -33,9 +33,7 @@
 
                     <!-- Login / Logout comprueba si has iniciado sesion -->
                     {% if user.is_authenticated %}
-                        <a href="{% url 'update_user' %}"><img src="{% static 'app_index/assets/img/avatares/noprofile.png' %}" width="50px" class="rounded-circle"> 
-                            <div class="username_navbar"> {{user.username}} </div>
-                        </a>
+                        <a href="{% url 'update_user' %}"><img src="{% static 'app_index/assets/img/avatares/noprofile.png' %}" width="50px" class="rounded-circle"> </a>
                     {% else %}
                         <a style="color: transparent;" class="btn btn-success rounded m-2 p-2" href="{% url 'login' %}">LOGIN</a>
                     {% endif %}
