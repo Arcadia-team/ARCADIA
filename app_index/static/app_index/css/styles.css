@@ -11439,8 +11439,16 @@ footer.footer {
   width: 50%;
   margin: auto;
   cursor:pointer;
-
 }
+
+.fotobubbleshooter{
+  background-image: url('../assets/img/boobleshooterimagen.png');
+  background-repeat: no-repeat;
+  width: 20%;
+  margin: auto;
+  cursor:pointer;
+}
+
 .fototetris{
   background-image: url('../assets/img/tetris.png');
   background-repeat: no-repeat;
@@ -11448,6 +11456,7 @@ footer.footer {
   margin: auto;
   cursor: pointer;
 }
+
 .fotosnake{
   height:100%;
   background-image: url('../assets/img/snake.png');
@@ -11455,6 +11464,15 @@ footer.footer {
   width: 50%;
   margin: auto;
   cursor: pointer;
+}
+
+.fotopong{
+  background-image: url('../assets/img/fotopong.png');
+  background-repeat: no-repeat;
+  width: 25%;
+  margin: auto;
+  cursor:pointer;
+
 }
 
 .fotoprimero{
