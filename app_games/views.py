@@ -8,7 +8,6 @@ from django.urls import reverse, reverse_lazy
 def games(request):
     return render(request, "app_games/games.html")
 
-
 #GAME - JUEGOS
 def tetris(request):
     return render(request, "app_games/tetris.html")
@@ -27,3 +26,6 @@ def pacman(request):
 
 def spaceinvaders(request):
     return render(request, "app_games/spaceinvaders.html")
+
+def slope(request):
+    return render(request, "app_games/slope.html")
