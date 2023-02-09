@@ -1,79 +1,55 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="utf-8" />
+{% load static %}
+
     <title>Pacman</title>
-    <link rel="stylesheet" href="design/style.css" />
     
+    <link rel="stylesheet" href="{% static 'app_games/pacman/design/style.css'%}">
 
     <script type="application/javascript" src="{% static 'app_games/pacman/source/Data.js'%}"></script>
     <script type="application/javascript" src="{% static 'app_games/pacman/source/Display.js'%}"></script>
     <script type="application/javascript" src="{% static 'app_games/pacman/source/Food.js'%}"></script>
     <script type="application/javascript" src="{% static 'app_games/pacman/source/Fruit.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/Blob.js'%}"></script>
     <script type="application/javascript" src="{% static 'app_games/pacman/source/HighScores.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/Canvas.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/BoardCanvas.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/GameCanvas.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/Data.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/Data.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/Data.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/Data.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/Data.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/Data.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/Data.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/Data.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/Data.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/Data.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/Data.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/Data.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/Data.js'%}"></script>
-    <script type="application/javascript" src="{% static 'app_games/pacman/source/Data.js'%}"></script>
 
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/board/Board.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/board/Canvas.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/board/BoardCanvas.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/board/GameCanvas.js'%}"></script>
 
-    <script src="source/Blob.js"></script>
-    <script src="source/HighScores.js"></script>
-    
-    <script src="source/board/Board.js"></script>
-    <script src="source/board/Canvas.js"></script>
-    <script src="source/board/BoardCanvas.js"></script>
-    <script src="source/board/GameCanvas.js"></script>
-    
-    <script src="source/score/ScoreBlob.js"></script>
-    <script src="source/score/Score.js"></script>
-    
-    <script src="source/ghosts/Ghosts.js"></script>
-    <script src="source/ghosts/Ghost.js"></script>
-    <script src="source/ghosts/Blinky.js"></script>
-    <script src="source/ghosts/Clyde.js"></script>
-    <script src="source/ghosts/Inky.js"></script>
-    <script src="source/ghosts/Pinky.js"></script>
-    
-    <script src="source/animations/Animations.js"></script>
-    <script src="source/animations/Animation.js"></script>
-    <script src="source/animations/DeathAnimation.js"></script>
-    <script src="source/animations/EndLevelAnimation.js"></script>
-    <script src="source/animations/FruitScoreAnimation.js"></script>
-    <script src="source/animations/GameOverAnimation.js"></script>
-    <script src="source/animations/GhostScoreAnimation.js"></script>
-    <script src="source/animations/NewLevelAnimation.js"></script>
-    <script src="source/animations/PausedAnimation.js"></script>
-    <script src="source/animations/ReadyAnimation.js"></script>
-    
-    <script src="source/demo/Demo.js"></script>
-    <script src="source/demo/DemoData.js"></script>
-    <script src="source/demo/BigBlob.js"></script>
-    <script src="source/demo/DemoBlob.js"></script>
-    <script src="source/demo/DemoFood.js"></script>
-    <script src="source/demo/DemoGhost.js"></script>
-    
-    <script src="source/Init.js"></script>
-    
-    <script src="utils/Sounds.js"></script>
-    <script src="utils/Storage.js"></script>
-    <script src="utils/Utils.js"></script>
-</head>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/score/ScoreBlob.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/score/Score.js'%}"></script>
 
-<body>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/ghosts/Ghosts.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/ghosts/Ghost.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/ghosts/Blinky.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/ghosts/Clyde.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/ghosts/Inky.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/ghosts/Pinky.js'%}"></script>
+    
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/animations/Animations.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/animations/Animation.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/animations/DeathAnimation.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/animations/EndLevelAnimation.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/animations/FruitScoreAnimation.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/animations/GameOverAnimation.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/animations/GhostScoreAnimation.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/animations/NewLevelAnimation.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/animations/PausedAnimation.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/animations/ReadyAnimation.js'%}"></script>
+
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/demo/Demo.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/demo/DemoData.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/demo/BigBlob.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/demo/DemoBlob.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/demo/DemoFood.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/demo/DemoGhost.js'%}"></script>
+
+    <script type="application/javascript" src="{% static 'app_games/pacman/source/Init.js'%}"></script>
+    
+    <script type="application/javascript" src="{% static 'app_games/pacman/utils/Sounds.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/utils/Storage.js'%}"></script>
+    <script type="application/javascript" src="{% static 'app_games/pacman/utils/Utils.js'%}"></script>
+
     <div id="container" class="mainScreen">
         <canvas class="board"></canvas>
         <canvas class="game"></canvas>
@@ -122,5 +98,4 @@
             <a href="#" data-action="mainScreen"><u>B</u>ack</a>
         </div>
     </div>
-</body>
-</html>
+

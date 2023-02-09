@@ -11440,6 +11440,13 @@ footer.footer {
   margin: auto;
   cursor:pointer;
 }
+.fotospaceinvaders{
+  background-image: url('../assets/img/spaceinvaders.png');
+  background-repeat: no-repeat;
+  width: 50%;
+  margin: auto;
+  cursor:pointer;
+}
 
 .fotobubbleshooter{
   background-image: url('../assets/img/boobleshooterimagen.png');

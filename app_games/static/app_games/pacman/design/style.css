@@ -1,19 +1,13 @@
-/**
- * Game Fonts
- */
+
+/*
 @font-face {
 	font-family: "Whimsy TT";
 	font-style: normal;
 	font-weight: normal;
 	src: local("Whimsy TT"), url("../fonts/whimsytt.ttf") format("truetype");
-}
+}*/
 
-
-
-/**
- * Main Styles
- */
-html, body {
+html, body{
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -23,6 +17,7 @@ html, body {
 	background-color: transparent;    
     backface-visibility: hidden;
 }
+
 html, body, input {
 	font-family: "Whimsy TT";
 	font-size: 12px;

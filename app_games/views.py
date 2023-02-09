@@ -21,3 +21,9 @@ def snake(request):
 
 def pong(request):
     return render(request, "app_games/pong.html")
+
+def pacman(request):
+    return render(request, "app_games/pacman.html")
+
+def spaceinvaders(request):
+    return render(request, "app_games/spaceinvaders.html")

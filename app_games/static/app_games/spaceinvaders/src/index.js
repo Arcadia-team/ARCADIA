@@ -1,3 +1,5 @@
+
+
 import Juego from "./juego.js";
 let juego = new Juego(document.getElementById("pantalla"));
 let tiempoPasado = 0;
