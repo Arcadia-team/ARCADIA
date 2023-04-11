@@ -23,8 +23,15 @@ def signup_request(request):
         form = SignUpForm(request.POST)
         
         if form.is_valid():
+            #guardamos info user y procedemos a crear perfil con foto.
             form.save()
-            return render(request,"app_index/index.html",{"mensaje":"Usuario creado, ¡Bienvenido a Arcadia!"})
+
+            # Crear automáticamente un UserProfile con una foto por defecto.
+            default_photo_path = 'profile_photos/default_profile_photo.png' 
+            user_profile = UserProfile(user=user, photo=default_photo_path)
+
+            #Redirige a inicio dando la bienvenida
+            return render(request,"app_index/index.html",{"mensaje":"User created, ¡Welcome to Arcadia!"})
         
         mensaje="Please check your signup credentials and try again!"  
      
