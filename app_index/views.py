@@ -10,7 +10,7 @@ from django.contrib.auth.views import LogoutView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from app_index.forms import SignUpForm
-
+from app_perfiles.models import UserProfile
 
 # Create your views here.
 def inicio(request):
