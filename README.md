@@ -1,2 +1,2 @@
 # ARCADIA
-Web de videojuegos arcade
+La mejor plataforma de videojuegos CLÁSICOS.
