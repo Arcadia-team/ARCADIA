@@ -12,6 +12,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from app_index.forms import SignUpForm
 from app_perfiles.models import UserProfile
 
+#Para crear perfil default: 
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from app_perfiles.models import UserProfile
+from django.contrib.auth.models import User
+
 # Create your views here.
 def inicio(request):
     return render(request, "app_index/index.html")
@@ -25,11 +31,7 @@ def signup_request(request):
         if form.is_valid():
             #guardamos info user y procedemos a crear perfil con foto.
             form.save()
-
-            # Crear automáticamente un UserProfile con una foto por defecto.
-            default_photo_path = 'profile_photos/default_profile_photo.png' 
-            user_profile = UserProfile(user=user, photo=default_photo_path)
-
+            
             #Redirige a inicio dando la bienvenida
             return render(request,"app_index/index.html",{"mensaje":"User created, ¡Welcome to Arcadia!"})
         
@@ -37,7 +39,14 @@ def signup_request(request):
      
     form = SignUpForm()
     return render(request, "app_index/signup.html",{"form":form, "mensaje":mensaje})
-    
+
+#Crear user_profile default: 
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        UserProfile.objects.create(user=instance, photo='profile_photos/default_profile_photo.png')
+
+
 
 # Login
 def login_request(request):

@@ -8,8 +8,9 @@ from django.contrib.auth.models import User
 from django.views.generic import UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-
 # Create your views here.
+
+#Actualizar info user:
 class UserUpdateView(LoginRequiredMixin, UpdateView):
     model = User
     form_class = UserUpdateForm
@@ -18,3 +19,6 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_object(self, queryset=None):
         return self.request.user
+
+
+
