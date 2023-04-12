@@ -44,7 +44,7 @@ def signup_request(request):
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
-        UserProfile.objects.create(user=instance, photo='profile_photos/default_profile_photo.png')
+        UserProfile.objects.create(user=instance)
 
 
 

@@ -128,5 +128,3 @@ dmypy.json
 .pyre/
 
 #database
-
-db.sqlite3
