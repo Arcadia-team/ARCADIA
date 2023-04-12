@@ -11440,6 +11440,20 @@ footer.footer {
   margin: auto;
   cursor:pointer;
 }
+.fotodinosaur{
+  background-image: url('../assets/img/dionsaur.png');
+  background-repeat: no-repeat;
+  width: 50%;
+  margin: auto;
+  cursor:pointer;
+}
+.fotoasteroid{
+  background-image: url('../assets/img/asteroid.png');
+  background-repeat: no-repeat;
+  width: 50%;
+  margin: auto;
+  cursor:pointer;
+}
 .fotoslope{
   background-image: url('../assets/img/slope.png');
   background-repeat: no-repeat;

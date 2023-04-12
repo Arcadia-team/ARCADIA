@@ -9,16 +9,17 @@ const context = canvas.getContext('2d');
 // or another active bubble, we just find the closest inactive bubble
 // and make it active with the same color as the shot bubble. this
 // gives the illusion of the bubble snapping to a grid
-const grid = 32;
+const grid = 69;
+let puntuacion = 0;
 
 // each even row is 8 bubbles long and each odd row is 7 bubbles long.
 // the level consists of 4 rows of bubbles of 4 colors: red, orange,
 // green, and yellow
 const level1 = [
+  ['R','R','Y','Y','B','B','G','G','G'],
   ['R','R','Y','Y','B','B','G','G'],
-  ['R','R','Y','Y','B','B','G'],
-  ['B','B','G','G','R','R','Y','Y'],
-  ['B','G','G','R','R','Y','Y']
+  ['B','B','G','G','R','R','Y','Y','G'],
+  ['B','G','G','R','R','Y','Y','G']
 ];
 
 // create a mapping between color short code (R, G, B, Y) and color name
@@ -85,6 +86,7 @@ function getClosestBubble(obj, activeState = false) {
   }
 
   return closestBubbles
+  
     // turn the array of bubbles into an array of distances
     .map(bubble => {
       return {
@@ -163,6 +165,7 @@ function getNeighbors(bubble) {
 
 // remove bubbles that create a match of 3 colors
 function removeMatch(targetBubble) {
+
   const matches = [targetBubble];
 
   bubbles.forEach(bubble => bubble.processed = false);
@@ -175,17 +178,21 @@ function removeMatch(targetBubble) {
 
     if (!neighbor.processed) {
       neighbor.processed = true;
-
+      
       if (neighbor.color === targetBubble.color) {
         matches.push(neighbor);
         neighbors = neighbors.concat(getNeighbors(neighbor));
+
       }
     }
   }
 
   if (matches.length >= 3) {
+    puntuacion = puntuacion + 10;
+    document.getElementById("puntuacion").innerHTML = puntuacion;
     matches.forEach(bubble => {
       bubble.active = false;
+
     });
   }
 }
@@ -193,6 +200,7 @@ function removeMatch(targetBubble) {
 // make any floating bubbles (bubbles that don't have a bubble chain
 // that touch the ceiling) drop down the screen
 function dropFloatingBubbles() {
+  
   const activeBubbles = bubbles.filter(bubble => bubble.active);
   activeBubbles.forEach(bubble => bubble.processed = false);
 
@@ -205,6 +213,7 @@ function dropFloatingBubbles() {
     let neighbor = neighbors[i];
 
     if (!neighbor.processed) {
+      
       neighbor.processed = true;
       neighbors = neighbors.concat(getNeighbors(neighbor));
     }
@@ -405,7 +414,7 @@ document.addEventListener('keydown', (e) => {
   }
 
   // if the current bubble is not moving we can launch it
-  if (e.code === 'Space' &&  curBubble.dx === 0 && curBubble.dy === 0) {
+  if (e.code === 'Space' &&  curBubble.dx === 0 && curBubble.dy === 0 || e.code === 'ArrowUp') {
     // convert an angle to x/y
     curBubble.dx = Math.sin(shootDeg) * curBubble.speed;
     curBubble.dy = -Math.cos(shootDeg) * curBubble.speed;
