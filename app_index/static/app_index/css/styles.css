@@ -11440,8 +11440,15 @@ footer.footer {
   margin: auto;
   cursor:pointer;
 }
+.fotobomberman{
+  background-image: url('../assets/img/bomberman.png');
+  background-repeat: no-repeat;
+  width: 50%;
+  margin: auto;
+  cursor:pointer;
+}
 .fotodinosaur{
-  background-image: url('../assets/img/dionsaur.png');
+  background-image: url('../assets/img/dinosaur.png');
   background-repeat: no-repeat;
   width: 50%;
   margin: auto;
@@ -11497,7 +11504,7 @@ footer.footer {
 .fotopong{
   background-image: url('../assets/img/fotopong.png');
   background-repeat: no-repeat;
-  width: 25%;
+  width: 50%;
   margin: auto;
   cursor:pointer;
 
