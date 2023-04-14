@@ -30,10 +30,13 @@
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'inicio' %}">Home</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'games' %}">Games</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'rankings' %}">Rankings</a></li>
+                        
 
                     <!-- Login / Logout comprueba si has iniciado sesion -->
                     {% if user.is_authenticated %}
-                        <a href="{% url 'update_user' %}"><img src="static/{{user.userprofile.avatar.ruta_imagen}}" width="50px" class="rounded-circle"> </a>
+                        {% if user.userprofile.avatar_id == 1 %}
+                            <a href="{% url 'update_user' %}"><img src="{% static {user.userprofile.avatar.ruta_foto} %}" width="50px" class="rounded-circle"> </a>
+                        {% endif %}
                     {% else %}
                         <a style="color: transparent;" class="btn btn-success rounded m-2 p-2" href="{% url 'login' %}">LOGIN</a>
                     {% endif %}
