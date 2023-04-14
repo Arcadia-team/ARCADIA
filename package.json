@@ -2,7 +2,8 @@
     "name": "ARCADIA",
     "version": "1.0.0",
     "dependencies": {
-      "webpack": "^5.0.0",
-      "webpack-cli": "^4.0.0"
+        "@babylonjs/core": "^5.55.0",
+        "webpack": "^5.0.0",
+        "webpack-cli": "^4.0.0"
     }
-  }
+}
