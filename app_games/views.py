@@ -29,3 +29,9 @@ def spaceinvaders(request):
 
 def slope(request):
     return render(request, "app_games/slope.html")
+
+def asteroid(request):
+    return render(request, "app_games/asteroid.html")
+
+def dinosaur(request):
+    return render(request, "app_games/dinosaur.html")
