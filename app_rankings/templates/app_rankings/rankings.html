@@ -11,8 +11,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotopacman num1ranking"></div>
-                <h1 class="letrasamarillas">Pacman</h1>
+                <div class="fotosnake num1ranking"></div>
+                <h1 class="letrasamarillas">Snake</h1>
+                {% for objeto in snake %}
                 <table class="">
                     <thead>
                         <tr class="letrasamarillas">
@@ -24,104 +25,19 @@
                     </thead>
                     <tr class="fondoBlanco borde3px">
                         <td class="borde3px tamañotablas">1</td>
-                        <td class="borde3px tamañotablas">Juanfran</td>
+                        <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
                         <td class="borde3px tamañotablas">ESP</td>
-                        <td class="borde3px tamañotablas">1000</td>
+                        <td class="borde3px tamañotablas">{{objeto.score}}</td>
                     </tr>
                 </table>
-                <table class="">
-                    <thead>
-                        <tr class="letrasamarillas">
-                            <th>Posición</th>
-                            <th>Nombre</th>
-                            <th>Pais</th>
-                            <th>Puntuación</th>
-                        </tr>
-                    </thead>
-                    <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">Celda 4</td>
-                        <td class="borde3px tamañotablas">Celda 5</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
-                    </tr>
-                </table>
-                <table class="">
-                    <thead>
-                        <tr class="letrasamarillas">
-                            <th>Posición</th>
-                            <th>Nombre</th>
-                            <th>Pais</th>
-                            <th>Puntuación</th>
-                        </tr>
-                    </thead>
-                    <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">Celda 4</td>
-                        <td class="borde3px tamañotablas">Celda 5</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
-                    </tr>
-                </table>
+                {% endfor %} 
+            
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fototetris num1ranking"></div>
-                <h1 class="letrasamarillas">Tetris</h1>
-                <table class="">
-                    <thead>
-                        <tr class="letrasamarillas">
-                            <th>Posición</th>
-                            <th>Nombre</th>
-                            <th>Pais</th>
-                            <th>Puntuación</th>
-                        </tr>
-                    </thead>
-                    <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">1</td>
-                        <td class="borde3px tamañotablas">Juanfran</td>
-                        <td class="borde3px tamañotablas">ES</td>
-                        <td class="borde3px tamañotablas">1000</td>
-                    </tr>
-                </table>
-                <table class="">
-                    <thead>
-                        <tr class="letrasamarillas">
-                            <th>Posición</th>
-                            <th>Nombre</th>
-                            <th>Pais</th>
-                            <th>Puntuación</th>
-                        </tr>
-                    </thead>
-                    <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">Celda 4</td>
-                        <td class="borde3px tamañotablas">Celda 5</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
-                    </tr>
-                </table>
-                <table class="">
-                    <thead>
-                        <tr class="letrasamarillas">
-                            <th>Posición</th>
-                            <th>Nombre</th>
-                            <th>Pais</th>
-                            <th>Puntuación</th>
-                        </tr>
-                    </thead>
-                    <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">Celda 4</td>
-                        <td class="borde3px tamañotablas">Celda 5</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-5 fondoPurpura alturadiv2">
                 <div class="fotopacman num1ranking"></div>
                 <h1 class="letrasamarillas">Pacman</h1>
+                {% for objeto in pacman %}
                 <table class="">
                     <thead>
                         <tr class="letrasamarillas">
@@ -133,11 +49,18 @@
                     </thead>
                     <tr class="fondoBlanco borde3px">
                         <td class="borde3px tamañotablas">1</td>
-                        <td class="borde3px tamañotablas">Juanfran</td>
+                        <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
                         <td class="borde3px tamañotablas">ESP</td>
-                        <td class="borde3px tamañotablas">1000</td>
+                        <td class="borde3px tamañotablas">{{objeto.score}}</td>
                     </tr>
                 </table>
+                {% endfor %} 
+            
+            </div>
+            <div class="col-md-5 fondoPurpura alturadiv2">
+                <div class="fototetris num1ranking"></div>
+                <h1 class="letrasamarillas">Tetris</h1>
+                {% for objeto in tetris %}
                 <table class="">
                     <thead>
                         <tr class="letrasamarillas">
@@ -148,33 +71,20 @@
                         </tr>
                     </thead>
                     <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">Celda 4</td>
-                        <td class="borde3px tamañotablas">Celda 5</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
+                        <td class="borde3px tamañotablas">1</td>
+                        <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
+                        <td class="borde3px tamañotablas">ESP</td>
+                        <td class="borde3px tamañotablas">{{objeto.score}}</td>
                     </tr>
                 </table>
-                <table class="">
-                    <thead>
-                        <tr class="letrasamarillas">
-                            <th>Posición</th>
-                            <th>Nombre</th>
-                            <th>Pais</th>
-                            <th>Puntuación</th>
-                        </tr>
-                    </thead>
-                    <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">Celda 4</td>
-                        <td class="borde3px tamañotablas">Celda 5</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
-                    </tr>
-                </table>
+                {% endfor %} 
+            
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fototetris num1ranking"></div>
-                <h1 class="letrasamarillas">Tetris</h1>
+                <div class="fotodinosaur num1ranking"></div>
+                <h1 class="letrasamarillas">Dinosaur</h1>
+                {% for objeto in dinosaur %}
                 <table class="">
                     <thead>
                         <tr class="letrasamarillas">
@@ -186,52 +96,111 @@
                     </thead>
                     <tr class="fondoBlanco borde3px">
                         <td class="borde3px tamañotablas">1</td>
-                        <td class="borde3px tamañotablas">Juanfran</td>
-                        <td class="borde3px tamañotablas">ES</td>
-                        <td class="borde3px tamañotablas">1000</td>
+                        <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
+                        <td class="borde3px tamañotablas">ESP</td>
+                        <td class="borde3px tamañotablas">{{objeto.score}}</td>
                     </tr>
                 </table>
-                <table class="">
-                    <thead>
-                        <tr class="letrasamarillas">
-                            <th>Posición</th>
-                            <th>Nombre</th>
-                            <th>Pais</th>
-                            <th>Puntuación</th>
-                        </tr>
-                    </thead>
-                    <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">Celda 4</td>
-                        <td class="borde3px tamañotablas">Celda 5</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
-                    </tr>
-                </table>
-                <table class="">
-                    <thead>
-                        <tr class="letrasamarillas">
-                            <th>Posición</th>
-                            <th>Nombre</th>
-                            <th>Pais</th>
-                            <th>Puntuación</th>
-                        </tr>
-                    </thead>
-                    <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">Celda 4</td>
-                        <td class="borde3px tamañotablas">Celda 5</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
-                        <td class="borde3px tamañotablas">Celda 6</td>
-                    </tr>
-                </table>
+                {% endfor %} 
+            
             </div>
+            <div class="col-md-5 fondoPurpura alturadiv2">
+                <div class="fotoasteroid num1ranking"></div>
+                <h1 class="letrasamarillas">Asteroid</h1>
+                {% for objeto in asteroid %}
+                <table class="">
+                    <thead>
+                        <tr class="letrasamarillas">
+                            <th>Posición</th>
+                            <th>Nombre</th>
+                            <th>Pais</th>
+                            <th>Puntuación</th>
+                        </tr>
+                    </thead>
+                    <tr class="fondoBlanco borde3px">
+                        <td class="borde3px tamañotablas">1</td>
+                        <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
+                        <td class="borde3px tamañotablas">ESP</td>
+                        <td class="borde3px tamañotablas">{{objeto.score}}</td>
+                    </tr>
+                </table>
+                {% endfor %} 
+            
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5 fondoPurpura alturadiv2">
+                <div class="fotoslope num1ranking"></div>
+                <h1 class="letrasamarillas">Slope</h1>
+                {% for objeto in slope %}
+                <table class="">
+                    <thead>
+                        <tr class="letrasamarillas">
+                            <th>Posición</th>
+                            <th>Nombre</th>
+                            <th>Pais</th>
+                            <th>Puntuación</th>
+                        </tr>
+                    </thead>
+                    <tr class="fondoBlanco borde3px">
+                        <td class="borde3px tamañotablas">1</td>
+                        <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
+                        <td class="borde3px tamañotablas">ESP</td>
+                        <td class="borde3px tamañotablas">{{objeto.score}}</td>
+                    </tr>
+                </table>
+                {% endfor %} 
+            
+            </div>
+            <div class="col-md-5 fondoPurpura alturadiv2">
+                <div class="fotopong num1ranking"></div>
+                <h1 class="letrasamarillas">Pong</h1>
+                {% for objeto in pong %}
+                <table class="">
+                    <thead>
+                        <tr class="letrasamarillas">
+                            <th>Posición</th>
+                            <th>Nombre</th>
+                            <th>Pais</th>
+                            <th>Puntuación</th>
+                        </tr>
+                    </thead>
+                    <tr class="fondoBlanco borde3px">
+                        <td class="borde3px tamañotablas">1</td>
+                        <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
+                        <td class="borde3px tamañotablas">ESP</td>
+                        <td class="borde3px tamañotablas">{{objeto.score}}</td>
+                    </tr>
+                </table>
+                {% endfor %} 
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5 fondoPurpura alturadiv2">
+                <div class="fotobomberman num1ranking"></div>
+                <h1 class="letrasamarillas">Bomberman</h1>
+                {% for objeto in bomberman %}
+                <table class="">
+                    <thead>
+                        <tr class="letrasamarillas">
+                            <th>Posición</th>
+                            <th>Nombre</th>
+                            <th>Pais</th>
+                            <th>Puntuación</th>
+                        </tr>
+                    </thead>
+                    <tr class="fondoBlanco borde3px">
+                        <td class="borde3px tamañotablas">{{ contador2 }}</td>
+                        <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
+                        <td class="borde3px tamañotablas">ESP</td>
+                        <td class="borde3px tamañotablas">{{objeto.score}}</td>
+                    </tr>
+                </table>
+                {% endfor %} 
+            
+            </div>
+
         </div>
-
-
-
-
-
-
-
+        
+        
 
 
     </div>

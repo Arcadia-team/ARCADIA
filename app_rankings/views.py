@@ -1,11 +1,29 @@
 from django.shortcuts import render
+from app_games.models import Score
 
 # Create your views here.
 
 #RANKINGS - General
 def rankings(request):
-    return render(request, "app_rankings/rankings.html")
+    snake = Score.objects.filter(game_id='1').order_by('-score')[:3]
+    pacman = Score.objects.filter(game_id='2').order_by('-score')[:3]
+    tetris = Score.objects.filter(game_id='3').order_by('-score')[:3]
+    dinosaur = Score.objects.filter(game_id='4').order_by('-score')[:3]
+    asteroid = Score.objects.filter(game_id='5').order_by('-score')[:3]
+    slope = Score.objects.filter(game_id='6').order_by('-score')[:3]
+    pong = Score.objects.filter(game_id='7').order_by('-score')[:3]
+    bomberman = Score.objects.filter(game_id='8').order_by('-score')[:3]
+    contador = 1
+    contador1 = 1
+    contador2 = 2
+    contador3 = 3
+
+    while contador < 3:
+        contador = contador + 1
+
+    return render(request, "app_rankings/rankings.html", {'snake' : snake, 'tetris' : tetris, 'pacman' : pacman, 'dinosaur' : dinosaur, 'asteroid' : asteroid, 'slope' : slope, 'pong' : pong, 'bomberman' : bomberman, 'contador1': contador1, 'contador2': contador2, 'contador3': contador3})
 
 #RANKING - POR JUEGO
 def ranking(request):
     return render(request, "app_rankings/ranking.html")
+
