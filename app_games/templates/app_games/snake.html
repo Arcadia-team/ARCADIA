@@ -1,11 +1,15 @@
 
 {% load static %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+
 <title>Snake</title>
 
 <link rel="stylesheet" href="{% static 'app_games/snake/css.css' %}">
-
-	<div class="score" id="score">0</div>
-		<canvas id="canvas" height="500px" width="500px"></canvas>
+	{% csrf_token %}
+	<div class="score" id="score">0</div><div>{{score}}</div>
+	
+		<canvas id="canvas" height="750px" width="750px"></canvas>
 	</div>
 <script type="application/javascript" src="{% static 'app_games/snake/js.js'%}"></script>
 

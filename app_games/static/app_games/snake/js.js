@@ -1,4 +1,5 @@
 var 
+score = 0;
 canvas = document.getElementById('canvas'),
 ctx = canvas.getContext('2d'),
 scoreIs = document.getElementById('score'),
@@ -127,14 +128,28 @@ function game(){
 	var head = snake[0];
 	// checking for wall collisions
 	if(head.x < 0 || head.x > canvas.width - cellSize  || head.y < 0 || head.y > canvas.height - cellSize) {
-		hit.play();
+		//hit.play();
 		setBackground();
 		createSnake();
 		drawSnake();
 		createFood();
 		drawFood();
 		directionQueue = 'right';
+		var csrftoken = Cookies.get('csrftoken');
+		$.ajax({
+			url: "/games/snake2/",
+			method: "POST",
+			data: {
+				'score': score,
+				'csrfmiddlewaretoken': csrftoken
+			},
+			dataType: 'json',
+			success: function(response) {
+				console.log(response);
+			}
+		});
 		score = 0;
+		
 	}
 	// checking for colisions with snake's body
 	for(i = 1; i < snake.length; i++) {
@@ -154,7 +169,7 @@ function game(){
 		snake[snake.length] = {x: head.x, y: head.y};
 		createFood();
 		drawFood();
-		pick.play();
+		//pick.play();
 		score += 10;
 	}
 
@@ -177,6 +192,7 @@ function newGame() {
 	createSnake();
 	createFood();
 
+
 	if(typeof loop != 'undefined') {
 		clearInterval(loop);
 	}
@@ -184,4 +200,6 @@ function newGame() {
 		loop = setInterval(game, fps);
 	}
 }
+
+
 newGame();

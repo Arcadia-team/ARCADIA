@@ -1,5 +1,9 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
+from django.http import JsonResponse
+from django.http import HttpResponse
+
+from app_games.models import Game
 
 
 # Create your views here.
@@ -17,6 +21,15 @@ def bubbleshooter(request):
 
 def snake(request):
     return render(request, "app_games/snake.html")
+
+def snake2(request):
+    
+    score = request.POST.get('score')  # recupera el valor del campo 'score'
+    
+    VariableScore = Game(name=score)
+
+    VariableScore.save()
+    return HttpResponse('Hola mundo')
 
 def pong(request):
     return render(request, "app_games/pong.html")

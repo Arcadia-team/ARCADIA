@@ -18,9 +18,13 @@ from django.dispatch import receiver
 from app_perfiles.models import UserProfile
 from django.contrib.auth.models import User
 
+#Buscador
+from app_games.models import Game
+
 # Create your views here.
 def inicio(request):
-    return render(request, "app_index/index.html")
+    game = Game.objects.all()[:3]
+    return render(request, "app_index/index.html", {'game': game})
 
 # Register
 def signup_request(request):

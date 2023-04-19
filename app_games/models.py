@@ -1,10 +1,14 @@
 from django.db import models
 
+
 class Game(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
+
+
+    
 
 class Score(models.Model):
     user_profile = models.ForeignKey('app_perfiles.UserProfile', on_delete=models.CASCADE)
