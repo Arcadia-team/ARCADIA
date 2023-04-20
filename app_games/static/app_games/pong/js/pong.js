@@ -1,3 +1,5 @@
+var puntuacion = 0;
+
 // Global Variables
 var DIRECTION = {
   IDLE: 0,
@@ -189,6 +191,7 @@ var Game = {
     // Handle the end of round transition
     // Check to see if the player won the round.
     if (this.player.score === rounds[this.round]) {
+      puntuacion = puntuacion + this.player.score;
       // Check to see if there are any more rounds/levels left and display the victory screen if
       // there are not.
       if (!rounds[this.round + 1]) {
@@ -210,6 +213,19 @@ var Game = {
     else if (this.paddle.score === rounds[this.round]) {
       this.over = true;
       setTimeout(function () { Pong.endGameMenu('Game Over!'); }, 1000);
+      var csrftoken = Cookies.get('csrftoken');
+      $.ajax({
+        url: "/games/pong2/",
+        method: "POST",
+        data: {
+          'score': puntuacion,
+          'csrfmiddlewaretoken': csrftoken
+        },
+        dataType: 'json',
+        success: function(response) {
+          console.log(response);
+        }
+      });
     }
   },
 

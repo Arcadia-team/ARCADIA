@@ -2,9 +2,11 @@
 
 {% load static %}
 {% block juego %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 
 <link rel="stylesheet" href="{% static 'app_games/pong/css/styles.css' %}">
-
+{% csrf_token %}
 <canvas class="bg-dark"></canvas>
 
 <script type="application/javascript" src="{% static 'app_games/pong/js/pong.js'%}"></script>
