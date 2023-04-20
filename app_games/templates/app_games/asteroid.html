@@ -8,6 +8,8 @@
     <script type="application/javascript" src="{% static 'app_games/asteroid/vector_battle_regular.typeface.js'%}"></script>
     <script type="application/javascript" src="{% static 'app_games/asteroid/ipad.js'%}"></script>
     <script type="application/javascript" src="{% static 'app_games/asteroid/game.js'%}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 
     <style>
       #canvas { border:1px solid black; top:0px; left:0px; }
@@ -22,6 +24,7 @@
   </head>
   <body>
     <div id="game-container">
+      {% csrf_token %}
       <canvas id="canvas" width="780" height="540"></canvas>
       <div id="left-controls">
         <div id="up" class='button'>THRUST</div>

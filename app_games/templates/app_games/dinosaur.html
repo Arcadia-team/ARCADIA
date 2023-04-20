@@ -17,7 +17,9 @@
 <meta name="twitter:description" content="Check out the cool hidden game from Google Chrome!">
 <meta name="twitter:image:src" content="http://img.thecodepost.org/2015/01/trex.png">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+  {% csrf_token %}
 	<!--script type="text/javascript" src="a.js"></script-->
 	<script type="text/javascript">
 	function hideClass(name) {
@@ -598,12 +600,28 @@
     this.dimensions);
     } else {
     this.gameOverPanel.draw();
+
     }
     // Update the high score.
     if (this.distanceRan > this.highestScore) {
     this.highestScore = Math.ceil(this.distanceRan);
     this.distanceMeter.setHighScore(this.highestScore);
     }
+    var csrftoken = Cookies.get('csrftoken');
+    var dinoScore = this.distanceRan / 40
+    dinoScore = Math.round(dinoScore)
+		$.ajax({
+			url: "/games/dinosaur2/",
+			method: "POST",
+			data: {
+				'score': dinoScore,
+				'csrfmiddlewaretoken': csrftoken
+			},
+			dataType: 'json',
+			success: function(response) {
+				console.log(response);
+			}
+		});
     // Reset the time clock.
     this.time = getTimeStamp();
     },

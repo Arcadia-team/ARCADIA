@@ -61,6 +61,19 @@ class Game {
     }
 
     resetGame() {
+        var csrftoken = Cookies.get('csrftoken');
+		$.ajax({
+			url: "/games/tetris2/",
+			method: "POST",
+			data: {
+				'score': this.score,
+				'csrfmiddlewaretoken': csrftoken
+			},
+			dataType: 'json',
+			success: function(response) {
+				console.log(response);
+			}
+		});
         this.score = 0;
         this.sounds.success.currentTime = 0;
         this.sounds.success.pause();
@@ -390,6 +403,7 @@ class Game {
 
     refreshScore() {
         this.$score.textContent = `Score: ${this.score}`;
+
     }
 
     initSounds() {

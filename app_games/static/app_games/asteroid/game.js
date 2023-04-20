@@ -280,7 +280,7 @@ Sprite = function () {
       px = trans[i*2];
       py = trans[i*2 + 1];
       // mozilla doesn't take into account transforms with isPointInPath >:-P
-      if (($.browser.mozilla) ? this.pointInPolygon(px, py) : this.context.isPointInPath(px, py)) {
+      if (this.context.isPointInPath(px, py)) {
         other.collision(this);
         this.collision(other);
         return;
@@ -984,6 +984,19 @@ Game = {
     },
     player_died: function () {
       if (Game.lives < 0) {
+        var csrftoken = Cookies.get('csrftoken');
+        $.ajax({
+          url: "/games/asteroid2/",
+          method: "POST",
+          data: {
+            'score': Game.score,
+            'csrfmiddlewaretoken': csrftoken
+          },
+          dataType: 'json',
+          success: function(response) {
+            console.log(response);
+          }
+        });
         this.state = 'end_game';
       } else {
         if (this.timer == null) {
@@ -1007,7 +1020,7 @@ Game = {
         this.state = 'waiting';
       }
 
-      window.gameStart = false;
+      window. gameStart = false;
     },
 
     execute: function () {

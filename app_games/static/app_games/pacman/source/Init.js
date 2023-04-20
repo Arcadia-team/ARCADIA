@@ -32,9 +32,22 @@
             blob   = null;
             
             Board.clearAll();
-            display.set("gameOver").show();
-            scores.setInput();
+            newGame();
         });
+        var pacmanscore = score.getScore();
+        var csrftoken = Cookies.get('csrftoken');
+		$.ajax({
+			url: "/games/pacman2/",
+			method: "POST",
+			data: {
+				'score': pacmanscore,
+				'csrfmiddlewaretoken': csrftoken
+			},
+			dataType: 'json',
+			success: function(response) {
+				console.log(response);
+			}
+		});
     }
     
     /**

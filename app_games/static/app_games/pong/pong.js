@@ -198,6 +198,19 @@ var Game = {
         setTimeout(function () { Pong.endGameMenu('Winner!'); }, 1000);
       } else {
         // If there is another round, reset all the values and increment the round number.
+        var csrftoken = Cookies.get('csrftoken');
+        $.ajax({
+          url: "/games/pong2/",
+          method: "POST",
+          data: {
+            'score': this.player.score,
+            'csrfmiddlewaretoken': csrftoken
+          },
+          dataType: 'json',
+          success: function(response) {
+            console.log(response);
+          }
+        });
         this.color = this._generateRoundColor();
         this.player.score = this.paddle.score = 0;
         this.player.speed += 0.5;
