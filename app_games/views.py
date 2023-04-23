@@ -31,11 +31,16 @@ def snake(request):
     return render(request, "app_games/snake.html")
 
 def snake2(request):
-    score = request.POST.get('score') 
-    user_id = request.user.id
-    VariableScore = Score(score=score,game_id=1,user_profile_id=user_id)
-    VariableScore.save()
+    score = request.POST.get('score')
+    if score != '0':
+        print('asdasd')
+        user_id = request.user.id
+        #user_ip = request.META.get('REMOTE_ADDR')
+        #print(user_ip)
+        VariableScore = Score(score=score,game_id=1,user_profile_id=user_id)
+        VariableScore.save()
     return HttpResponse('query enviada')
+        
 
 def pong(request):
     return render(request, "app_games/pong.html")

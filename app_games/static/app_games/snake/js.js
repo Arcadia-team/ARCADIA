@@ -154,13 +154,26 @@ function game(){
 	// checking for colisions with snake's body
 	for(i = 1; i < snake.length; i++) {
 		if(head.x == snake[i].x && head.y == snake[i].y) {
-			hit.play(); // playing sounds
+			//hit.play(); // playing sounds
 			setBackground();
 			createSnake();
 			drawSnake();
 			createFood();
 			drawFood();
 			directionQueue = 'right';
+			var csrftoken = Cookies.get('csrftoken');
+			$.ajax({
+				url: "/games/snake2/",
+				method: "POST",
+				data: {
+					'score': score,
+					'csrfmiddlewaretoken': csrftoken
+				},
+				dataType: 'json',
+				success: function(response) {
+					console.log(response);
+				}
+			});
 			score = 0;
 		}
 	}

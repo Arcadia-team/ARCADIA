@@ -5,31 +5,24 @@
 {% block contenido_no_heredado %}
 
         <title>ARCADIA</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+        <script type="application/javascript" src="{% static 'app_index/js/scripts.js'%}"></script>
         <!-- Masthead-->
         <header class="masthead">
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
                         <div class="text-center text-white">
-                            <!-- Page heading-->
                             <h1 style="font-family: arcadeFont; font-size: 180%; padding-right: 16%;" class="mb-5"> Search your games! </h1>
-                            <!-- Signup form-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- * * SB Forms Contact Form * *-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- This form is pre-integrated with SB Forms.-->
-                            <!-- To make this form functional, sign up at-->
-                            <!-- https://startbootstrap.com/solution/contact-forms-->
-                            <!-- to get an API token!-->
                             <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
                                 <div style="font-family: arcadeFont;"class="row">
                                     <div class="col">
+                                        {% csrf_token %}
+                                        <input class="form-control form-control-lg" id="letra" type="text" placeholder="Pacman..." />
                                         
-                                        <input class="form-control form-control-lg" id="game-shearched" type="text" placeholder="Pacman..." />
                                         <ul class="list-group">
-                                            {% for product in game %}
-                                              <li class="list-group-item">{{ product.name }}</li>
-                                            {% endfor %}
+                                            <div id="mi-lista"></div>
                                         </ul>
 
                                     </div>

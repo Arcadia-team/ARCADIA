@@ -20,11 +20,41 @@ from django.contrib.auth.models import User
 
 #Buscador
 from app_games.models import Game
+from django.http import HttpResponse
+import json
 
 # Create your views here.
 def inicio(request):
+    #letra = request.POST['letra']
+    #print(letra)
     game = Game.objects.all()[:3]
-    return render(request, "app_index/index.html", {'game': game})
+    return render(request, "app_index/index.html")
+
+
+def game_to_dict(game):
+    if game.count() == 1:
+        return {
+            '0': game[0].name
+        }
+    if game.count() == 2:
+        return {
+            '0': game[0].name,
+            '1': game[1].name
+        }
+    if game.count() == 3:
+        return {
+            '0': game[0].name,
+            '1': game[1].name,
+            '2': game[2].name
+        }
+
+def inicio2(request):
+    if request.method == 'POST':
+        letra = request.POST['letra']
+        games = Game.objects.filter(name__icontains=letra)[:3]
+        games_list = [game_to_dict(games) for game in games]
+        return HttpResponse(json.dumps(games_list), content_type='application/json')
+
 
 # Register
 def signup_request(request):

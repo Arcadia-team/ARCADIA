@@ -1,9 +1,11 @@
 from django.urls import path
-from app_index.views import inicio, login_request, signup_request, logout_request
+from app_index.views import inicio, login_request, signup_request, logout_request, inicio2
+
 
 
 urlpatterns = [
     path('', inicio, name="inicio"),
+    path('inicio2/', inicio2, name="inicio2"),
     path('login/', login_request, name="login"),
     path('logout/',  logout_request, name="logout"),
     path('signup/', signup_request, name="signup"),
