@@ -3,6 +3,8 @@ from django.urls import reverse, reverse_lazy
 from django.http import JsonResponse
 from django.http import HttpResponse
 from app_games.models import Score
+from app_games.models import Game
+from django.db.models import F
 
 
 # Las vistas con el nombre del juego cargar el juego en la web.
@@ -28,6 +30,10 @@ def bubbleshooter(request):
     return render(request, "app_games/bubbleshooter.html")
 
 def snake(request):
+    numPartidas = Game.objects.get(id=1)
+    numPartidas.numPartidas = F('numPartidas') + 1
+    numPartidas.save()
+
     return render(request, "app_games/snake.html")
 
 def snake2(request):

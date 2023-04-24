@@ -11634,7 +11634,9 @@ footer.footer {
 .paddingtitulotabla{
   padding:1em;
 }
-
+.overBuscador:hover {
+  color: #0a58ca;
+}
 
 
 

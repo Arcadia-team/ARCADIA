@@ -23,6 +23,9 @@ from app_games.models import Game
 from django.http import HttpResponse
 import json
 
+#Para conseguir los juegos mas jugados
+from django.db.models import F
+
 # Create your views here.
 def inicio(request):
     #letra = request.POST['letra']
