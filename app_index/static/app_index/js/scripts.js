@@ -10,6 +10,10 @@ function redirigir(li){
 }
 
 $(document).ready(function() {
+
+    
+
+
     $('#letra').on('keyup', function(event){
         var contenido = $("#letra").val();
         if ((event.key !== ultimaLetra)  || (event.key == 'Backspace')) {

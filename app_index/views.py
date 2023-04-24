@@ -28,10 +28,17 @@ from django.db.models import F
 
 # Create your views here.
 def inicio(request):
-    #letra = request.POST['letra']
-    #print(letra)
-    game = Game.objects.all()[:3]
-    return render(request, "app_index/index.html")
+    partidas = Game.objects.order_by('-numPartidas').values_list('name', flat=True)[:3]
+    partida1 = partidas[0].lower()
+    fototop1 = 'foto'+partida1
+    
+    partida2 = partidas[1].lower()
+    fototop2 = 'foto'+partida2
+
+    partida3 = partidas[2].lower()
+    fototop3 = 'foto'+partida3
+
+    return render(request, "app_index/index.html",{'top1':partidas[0],'top2':partidas[1],'top3':partidas[2],'fototop1':fototop1,'fototop2':fototop2,'fototop3':fototop3})
 
 
 def game_to_dict(game):
