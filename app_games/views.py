@@ -16,10 +16,12 @@ def games(request):
 
 #GAME - JUEGOS
 def tetris(request):
+    numPartidas = Game.objects.get(id=3)
+    numPartidas.numPartidas = F('numPartidas') + 1
+    numPartidas.save()
     return render(request, "app_games/tetris.html")
 
 def tetris2(request):
-    
     score = request.POST.get('score') 
     user_id = request.user.id
     VariableScore = Score(score=score,game_id=3,user_profile_id=user_id)
@@ -27,13 +29,15 @@ def tetris2(request):
     return HttpResponse('query enviada')
 
 def bubbleshooter(request):
+    #numPartidas = Game.objects.get(id=7)
+    #numPartidas.numPartidas = F('numPartidas') + 1
+    #numPartidas.save()
     return render(request, "app_games/bubbleshooter.html")
 
 def snake(request):
     numPartidas = Game.objects.get(id=1)
     numPartidas.numPartidas = F('numPartidas') + 1
     numPartidas.save()
-
     return render(request, "app_games/snake.html")
 
 def snake2(request):
@@ -49,6 +53,9 @@ def snake2(request):
         
 
 def pong(request):
+    numPartidas = Game.objects.get(id=7)
+    numPartidas.numPartidas = F('numPartidas') + 1
+    numPartidas.save()
     return render(request, "app_games/pong.html")
 
 def pong2(request):
@@ -59,6 +66,9 @@ def pong2(request):
     return HttpResponse('query enviada')
 
 def pacman(request):
+    numPartidas = Game.objects.get(id=2)
+    numPartidas.numPartidas = F('numPartidas') + 1
+    numPartidas.save()
     return render(request, "app_games/pacman.html")
 
 def pacman2(request):
@@ -72,9 +82,15 @@ def spaceinvaders(request):
     return render(request, "app_games/spaceinvaders.html")
 
 def slope(request):
+    numPartidas = Game.objects.get(id=6)
+    numPartidas.numPartidas = F('numPartidas') + 1
+    numPartidas.save()
     return render(request, "app_games/slope.html")
 
 def asteroid(request):
+    numPartidas = Game.objects.get(id=5)
+    numPartidas.numPartidas = F('numPartidas') + 1
+    numPartidas.save()
     return render(request, "app_games/asteroid.html")
 
 def asteroid2(request):
@@ -85,6 +101,9 @@ def asteroid2(request):
     return HttpResponse('query enviada')
 
 def dinosaur(request):
+    numPartidas = Game.objects.get(id=4)
+    numPartidas.numPartidas = F('numPartidas') + 1
+    numPartidas.save()
     return render(request, "app_games/dinosaur.html")
 
 def dinosaur2(request):
