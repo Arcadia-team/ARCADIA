@@ -10,8 +10,8 @@
     <section class="bg-light">
         <div class="container">
             <div class="row">
-                <div class="fotopacman num1ranking"></div>
-                <h1 style="color:#FFFF00" class="letraspacman">Pacman</h1>
+                <div class="{{boton_id_foto}} num1ranking"></div>
+                <h1 style="color:#FFFF00" class="letraspacman">{{boton_id}}</h1>
                 <div class="col fondoPurpura alturadiv">
                     <div class="fotoprimero"></div>
                     <table class="">
@@ -19,7 +19,7 @@
                             <th class="">Nombre</th>
                         </tr>
                         <tr class="fondoBlanco borde3px">
-                          <td class="borde3px tamañotablas2">Vrraian</td>
+                          <td class="borde3px tamañotablas2">{{pong.0.user_profile}}</td>
                           <!-- <td class="borde3px tamañotablas3"><img class="banderas" src="../static/assets/img/4x3/ES.svg"></td> -->
                           
                         </tr>
@@ -29,7 +29,7 @@
                             <th class="">Puntación</th>
                         </tr>
                         <tr class="fondoBlanco borde3px">
-                          <td class="borde3px tamañotablas2">467</td>
+                          <td class="borde3px tamañotablas2">{{pong.0.score}}</td>
                           <!-- <td class="borde3px tamañotablas3"><img class="banderas" src="../static/assets/img/4x3/ES.svg"></td> -->
                         </tr>
                     </table>
@@ -47,7 +47,7 @@
                             <th class="">Fecha</th>
                         </tr>
                         <tr class="fondoBlanco borde3px">
-                          <td class="borde3px tamañotablas2">25/10/2022</td>
+                          <td class="borde3px tamañotablas2">{{pong.0.date_played}}</td>
                           <!-- <td class="borde3px tamañotablas3"><img class="banderas" src="../static/assets/img/4x3/ES.svg"></td> -->
                         </tr>
                     </table>
@@ -62,7 +62,7 @@
                             <th class="">Nombre</th>
                         </tr>
                         <tr class="fondoBlanco borde3px">
-                          <td class="borde3px tamañotablas2">Vrraian</td>
+                          <td class="borde3px tamañotablas2">{{pong.1.user_profile}}</td>
                           <!--<td class="borde3px tamañotablas3"><img class="banderas" src="../static/assets/img/4x3/ES.svg"></td>-->
                           
                         </tr>
@@ -72,7 +72,7 @@
                             <th class="">Puntación</th>
                         </tr>
                         <tr class="fondoBlanco borde3px">
-                          <td class="borde3px tamañotablas2">467</td>
+                          <td class="borde3px tamañotablas2">{{pong.1.score}}</td>
                           <!-- <td class="borde3px tamañotablas3"><img class="banderas" src="../static/assets/img/4x3/ES.svg"></td> -->
                         </tr>
                     </table>
@@ -90,7 +90,7 @@
                             <th class="">Fecha</th>
                         </tr>
                         <tr class="fondoBlanco borde3px">
-                          <td class="borde3px tamañotablas2">25/10/2022</td>
+                          <td class="borde3px tamañotablas2">{{pong.1.date_played}}</td>
                           <!-- <td class="borde3px tamañotablas3"><img class="banderas" src="../static/assets/img/4x3/ES.svg"></td> -->
                         </tr>
                     </table>
@@ -103,7 +103,7 @@
                             <th class="">Nombre</th>
                         </tr>
                         <tr class="fondoBlanco borde3px">
-                          <td class="borde3px tamañotablas2">Vrraian</td>
+                          <td class="borde3px tamañotablas2">{{pong.2.user_profile}}</td>
                           <!--<td class="borde3px tamañotablas3"><img class="banderas" src="../static/assets/img/4x3/ES.svg"></td>-->
                           
                         </tr>
@@ -113,7 +113,7 @@
                             <th class="">Puntación</th>
                         </tr>
                         <tr class="fondoBlanco borde3px">
-                          <td class="borde3px tamañotablas2">467</td>
+                          <td class="borde3px tamañotablas2">{{pong.2.score}}</td>
                           <!-- <td class="borde3px tamañotablas3"><img class="banderas" src="../static/assets/img/4x3/ES.svg"></td> -->
                         </tr>
                     </table>
@@ -131,7 +131,7 @@
                             <th class="">Fecha</th>
                         </tr>
                         <tr class="fondoBlanco borde3px">
-                          <td class="borde3px tamañotablas2">25/10/2022</td>
+                          <td class="borde3px tamañotablas2">{{pong.2.date_played}}</td>
                           <!-- <td class="borde3px tamañotablas3"><img class="banderas" src="../static/assets/img/4x3/ES.svg"></td> -->
                         </tr>
                     </table>
@@ -149,46 +149,46 @@
                         </tr>
                         <tr class="fondoBlanco borde3px">
                         <td class="borde3px tamañotablas2">4</td>
-                        <td class="borde3px tamañotablas2">Marruecos</td>
-                        <td class="borde3px tamañotablas2">9222</td>
-                        <td class="borde3px tamañotablas2">20/04/1999</td>
+                        <td class="borde3px tamañotablas2">{{pong.3.user_profile}}</td>
+                        <td class="borde3px tamañotablas2">{{pong.3.score}}</td>
+                        <td class="borde3px tamañotablas2">{{pong.3.date_played}}</td>
                         </tr>
                         <tr class="fondoBlanco borde3px">
                             <td class="borde3px tamañotablas2">5</td>
-                            <td class="borde3px tamañotablas2">Marruecos</td>
-                            <td class="borde3px tamañotablas2">9222</td>
-                            <td class="borde3px tamañotablas2">20/04/1999</td>
-                        </tr>
-                        <tr class="fondoBlanco borde3px">
-                            <td class="borde3px tamañotablas2">6</td>
-                            <td class="borde3px tamañotablas2">Marruecos</td>
-                            <td class="borde3px tamañotablas2">9222</td>
-                            <td class="borde3px tamañotablas2">20/04/1999</td>
-                        </tr>
-                        <tr class="fondoBlanco borde3px">
-                            <td class="borde3px tamañotablas2">7</td>
-                            <td class="borde3px tamañotablas2">Marruecos</td>
-                            <td class="borde3px tamañotablas2">9222</td>
-                            <td class="borde3px tamañotablas2">20/04/1999</td>
-                        </tr>
-                        <tr class="fondoBlanco borde3px">
-                            <td class="borde3px tamañotablas2">8</td>
-                            <td class="borde3px tamañotablas2">Marruecos</td>
-                            <td class="borde3px tamañotablas2">9222</td>
-                            <td class="borde3px tamañotablas2">20/04/1999</td>
-                        </tr>
-                        <tr class="fondoBlanco borde3px">
-                            <td class="borde3px tamañotablas2">9</td>
-                            <td class="borde3px tamañotablas2">Marruecos</td>
-                            <td class="borde3px tamañotablas2">9222</td>
-                            <td class="borde3px tamañotablas2">20/04/1999</td>
-                        </tr>
-                        <tr class="fondoBlanco borde3px">
-                            <td class="borde3px tamañotablas2">10</td>
-                            <td class="borde3px tamañotablas2">Marruecos</td>
-                            <td class="borde3px tamañotablas2">9222</td>
-                            <td class="borde3px tamañotablas2">20/04/1999</td>
-                        </tr>
+                            <td class="borde3px tamañotablas2">{{pong.4.user_profile}}</td>
+                            <td class="borde3px tamañotablas2">{{pong.4.score}}</td>
+                            <td class="borde3px tamañotablas2">{{pong.4.date_played}}</td>
+                            </tr>
+                            <tr class="fondoBlanco borde3px">
+                                <td class="borde3px tamañotablas2">6</td>
+                                <td class="borde3px tamañotablas2">{{pong.5.user_profile}}</td>
+                                <td class="borde3px tamañotablas2">{{pong.5.score}}</td>
+                                <td class="borde3px tamañotablas2">{{pong.5.date_played}}</td>
+                            </tr>
+                            <tr class="fondoBlanco borde3px">
+                                <td class="borde3px tamañotablas2">7</td>
+                                <td class="borde3px tamañotablas2">{{pong.6.user_profile}}</td>
+                                <td class="borde3px tamañotablas2">{{pong.6.score}}</td>
+                                <td class="borde3px tamañotablas2">{{pong.6.date_played}}</td>
+                            </tr>
+                            <tr class="fondoBlanco borde3px">
+                                <td class="borde3px tamañotablas2">8</td>
+                                <td class="borde3px tamañotablas2">{{pong.7.user_profile}}</td>
+                                <td class="borde3px tamañotablas2">{{pong.7.score}}</td>
+                                <td class="borde3px tamañotablas2">{{pong.7.date_played}}</td>
+                            </tr>
+                            <tr class="fondoBlanco borde3px">
+                                <td class="borde3px tamañotablas2">9</td>
+                                <td class="borde3px tamañotablas2">{{pong.8.user_profile}}</td>
+                                <td class="borde3px tamañotablas2">{{pong.8.score}}</td>
+                                <td class="borde3px tamañotablas2">{{pong.8.date_played}}</td>
+                            </tr>
+                            <tr class="fondoBlanco borde3px">
+                                <td class="borde3px tamañotablas2">10</td>
+                                <td class="borde3px tamañotablas2">{{pong.9.user_profile}}</td>
+                                <td class="borde3px tamañotablas2">{{pong.9.score}}</td>
+                                <td class="borde3px tamañotablas2">{{pong.9.date_played}}</td>
+                            </tr>
                     </table>
                 </div>
             </div>

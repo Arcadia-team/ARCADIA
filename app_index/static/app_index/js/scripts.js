@@ -9,11 +9,13 @@ function redirigir(li){
   window.location.href = "/games/"+variableID+"/";
 }
 
+
+
 $(document).ready(function() {
-
+    $('#botonRankingPong').on('click', function(event){
+      alert('asd');
+    });
     
-
-
     $('#letra').on('keyup', function(event){
         var contenido = $("#letra").val();
         if ((event.key !== ultimaLetra)  || (event.key == 'Backspace')) {
@@ -57,9 +59,7 @@ $(document).ready(function() {
       });
       
 
-
-
-
+      
 
 
   });

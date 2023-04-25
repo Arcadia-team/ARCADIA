@@ -31,6 +31,12 @@
                     </tr>
                 </table>
                 {% endfor %} 
+                <form method="post" action="{% url 'ranking' %}">
+                    {% csrf_token %}
+
+                    <input type="hidden" id="boton_id" value="SNAKE" name="boton_id">
+                    <button type="submit" class="btn btn-primary">Ver mas</button>
+                </form>
             
             </div>
             <div class="col-md-2"></div>
@@ -55,6 +61,12 @@
                     </tr>
                 </table>
                 {% endfor %} 
+                <form method="post" action="{% url 'ranking' %}">
+                    {% csrf_token %}
+
+                    <input type="hidden" id="boton_id" value="PACMAN" name="boton_id">
+                    <button type="submit" class="btn btn-primary">Ver mas</button>
+                </form>
             
             </div>
             <div class="col-md-5 fondoPurpura alturadiv2">
@@ -78,6 +90,12 @@
                     </tr>
                 </table>
                 {% endfor %} 
+                <form method="post" action="{% url 'ranking' %}">
+                    {% csrf_token %}
+
+                    <input type="hidden" id="boton_id" value="TETRIS" name="boton_id">
+                    <button type="submit" class="btn btn-primary">Ver mas</button>
+                </form>
             
             </div>
             <div class="col-md-2"></div>
@@ -102,6 +120,12 @@
                     </tr>
                 </table>
                 {% endfor %} 
+                <form method="post" action="{% url 'ranking' %}">
+                    {% csrf_token %}
+
+                    <input type="hidden" id="boton_id" value="DINOSAUR" name="boton_id">
+                    <button type="submit" class="btn btn-primary">Ver mas</button>
+                </form>
             
             </div>
             <div class="col-md-5 fondoPurpura alturadiv2">
@@ -125,6 +149,12 @@
                     </tr>
                 </table>
                 {% endfor %} 
+                <form method="post" action="{% url 'ranking' %}">
+                    {% csrf_token %}
+
+                    <input type="hidden" id="boton_id" value="ASTEROID" name="boton_id">
+                    <button type="submit" class="btn btn-primary">Ver mas</button>
+                </form>
             
             </div>
             <div class="col-md-2"></div>
@@ -149,6 +179,12 @@
                     </tr>
                 </table>
                 {% endfor %} 
+                <form method="post" action="{% url 'ranking' %}">
+                    {% csrf_token %}
+
+                    <input type="hidden" id="boton_id" value="SLOPE" name="boton_id">
+                    <button type="submit" class="btn btn-primary">Ver mas</button>
+                </form>
             
             </div>
             <div class="col-md-5 fondoPurpura alturadiv2">
@@ -172,6 +208,14 @@
                     </tr>
                 </table>
                 {% endfor %} 
+                <form method="post" action="{% url 'ranking' %}">
+                    {% csrf_token %}
+
+                    <input type="hidden" id="boton_id" value="PONG" name="boton_id">
+                    <button type="submit" class="btn btn-primary">Ver mas</button>
+                </form>
+                  
+
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-5 fondoPurpura alturadiv2">
@@ -195,6 +239,12 @@
                     </tr>
                 </table>
                 {% endfor %} 
+                <form method="post" action="{% url 'ranking' %}">
+                    {% csrf_token %}
+
+                    <input type="hidden" id="boton_id" value="BOMBERMAN" name="boton_id">
+                    <button type="submit" class="btn btn-primary">Ver mas</button>
+                </form>
             
             </div>
 

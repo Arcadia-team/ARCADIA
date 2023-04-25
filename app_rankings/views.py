@@ -19,5 +19,31 @@ def rankings(request):
 
 #RANKING - POR JUEGO
 def ranking(request):
-    return render(request, "app_rankings/ranking.html")
+    if request.method == 'POST':
+        boton_id = request.POST.get('boton_id')
+        boton_id_foto = 'foto'+ boton_id.lower()
+        if boton_id == 'PONG':
+            pong = Score.objects.filter(game_id='7').order_by('-score')[:10]
+            return render(request, 'app_rankings/ranking.html', {'boton_id': boton_id,'pong': pong,'boton_id_foto':boton_id_foto})
+        if boton_id == 'SLOPE':
+            pong = Score.objects.filter(game_id='6').order_by('-score')[:10]
+            return render(request, 'app_rankings/ranking.html', {'boton_id': boton_id,'pong': pong,'boton_id_foto':boton_id_foto})
+        if boton_id == 'SNAKE':
+            pong = Score.objects.filter(game_id='1').order_by('-score')[:10]
+            return render(request, 'app_rankings/ranking.html', {'boton_id': boton_id,'pong': pong,'boton_id_foto':boton_id_foto})
+        if boton_id == 'TETRIS':
+            pong = Score.objects.filter(game_id='3').order_by('-score')[:10]
+            return render(request, 'app_rankings/ranking.html', {'boton_id': boton_id,'pong': pong,'boton_id_foto':boton_id_foto})
+        if boton_id == 'ASTEROID':
+            pong = Score.objects.filter(game_id='5').order_by('-score')[:10]
+            return render(request, 'app_rankings/ranking.html', {'boton_id': boton_id,'pong': pong,'boton_id_foto':boton_id_foto})
+        if boton_id == 'PACMAN':
+            pong = Score.objects.filter(game_id='2').order_by('-score')[:10]
+            return render(request, 'app_rankings/ranking.html', {'boton_id': boton_id,'pong': pong,'boton_id_foto':boton_id_foto})
+        if boton_id == 'DINOSAUR':
+            pong = Score.objects.filter(game_id='4').order_by('-score')[:10]
+            return render(request, 'app_rankings/ranking.html', {'boton_id': boton_id,'pong': pong,'boton_id_foto':boton_id_foto})
+        if boton_id == 'BOMBERMAN':
+            pong = Score.objects.filter(game_id='8').order_by('-score')[:10]
+            return render(request, 'app_rankings/ranking.html', {'boton_id': boton_id,'pong': pong,'boton_id_foto':boton_id_foto})
 
