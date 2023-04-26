@@ -29,7 +29,6 @@
     <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script8.js' %}"></script>
   </head>
 
-
 <body class="logged-out env-production page-responsive height-full d-flex flex-column header-overlay" style="word-wrap: break-word;">
   <div class="logged-out env-production page-responsive height-full d-flex flex-column header-overlay" style="word-wrap: break-word;">    
   
@@ -38,26 +37,29 @@
       
   <main class="js-warp-hide bg-gray-dark-mktg d-flex flex-auto flex-column overflow-hidden position-relative">
    
+    
+    
     <div class="d-flex flex-auto flex-justify-center pt-12">
+      <div class="js-continue-container width-full z-1 signup-text-suggester">
+        <div class="m-4 p-4 f4 color-shadow-small bg-gray-800-mktg rounded-2 signup-content-container">
+          
+          {% if mensaje %}
+          <section style="font-size: 95%; margin-bottom:3%; background-color: rgba(4,13,33,1); color: #627597;; text-align: center;">
+            <span style="font-weight: bold; font-size: 105%;"> {{mensaje}} </span>
+          </section>
+          {% endif %}
+          
+          <h1 class="sr-only">{{form.username}}</h1>
+          <typing-effect 
+          data-lines='["{{user.username}}"]'
+          class="js-signup-typed-welcome" style="font-size: 65%;">
+          <span data-target="typing-effect.content" style="font-family: arcadeFont;color:rgba(249, 138, 249, 0.8)" class="text-mono"></span>
+          <span data-target="typing-effect.cursor" class="typing-effect-cursor">|</span>
+        </typing-effect>
+        
+        <a style="color: transparent; text-align: right; width: 100%;" class="btn-logout btn-success-logout rounded m-2 p-2" href="{% url 'logout' %}">LOGOUTT</a> 
       
-<div class="js-continue-container width-full z-1 signup-text-suggester">
-  <div class="m-4 p-4 f4 color-shadow-small bg-gray-800-mktg rounded-2 signup-content-container">
-
-    {% if mensaje %}
-      <section style="font-size: 95%; margin-bottom:3%; background-color: rgba(4,13,33,1); color: #627597;; text-align: center;">
-        <span style="font-weight: bold; font-size: 105%;"> {{mensaje}} </span>
-      </section>
-    {% endif %}
-
-      <h1 class="sr-only">{{form.username}}</h1>
-      <typing-effect 
-        data-lines='["Pannel user of {{user.username}}"]'
-        class="js-signup-typed-welcome" style="font-size: 65%;">
-        <span data-target="typing-effect.content" style="font-family: arcadeFont;color:rgba(249, 138, 249, 0.8)" class="text-mono"></span>
-        <span data-target="typing-effect.cursor" class="typing-effect-cursor">|</span>
-      </typing-effect>
-
-      <!-- Formulario -->
+        <!-- Formulario -->
     <form class="position-relative js-octocaptcha-parent" method="post">
       {% csrf_token %}
       <div class="js-continue-step-container signup-continue-step-container mt-4">
