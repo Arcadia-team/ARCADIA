@@ -51,7 +51,7 @@
 
       <h1 class="sr-only">{{form.username}}</h1>
       <typing-effect 
-        data-lines='["{{user.username}}"]'
+        data-lines='["Pannel user of {{user.username}}"]'
         class="js-signup-typed-welcome" style="font-size: 65%;">
         <span data-target="typing-effect.content" style="font-family: arcadeFont;color:rgba(249, 138, 249, 0.8)" class="text-mono"></span>
         <span data-target="typing-effect.cursor" class="typing-effect-cursor">|</span>
@@ -88,6 +88,34 @@
         <div class="d-flex flex-items-center flex-column flex-sm-row">
           <div class="d-flex flex-items-center width-full">
             {{form.email}}
+          </div>
+        </div>
+
+        <br>
+        <!-- Label -->
+        <div>
+          <label for="email" class="labels-signup">
+            Password
+          </label>
+        </div>
+        <!-- Input -->
+        <div class="d-flex flex-items-center flex-column flex-sm-row">
+          <div class="d-flex flex-items-center width-full">
+            {{form.password}}
+          </div>
+        </div>
+
+        <br>
+        <!-- Label -->
+        <div>
+          <label for="email" class="labels-signup">
+            Avatar
+          </label>
+        </div>
+        <!-- Input -->
+        <div class="d-flex flex-items-center flex-column flex-sm-row">
+          <div class="d-flex flex-items-center width-full">
+            {{form.avatar}}
           </div>
         </div>
         
