@@ -11573,13 +11573,13 @@ footer.footer {
 
 .alturadiv{
   margin-top:2em;
-  height:32em;
+  height:25em;
   margin-bottom:2em;
 }
 
 .alturadiv2{
   margin-top:2em;
-  height:29em;
+  height:32em;
   margin-bottom:2em;
 }
 
@@ -11617,7 +11617,7 @@ footer.footer {
 }
 
 .fondopurpura3{
-  height:31em;
+  height:33em;
   background-color: #443957;
 }
 .margintop10{
@@ -11637,6 +11637,27 @@ footer.footer {
 .overBuscador:hover {
   color: #0a58ca;
 }
+
+.botonVerMasRakings{
+  margin-left:41%;
+  margin-top:0.6em;
+  background-color:yellow;
+  color:black;
+  border:3px solid black;
+  font-size:18px;
+  font-weight: bold;
+}
+.botonVerMasRakings:hover{
+  margin-left:41%;
+  margin-top:0.6em;
+  background-color: rgba(215, 16, 255, 0.5);
+  color:yellow;
+  border:3px solid black;
+  font-size:18px;
+  font-weight: bold;
+}
+
+
 
 
 

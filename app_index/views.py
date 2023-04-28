@@ -20,11 +20,73 @@ from django.contrib.auth.models import User
 
 #Buscador
 from app_games.models import Game
+from app_games.models import Score
 from django.http import HttpResponse
 import json
 
 #Para conseguir los juegos mas jugados
 from django.db.models import F
+
+#Grafica adminpanel 
+import matplotlib.pyplot as plt
+from django.http import JsonResponse
+from io import BytesIO
+import base64
+import matplotlib
+import plotly.graph_objs as go
+from plotly.offline import plot
+from plotly.subplots import make_subplots
+
+def adminpanel(request):
+
+    if request.user.username == 'juanfran':
+        #if request.method == 'POST':
+        queryset = Game.objects.values('name','numPartidas')
+        valores = [dato['numPartidas'] for dato in queryset]
+        etiquetas = [dato['name'] for dato in queryset]
+
+        # Crear un gráfico de queso con Plotly
+        fig = make_subplots(rows=1, cols=1, specs=[[{'type':'domain'}]])
+        fig.add_trace(go.Pie(labels=etiquetas, values=valores), 1, 1)
+        fig.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20)
+        
+        
+
+        # Devolver el gráfico de Plotly como una respuesta de Django
+        div = fig.to_html(full_html=False)
+
+
+
+        partidas = Score.objects.filter(game_id=1)
+
+
+        return render(request,"app_index/adminpanel.html",{"div" : div,'partidas' : partidas})
+    else:
+        return HttpResponse("Lo siento, no tienes acceso a esta página.")
+
+
+
+
+def adminpanel2(request):
+        if request.method == 'POST':
+            valores2 = request.POST.get('val2')
+            valores3 = request.POST.get('val3')
+            valores4 = request.POST.get('val4')
+            if valores2 != None:
+                print('val2'+valores2)
+                print('val3'+valores3)
+                print('val4'+valores4)
+                Score.objects.filter(user_profile_id__user__username=valores2, score=valores3).delete()
+
+
+            valorSeleccionado = request.POST.get('selectjuegos')
+            partidas = Score.objects.filter(game_id=valorSeleccionado).values('user_profile__user__username','score','date_played')
+            resultados_dict = list(partidas)
+            return JsonResponse(resultados_dict, safe=False)
+                #return render(request,"app_index/adminpanel.html",{'partidas':partidas})
+
+
+
 
 # Create your views here.
 def inicio(request):

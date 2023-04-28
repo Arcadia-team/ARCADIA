@@ -1,0 +1,64 @@
+{% extends "app_index/base.html" %}
+
+{% load static %}
+
+{% block contenido_no_heredado %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<script type="application/javascript" src="{% static 'app_index/js/scripts.js'%}"></script>
+<link href="{% static 'app_index/css/styles.css' %}" rel="stylesheet" />
+
+    <div class="">
+        <div class="container ">
+            <div class="row">
+                <div class="col-6">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">
+                                    <select id="selectjuegos" >
+                                        <option value="1">SNAKE</option>
+                                        <option value="2">PACMAN</option>
+                                        <option value="3">TETRIS</option>
+                                        <option value="4">DINOSAUR</option>
+                                        <option value="5">ASTEROID</option>
+                                        <option value="6">SLOPE</option>
+                                        <option value="7">PONG</option>
+                                        <option value="8">BOMBERMAN</option>
+                                    </select>
+                                </th>
+                                <th scope="col">#</th>
+                                <th scope="col">User</th>
+                                <th scope="col">Score</th>
+                                <th scope="col">Data_Played</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaGenerada">
+                        {% for objeto in partidas %}
+                        <tr class="tablaInicial">
+                            <th scope="row" class="tablaInicial"><img src="{% static 'app_index/assets/img/iconodelete.png'%}" id="botonBorrarTabla"></th>
+                            <td scope="row" class="tablaInicial" id="{{ forloop.counter }}">{{ forloop.counter }}</td>
+                            <td class="tablaInicial">{{objeto.user_profile}}</td>
+                            <td class="tablaInicial">{{objeto.score}}</td>
+                            <td class="tablaInicial">{{objeto.date_played}}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-5">
+                    <div style="background-color: red;">{{ div|safe }}</div>
+                </div>
+
+                <!--
+                <div class="col-6">
+                    <img src="data:image/png;base64,{{ graphic }}" alt="Gráfica de queso">
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock contenido_no_heredado %}   

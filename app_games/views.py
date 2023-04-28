@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from app_games.models import Score
 from app_games.models import Game
 from django.db.models import F
+import time
 
 
 # Las vistas con el nombre del juego cargar el juego en la web.

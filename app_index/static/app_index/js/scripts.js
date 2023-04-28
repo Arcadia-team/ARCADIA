@@ -12,10 +12,7 @@ function redirigir(li){
 
 
 $(document).ready(function() {
-    $('#botonRankingPong').on('click', function(event){
-      alert('asd');
-    });
-    
+
     $('#letra').on('keyup', function(event){
         var contenido = $("#letra").val();
         if ((event.key !== ultimaLetra)  || (event.key == 'Backspace')) {
@@ -57,7 +54,65 @@ $(document).ready(function() {
           }
         }  
       });
-      
+      $('#selectjuegos').change(function(){
+        var csrftoken = Cookies.get('csrftoken');
+        var valorSeleccionado = $("#selectjuegos").val();
+        $.ajax({
+          url: "/adminpanel2/",
+          method: "POST",
+          data: {
+              'selectjuegos': valorSeleccionado,
+              'csrfmiddlewaretoken': csrftoken
+          },
+          dataType: 'json',
+          success: function(data){
+            $('.tablaInicial').remove();
+
+            var filasResultados = '';
+            $contador = 1;
+            $.each(data, function(index, resultado) {
+              //var img_src = "{% static 'app_index/assets/img/iconodelete.png'%}";
+              var img_src = "/static/app_index/assets/img/iconodelete.png";
+
+              filasResultados += '<tr><td><img src="' + img_src + '" id="botonBorrarTabla"></td><td>'+$contador+'</td><td>' + resultado.user_profile__user__username + '</td><td>' + resultado.score + '</td><td>' + resultado.date_played + '</td></tr>';
+              $contador++;
+            });
+            $('#tablaGenerada').html(filasResultados);
+            }
+        });
+      });
+      $("#tablaGenerada").on("click", "#botonBorrarTabla", function() {
+        var fila = $(this).parent().parent(); // Obtener la fila de la tabla
+        var valores = {
+          num: fila.find("td:nth-child(1)").text(),
+          user: fila.find("td:nth-child(3)").text(),
+          score: fila.find("td:nth-child(4)").text(),
+          fecha: fila.find("td:nth-child(5)").text()
+        }; // Obtener los valores de cada celda de la fila
+        var val1= fila.find("td:nth-child(1)").text();
+        var val2 = fila.find("td:nth-child(3)").text();
+        var val3 = fila.find("td:nth-child(4)").text();
+        var val4 = fila.find("td:nth-child(5)").text();
+
+        fila.remove(); // Eliminar la fila de la tabla
+        var csrftoken = Cookies.get('csrftoken');
+        $.ajax({
+            url: "/adminpanel2/",
+            method: "POST",
+            data: {
+                'valores': valores,
+                'val1': val1,
+                'val2': val2,
+                'val3': val3,
+                'val4': val4,
+                'csrfmiddlewaretoken': csrftoken
+            },
+            dataType: 'json',
+            success: function(response) {
+              
+            }
+        });
+      });
 
       
 
