@@ -57,7 +57,7 @@
           <span data-target="typing-effect.cursor" class="typing-effect-cursor">|</span>
         </typing-effect>
         
-        <a style="color: transparent; text-align: right; width: 100%;" class="btn-logout btn-success-logout rounded m-2 p-2" href="{% url 'logout' %}">LOGOUTT</a> 
+        <a style="color: transparent;text-align: right; width: 100%;" class="btn-logout btn-success-logout rounded m-2 p-2" href="{% url 'logout' %}">LOGOUTT</a> 
       
         <!-- Formulario -->
     <form class="position-relative js-octocaptcha-parent" method="post">
@@ -94,20 +94,7 @@
         </div>
 
         <br>
-        <!-- Label -->
-        <div>
-          <label for="email" class="labels-signup">
-            Password
-          </label>
-        </div>
-        <!-- Input -->
-        <div class="d-flex flex-items-center flex-column flex-sm-row">
-          <div class="d-flex flex-items-center width-full">
-            {{form.password}}
-          </div>
-        </div>
-
-        <br>
+        
         <!-- Label -->
         <div>
           <label for="email" class="labels-signup">
@@ -115,11 +102,13 @@
           </label>
         </div>
         <!-- Input -->
-        <div class="d-flex flex-items-center flex-column flex-sm-row">
-          <div class="d-flex flex-items-center width-full">
-            {{form.avatar}}
+        {% for avatar in form.avatar %}
+          <div class="image-radio">
+            {{ avatar.choice_label }}
+            <input type="radio" name="{{ form.avatar.name }}" value="{{ avatar.choice_value }}" id="{{ avatar.id }}" {% if form.avatar.value == avatar.choice_value %}checked{% endif %}>
+            
           </div>
-        </div>
+        {% endfor %}
         
       <br>
       <br>

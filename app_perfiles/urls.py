@@ -1,6 +1,6 @@
 from django.urls import path
-from app_perfiles.views import UserUpdateView
+from app_perfiles.views import edit_profile
 
 urlpatterns = [
-    path('', UserUpdateView.as_view(), name="user_pannel"),
+    path('', edit_profile, name="perfil"),
 ]

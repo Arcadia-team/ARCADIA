@@ -1,0 +1,18 @@
+{% extends "app_index/base.html" %}
+{% load static %}
+
+{% block contenido_no_heredado %}
+
+  <div class="container">
+
+    <img src="{% static 'app_index/avatares/pacman.png' %}" width="50px" class="rounded-circle"> </a>
+    <img src="{% static 'app_index/avatares/ghost.png' %}" width="50px" class="rounded-circle"> </a>
+    
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary mt-3">Guardar cambios</button>
+    </form>
+  </div>
+
+{% endblock contenido_no_heredado %}   
