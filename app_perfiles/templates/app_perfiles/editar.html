@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block contenido_no_heredado %}
-
+<button type="{% url 'user_data' %}" class="btn btn-secondary">Botón secundario</button>
   <div class="container">
 
     <img src="{% static 'app_index/avatares/pacman.png' %}" width="50px" class="rounded-circle"> </a>

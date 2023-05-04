@@ -23,7 +23,7 @@ urlpatterns = [
     path('', include('app_index.urls')),
 
     #PERFILES_APP
-    path('update-user/', include('app_perfiles.urls')),
+    path('user/', include('app_perfiles.urls')),
 
     #GAMES_APP
     path('games/', include('app_games.urls')),
