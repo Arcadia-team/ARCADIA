@@ -11380,6 +11380,25 @@ footer.footer {
   transition: 0.2s;
   background-image:url("../assets/img/logout.png");
 }
+
+/* ----------------------------- boton logout ------------------------------------------*/
+
+.btn-success-data {
+  color: #fff;
+  background-image:url("../assets/img/data-button.png");
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+.btn-check-data:checked + .btn-success-data, .btn-check-data:active + .btn-success-data, .btn-success-data:active {
+  transition: 0.3s;
+  background-image:url("../assets/img/data-button-press.png");
+}
+
+.btn-success-data:disabled {
+  transition: 0.2s;
+  background-image:url("../assets/img/data-button.png");
+}
 /*-------------------Css Original de ARCADIA (no frameworks)-----------  */
 
 
