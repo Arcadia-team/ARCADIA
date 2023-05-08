@@ -8,7 +8,7 @@
 <script type="application/javascript" src="{% static 'app_index/js/scripts.js'%}"></script>
 <link href="{% static 'app_index/css/styles.css' %}" rel="stylesheet" />
 
-    <div class="">
+    <div class="bg-light">
         <div class="container ">
             <div class="row">
                 <div class="col-6">
@@ -27,28 +27,28 @@
                                         <option value="8">BOMBERMAN</option>
                                     </select>
                                 </th>
-                                <th scope="col">#</th>
-                                <th scope="col">User</th>
-                                <th scope="col">Score</th>
-                                <th scope="col">Data_Played</th>
+                                <th scope="col" class="letrasamarillas">#</th>
+                                <th scope="col" class="letrasamarillas">User</th>
+                                <th scope="col" class="letrasamarillas">Score</th>
+                                <th scope="col" class="letrasamarillas">Data_Played</th>
                             </tr>
                         </thead>
                         <tbody id="tablaGenerada">
                         {% for objeto in partidas %}
-                        <tr class="tablaInicial">
-                            <th scope="row" class="tablaInicial"><img src="{% static 'app_index/assets/img/iconodelete.png'%}" id="botonBorrarTabla"></th>
-                            <td scope="row" class="tablaInicial" id="{{ forloop.counter }}">{{ forloop.counter }}</td>
-                            <td class="tablaInicial">{{objeto.user_profile}}</td>
-                            <td class="tablaInicial">{{objeto.score}}</td>
-                            <td class="tablaInicial">{{objeto.date_played}}</td>
-                        </tr>
+                            <tr class="tablaInicial">
+                                <th scope="row" class="tablaInicial"  style="border:3px solid black; background-color:white;"><img src="{% static 'app_index/assets/img/iconodelete.png'%}" id="botonBorrarTabla"></th>
+                                <td scope="row" class="tablaInicial" id="{{ forloop.counter }}" style="border:3px solid black; background-color:white;">{{ forloop.counter }}</td>
+                                <td class="tablaInicial clickedit" id="user{{ forloop.counter }}" style="border:3px solid black; background-color:white;">{{objeto.user_profile}}</td>
+                                <td class="tablaInicial clickedit" id="score{{ forloop.counter }}" style="border:3px solid black; background-color:white;">{{objeto.score}}</td>
+                                <td class="tablaInicial clickedit" style="border:3px solid black; background-color:white;">{{objeto.date_played}}</td>
+                            </tr>
                         {% endfor %}
                         </tbody>
                     </table>
                 </div>
                 <div class="col-1"></div>
                 <div class="col-5">
-                    <div style="background-color: red;">{{ div|safe }}</div>
+                    <div>{{ div|safe }}</div>
                 </div>
 
                 <!--

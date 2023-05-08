@@ -1,6 +1,7 @@
+{% extends "app_index/plantillaJuegos.html" %}
 {% load static %}
 
-{% block juego %}
+{% block content %}
 
 <html>
   <head>
@@ -25,7 +26,7 @@
   <body>
     <div id="game-container">
       {% csrf_token %}
-      <canvas id="canvas" width="780" height="540"></canvas>
+      <canvas id="canvas" width="800" height="610" style="position: absolute;margin-left:300px;margin-top:105px;background-color: white;"></canvas>
       <div id="left-controls">
         <div id="up" class='button'>THRUST</div>
         <div id="left" class='button'>LEFT</div>
@@ -38,4 +39,4 @@
   </body>
 </html>
 
-{% endblock juego %}
+{% endblock content %}

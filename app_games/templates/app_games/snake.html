@@ -1,5 +1,6 @@
-
+{% extends "app_index/plantillaJuegos.html" %}
 {% load static %}
+{% block content %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 
@@ -9,7 +10,8 @@
 	{% csrf_token %}
 	<div class="score" id="score">0</div>
 	
-		<canvas id="canvas" height="750px" width="750px"></canvas>
+		<canvas id="canvas" height="599px" width="599px" style="margin-top:115px;"></canvas>
 	</div>
 <script type="application/javascript" src="{% static 'app_games/snake/js.js'%}"></script>
+{% endblock %}
 

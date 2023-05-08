@@ -1,8 +1,7 @@
 
-
 {% load static %}
 
-{% block juego %}
+{% block content %}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- CSS TETRIS-->
 <link rel="stylesheet" href="{% static 'app_games/games/css/all.min.css' %}">
@@ -13,16 +12,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 
 <style>
-    body {
+    body 
+    {
         padding-bottom: 70px;
     }
 </style>
 
 <main>
     <div class="container">
-                <h2 id="puntaje" style="margin-left:800px">Presiona <kbd>P</kbd> o pulsa el botón para comenzar</h2>
-                <canvas id="canvas" style="margin-left:800px"></canvas>
-                <div class="mt-2" style="margin-left:800px">
+                <h2 id="puntaje" style="margin-left:800px;">Presiona <kbd>P</kbd> o pulsa el botón para comenzar</h2>
+                <canvas id="canvas" style="margin-left:800px;"></canvas>
+                <div class="mt-2" style="margin-left:800px;">
                     {% csrf_token %}
                     <button id="btnIniciar" class="btn btn-success"><i class="fas fa-play"></i></button>
                     <button hidden id="btnPausar" class="btn btn-success"><i class="fas fa-pause"></i></button>
@@ -41,4 +41,4 @@
 <script type="application/javascript" src="{% static 'app_games/games/js/tetris.js'%}"></script>
 <script type="application/javascript" src="{% static 'app_games/games/js/script.js'%}"></script>
 
-{% endblock juego %}
+{% endblock content %}

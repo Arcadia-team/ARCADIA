@@ -1,5 +1,5 @@
 from django.urls import path
-from app_index.views import inicio, login_request, signup_request, logout_request, inicio2, adminpanel, adminpanel2
+from app_index.views import inicio, login_request, signup_request, logout_request, inicio2, adminpanel, adminpanel2, adminpanel3
 
 
 
@@ -11,4 +11,5 @@ urlpatterns = [
     path('signup/', signup_request, name="signup"),
     path('adminpanel/', adminpanel, name="adminpanel"),
     path('adminpanel2/', adminpanel2, name="adminpanel2"),
+    path('adminpanel3/', adminpanel3, name="adminpanel3"),
 ]

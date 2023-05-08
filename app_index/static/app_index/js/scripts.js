@@ -2,6 +2,8 @@ var old_event = 0;
 var palabra = '';
 var soloLetras = /^[a-zA-Z]{1}$/;
 var ultimaLetra = '';
+var contenido = '';
+var id = '';
 
 function redirigir(li){
   var variableID = li.id;
@@ -12,6 +14,51 @@ function redirigir(li){
 
 
 $(document).ready(function() {
+    $(document).on('click', '.clickedit', function(){
+      id = event.target.id;
+			// Mostramos el ID en la consola del navegador
+			console.log("El ID del elemento clickeado es: " + id);
+      contenido = $(this).text();
+
+      var input = $('<input>', {
+        'type': 'text',
+        'value': contenido
+      });
+      $(this).html(input);
+      input.focus();
+    });
+    $(document).on('keydown', 'input[type="text"]', function(event) {
+      console.log(event.which)
+      if (event.which == 13) {  // Tecla Enter
+        event.preventDefault();
+        var nuevoContenido = $(this).val();
+        $(this).parent().text(nuevoContenido);
+        var fila = $(this).parent().parent(); // Obtener la fila de la tabla
+        var valorSeleccionado = $("#selectjuegos").val();
+        var csrftoken = Cookies.get('csrftoken');
+        $.ajax({
+            url: "/adminpanel3/",
+            method: "POST",
+            data: {
+                'val1': nuevoContenido,
+                'val2': contenido,
+                'id':id,
+                'juego':valorSeleccionado,
+                'csrfmiddlewaretoken': csrftoken
+            },
+            dataType: 'json',
+            success: function(response){
+              
+            }
+        });
+      } else if (event.which == 27) {  // Tecla Esc
+
+        event.preventDefault();
+        $(this).parent().text(contenido);
+        var fila = $(this).parent().parent(); // Obtener la fila de la tabla
+      }
+    });
+    
 
     $('#letra').on('keyup', function(event){
         var contenido = $("#letra").val();
@@ -54,6 +101,8 @@ $(document).ready(function() {
           }
         }  
       });
+
+      // GENERAR TABLA DE RANKING EN EL PANEL DE ADMIN
       $('#selectjuegos').change(function(){
         var csrftoken = Cookies.get('csrftoken');
         var valorSeleccionado = $("#selectjuegos").val();
@@ -71,24 +120,23 @@ $(document).ready(function() {
             var filasResultados = '';
             $contador = 1;
             $.each(data, function(index, resultado) {
-              //var img_src = "{% static 'app_index/assets/img/iconodelete.png'%}";
               var img_src = "/static/app_index/assets/img/iconodelete.png";
+              const fechaOriginal = new Date(resultado.date_played);
+              const opciones = { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
+              const fechaFormateada = fechaOriginal.toLocaleString('en-US', opciones);
 
-              filasResultados += '<tr><td><img src="' + img_src + '" id="botonBorrarTabla"></td><td>'+$contador+'</td><td>' + resultado.user_profile__user__username + '</td><td>' + resultado.score + '</td><td>' + resultado.date_played + '</td></tr>';
+              filasResultados += '<tr><td style="border:3px solid black; background-color:white;"><img src="' + img_src + '" id="botonBorrarTabla"></td><td style="border:3px solid black;  background-color:white;" >'+$contador+'</td><td id="user'+$contador+'" class="clickedit" style="border:3px solid black;  background-color:white;">' + resultado.user_profile__user__username + '</td><td id="score'+$contador+'" class="clickedit" style="border:3px solid black; background-color:white;">' + resultado.score + '</td><td id="dateplayed'+$contador+'" class="clickedit" style="border:3px solid black; background-color:white;">' + fechaFormateada + '</td></tr>';
               $contador++;
             });
             $('#tablaGenerada').html(filasResultados);
             }
         });
       });
+
+
       $("#tablaGenerada").on("click", "#botonBorrarTabla", function() {
         var fila = $(this).parent().parent(); // Obtener la fila de la tabla
-        var valores = {
-          num: fila.find("td:nth-child(1)").text(),
-          user: fila.find("td:nth-child(3)").text(),
-          score: fila.find("td:nth-child(4)").text(),
-          fecha: fila.find("td:nth-child(5)").text()
-        }; // Obtener los valores de cada celda de la fila
+
         var val1= fila.find("td:nth-child(1)").text();
         var val2 = fila.find("td:nth-child(3)").text();
         var val3 = fila.find("td:nth-child(4)").text();
@@ -100,7 +148,6 @@ $(document).ready(function() {
             url: "/adminpanel2/",
             method: "POST",
             data: {
-                'valores': valores,
                 'val1': val1,
                 'val2': val2,
                 'val3': val3,
@@ -109,6 +156,7 @@ $(document).ready(function() {
             },
             dataType: 'json',
             success: function(response) {
+              
               
             }
         });
