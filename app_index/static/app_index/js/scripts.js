@@ -14,14 +14,11 @@ function redirigir(li){
 
 
 $(document).ready(function() {
-    $(document).on('focusout', '.clickedit', function(){
-      var $campo = $(this).closest('td');
-      var clickedElement = $(this);
+    $(document).on('blur', '.clickedit input', function() {
+      var clickedElement = $(this).closest('.clickedit');
       var newValue = $(this).val();
       clickedElement.text(newValue);
       clickedElement.removeClass('editing');
-      $campo.text(val);
-
     });
     $(document).on('click', '.clickedit', function(){
       id = event.target.id;
