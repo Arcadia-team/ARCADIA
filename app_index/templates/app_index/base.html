@@ -36,10 +36,12 @@
 
                     <!-- Login / Logout comprueba si has iniciado sesion -->
                     {% if user.is_authenticated %}
-                            <a href="{% url 'update_user' %}"> 
-                                {% if user.userprofile.avatar_id == 1 %}
+                            <a href="{% url 'profile' %}"> 
+                            {% if user.userprofile.avatar_id == 1 %}
                                 <img src="{% static 'app_index/avatares/pacman.png' %}" width="50px" class="rounded-circle"> </a>
-                                {% endif %}
+                                {% elif user.userprofile.avatar_id == 2 %} 
+                                <img src="{% static 'app_index/avatares/ghost.png' %}" width="50px" class="rounded-circle"> </a>
+                            {% endif %}
                     {% else %}
                         <a style="color: transparent;" class="btn btn-success rounded m-2 p-2" href="{% url 'login' %}">LOGIN</a>
                     {% endif %}
