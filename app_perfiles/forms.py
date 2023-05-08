@@ -1,6 +1,7 @@
 
 from django import forms
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
 from .models import UserProfile, Avatar
 
 
@@ -26,20 +27,41 @@ class EditProfileForm(forms.ModelForm):
 class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['username', 'email', 'password']
+        fields = ['username', 'email']
 
-    password = forms.CharField(widget=forms.PasswordInput)
+    old_password = forms.CharField(widget=forms.PasswordInput, required=False)
+    new_password1 = forms.CharField(widget=forms.PasswordInput, required=False)
+    new_password2 = forms.CharField(widget=forms.PasswordInput, required=False)
 
-    avatar = forms.IntegerField()  # Agrega campos adicionales si es necesario
-
-    
-    def __init__(self, user_instance=None, user_profile_instance=None, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super(UserUpdateForm, self).__init__(*args, **kwargs)
+        self.fields['email'].required = True
 
-        if user_instance:
-            self.fields['username'].initial = user_instance.username
-            self.fields['email'].initial = user_instance.email
-            self.fields['password'].initial = user_instance.password
+    def clean_email(self):
+        email = self.cleaned_data['email']
+        if User.objects.exclude(pk=self.instance.pk).filter(email=email).exists():
+            raise forms.ValidationError('Este email ya está en uso')
+        return email
 
-        if user_profile_instance:
-            self.fields['avatar'].initial = user_profile_instance.avatar
+    def clean(self):
+        cleaned_data = super().clean()
+        old_password = cleaned_data.get('old_password')
+        new_password1 = cleaned_data.get('new_password1')
+        new_password2 = cleaned_data.get('new_password2')
+
+        if old_password and not authenticate(username=self.instance.username, password=old_password):
+            raise forms.ValidationError('La contraseña actual es incorrecta.')
+
+        if new_password1 and new_password1 != new_password2:
+            raise forms.ValidationError('Las nuevas contraseñas no coinciden.')
+        return cleaned_data
+
+    def save(self, commit=True):
+        user = super(UserUpdateForm, self).save(commit=False)
+        new_password = self.cleaned_data.get('new_password1')
+        if new_password:
+            user.set_password(new_password)
+        if commit:
+            user.save()
+        return user
+    
