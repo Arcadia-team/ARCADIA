@@ -14,6 +14,15 @@ function redirigir(li){
 
 
 $(document).ready(function() {
+    $(document).on('focusout', '.clickedit', function(){
+      var $campo = $(this).closest('td');
+      var clickedElement = $(this);
+      var newValue = $(this).val();
+      clickedElement.text(newValue);
+      clickedElement.removeClass('editing');
+      $campo.text(val);
+
+    });
     $(document).on('click', '.clickedit', function(){
       id = event.target.id;
 			// Mostramos el ID en la consola del navegador
@@ -29,6 +38,12 @@ $(document).ready(function() {
     });
     $(document).on('keydown', 'input[type="text"]', function(event) {
       console.log(event.which)
+      var $campo = $(this).closest('td'); // Obtener la referencia al campo
+      
+      // Agregar el evento 'blur' al campo
+      $campo.on('blur', function() {
+        console.log('Se perdió el foco del campo');
+      });
       if (event.which == 13) {  // Tecla Enter
         event.preventDefault();
         var nuevoContenido = $(this).val();
@@ -48,7 +63,7 @@ $(document).ready(function() {
             },
             dataType: 'json',
             success: function(response){
-              
+              $campo.text(response.val); // Cambiar contenido del campo con la respuesta de Django
             }
         });
       } else if (event.which == 27) {  // Tecla Esc
