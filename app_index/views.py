@@ -77,7 +77,7 @@ def adminpanel(request):
 
 
 
-        partidas = Score.objects.filter(game_id=1)
+        partidas = Score.objects.filter(game_id=1).order_by('-score')
 
 
         return render(request,"app_index/adminpanel.html",{"div" : div,'partidas' : partidas})
@@ -97,7 +97,7 @@ def adminpanel2(request):
 
 
             valorSeleccionado = request.POST.get('selectjuegos')
-            partidas = Score.objects.filter(game_id=valorSeleccionado).values('user_profile__user__username','score','date_played')
+            partidas = Score.objects.filter(game_id=valorSeleccionado).values('user_profile__user__username','score','date_played').order_by('-score')
             resultados_dict = list(partidas)
             return JsonResponse(resultados_dict, safe=False)
                 #return render(request,"app_index/adminpanel.html",{'partidas':partidas})
@@ -167,7 +167,7 @@ def adminpanel3(request):
                     print('userid '+str(userid))
                     print('Ultimo Caracter'+str(ultimo_caracter_int))
 
-                    valores5 = Score.objects.filter(game_id=juego).values('user_profile_id','score','date_played').order_by(-score)[ultimo_caracter_int]
+                    valores5 = Score.objects.filter(game_id=juego).values('user_profile_id','score','date_played').order_by('-score')[ultimo_caracter_int]
                     print('valores5' +str(valores5))
 
 
@@ -184,7 +184,9 @@ def adminpanel3(request):
                 print('4')
         else:
             print("La cadena solo puede contener numeros, letras y los siguientes simbolos _ else")
-            return HttpResponse("La cadena solo puede contener numeros, letras y los siguientes simbolos _", content_type='application/json')
+            error_message = "La cadena solo puede contener numeros, letras y los siguientes simbolos _"
+            response_data = {'error': error_message,'val':val2}
+            return HttpResponse(json.dumps(response_data), content_type='application/json')
 
         return HttpResponse("La cadena solo puede contener numeros, letras y los siguientes simbolos _", content_type='application/json')
 
