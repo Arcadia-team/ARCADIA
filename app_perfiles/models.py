@@ -10,6 +10,9 @@ class Avatar(models.Model):
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.ForeignKey(Avatar, on_delete=models.CASCADE, default=1)
+
+    # Otros campos adicionales para el perfil
+    # Ejemplo:
     bio = models.TextField(max_length=500, blank=True)
     website = models.URLField(max_length=100, blank=True)
     scores = models.ManyToManyField(Game, through=Score, related_name='user_profiles')
