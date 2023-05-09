@@ -54,7 +54,7 @@
     <typing-effect 
     data-lines='["{{user.username}}"]'
     class="js-signup-typed-welcome" style="font-size: 65%;">
-    <span data-target="typing-effect.content" style="font-family: arcadeFont;color:rgba(249, 138, 249, 0.8); margin-right: 45%;" class="text-mono"></span>
+    <span data-target="typing-effect.content" style="font-family: arcadeFont;color:rgba(249, 138, 249, 0.8); margin-right: 40%;" class="text-mono"></span>
     <span data-target="typing-effect.cursor" class="typing-effect-cursor">|</span>
     </typing-effect>
     
@@ -70,14 +70,9 @@
         {% csrf_token %}
 
         <!-- Avatar IMAGES-->
-        
-<<<<<<< HEAD
+
         <img src="{% static 'app_index/avatares/ghost.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="ghost"> </a>
         <img src="{% static 'app_index/avatares/pacman.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="pacman"> </a>
-=======
-        <img src="{% static 'app_index/avatares/pacman.png' %}" width="50px" class="rounded-circle"> </a>
-        <img src="{% static 'app_index/avatares/ghost.png' %}" width="50px" class="rounded-circle"> </a>
->>>>>>> 83527295ddac0fedc78699bf14e20bfdf92fbabe
         
         <!-- Avatar choise -->
         <div class="js-continue-step-container signup-continue-step-container">
