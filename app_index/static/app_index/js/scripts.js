@@ -14,6 +14,12 @@ function redirigir(li){
 
 
 $(document).ready(function() {
+    $('.clicklogopanelUser').click(function() {
+      var imageID = $(this).attr('id');
+      var imagePath = "/static/app_index/avatares/"+imageID+".png";
+      console.log(imagePath);
+      $('#actualizarImagen').attr('src', imagePath);
+    });
     $(document).on('blur', '.clickedit input', function() {
       var clickedElement = $(this).closest('.clickedit');
       var newValue = $(this).val();
