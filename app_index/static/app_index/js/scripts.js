@@ -137,7 +137,7 @@ $(document).ready(function() {
               const opciones = { month: 'long', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
               const fechaFormateada = fechaOriginal.toLocaleString('en-US', opciones);
 
-              filasResultados += '<tr><td style="border:3px solid black; background-color:white;"><img src="' + img_src + '" id="botonBorrarTabla"></td><td style="border:3px solid black;  background-color:white;" >'+$contador+'</td><td id="user'+$contador+'" class="clickedit" style="border:3px solid black;  background-color:white;">' + resultado.user_profile__user__username + '</td><td id="score'+$contador+'" class="clickedit" style="border:3px solid black; background-color:white;">' + resultado.score + '</td><td id="dateplayed'+$contador+'" class="clickedit" style="border:3px solid black; background-color:white;">' + fechaFormateada + '</td></tr>';
+              filasResultados += '<tr><td style="border:3px solid black; background-color:white;"><img src="' + img_src + '" id="botonBorrarTabla"></td><td style="border:3px solid black;  background-color:white;" >'+$contador+'</td><td id="user'+$contador+'" class="clickedit" style="border:3px solid black;  background-color:white;">' + resultado.user_profile__user__username + '</td><td id="score'+$contador+'" class="clickedit" style="border:3px solid black; background-color:white;">' + resultado.score + '</td><td id="dateplayed'+$contador+'" style="border:3px solid black; background-color:white;">' + fechaFormateada + '</td></tr>';
               $contador++;
             });
             $('#tablaGenerada').html(filasResultados);

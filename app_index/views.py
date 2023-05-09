@@ -113,12 +113,12 @@ def adminpanel3(request):
         juego = request.POST.get('juego')
         patron1 = r"^[a-zA-Z0-9_]+$"
         if re.match(patron1, val):
-            if len(clickid) == 5:
+            if len(clickid) == 6:
                 ultimo_caracter = clickid[-1]
                 ultimo_caracter_int = int(ultimo_caracter)
                 ultimo_caracter_int = ultimo_caracter_int - 1
                 ultimo_caracter2 = clickid[:-1]
-            elif len(clickid) == 6:
+            elif len(clickid) == 7:
                 ultimo_caracter = clickid[-2]
                 ultimo_caracter_int = int(ultimo_caracter)
                 ultimo_caracter_int = ultimo_caracter_int - 1
@@ -135,11 +135,12 @@ def adminpanel3(request):
                 print(juego)
                 
 
-                userExist = Score.objects.filter(score=val2).values('id')[:1]
+                userExist = Score.objects.filter(score=val2).values('id').order_by('-score')
+                print(userExist)
                 userid = userExist[0]['id']
 
-
-                valores5 = Score.objects.filter(id=userid).values('user_profile_id','score','date_played')[ultimo_caracter_int]
+                print(ultimo_caracter_int)
+                valores5 = Score.objects.filter(game_id=juego).values('user_profile_id','score','date_played').order_by('-score')[ultimo_caracter_int]
                 print(valores5)
 
                 mi_objeto = Score(user_profile_id=valores5['user_profile_id'],score=val,date_played=valores5['date_played'],game_id=juego)
