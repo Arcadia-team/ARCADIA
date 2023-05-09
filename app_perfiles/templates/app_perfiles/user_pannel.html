@@ -53,9 +53,13 @@
       <typing-effect 
         data-lines='["{{user.username}}"]'
         class="js-signup-typed-welcome" style="font-size: 65%;">
-        <span data-target="typing-effect.content" style="font-family: arcadeFont;color:rgba(249, 138, 249, 0.8)" class="text-mono"></span>
+        <span data-target="typing-effect.content" style="font-family: arcadeFont;color:rgba(249, 138, 249, 0.8); margin-right: 48%;" class="text-mono"></span>
         <span data-target="typing-effect.cursor" class="typing-effect-cursor">|</span>
       </typing-effect>
+
+    <!-- Buttons -->
+    <a style="color: transparent;" class="btn btn-success-data rounded m-2 p-2" href="{% url 'profile' %}">LOGIOUTT</a>
+    <a style="color: transparent;" class="btn btn-success-logout rounded m-2 p-2" href="{% url 'logout' %}">LOGIOUTT</a>
 
       <!-- Formulario -->
     <form style="width: 80%;" class="position-relative js-octocaptcha-parent" method="post">
