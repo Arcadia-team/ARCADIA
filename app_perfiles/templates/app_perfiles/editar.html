@@ -70,23 +70,15 @@
         {% csrf_token %}
 
         <!-- Avatar IMAGES-->
-
-        <img src="{% static 'app_index/avatares/ghost.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="ghost"> </a>
-        <img src="{% static 'app_index/avatares/pacman.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="pacman"> </a>
+        <img src="{% static 'app_index/avatares/pacman.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="pacman" style="cursor: pointer;"> </a>
+        <img src="{% static 'app_index/avatares/ghostazulfuerte.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="ghostazulfuerte" style="cursor: pointer;"> </a>
+        <img src="{% static 'app_index/avatares/ghostazul.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="ghostazul" style="cursor: pointer;"> </a>
+        <img src="{% static 'app_index/avatares/ghostrojo.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="ghostrojo" style="cursor: pointer;"> </a>
+        <img src="{% static 'app_index/avatares/ghostverde.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="ghostverde" style="cursor: pointer;"> </a>
+        <img src="{% static 'app_index/avatares/ghostrosa.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="ghostrosa" style="cursor: pointer;"> </a>
+        <img src="{% static 'app_index/avatares/ghostnaranja.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="ghostnaranja" style="cursor: pointer;"> </a>
         
-        <!-- Avatar choise -->
-        <div class="js-continue-step-container signup-continue-step-container">
-          <div class="mt-4">
-            <label for="login" class="labels-signup">
-              Avatar
-            </label>
-          </div>
-          <div class="d-flex flex-items-center flex-column flex-sm-row">
-            <div class="d-flex flex-items-center width-full">
-              {{form.avatar}}
-            </div>
-          </div>
-        </div>
+
         
         <br>
         <!-- Label -->

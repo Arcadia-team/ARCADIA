@@ -46,9 +46,19 @@ def userpanel(request):
         print(user)
         if imageID == 'pacman':
             idimagen = 1
-        elif imageID == 'ghost':
+        elif imageID == 'ghostazulfuerte':
             idimagen = 2
-        usuario = UserProfile.objects.get(avatar_id=idimagen).values('avatar_id__id')
+        elif imageID == 'ghostazul':
+            idimagen = 3
+        elif imageID == 'ghostrosa':
+            idimagen = 4
+        elif imageID == 'ghostnaranja':
+            idimagen = 5
+        elif imageID == 'ghostverde':
+            idimagen = 6
+        elif imageID == 'ghostrojo':
+            idimagen = 7
+        usuario = UserProfile.objects.filter(user_id__username=user).values('avatar_id').update(avatar_id=idimagen)
         print(usuario)
 
 
