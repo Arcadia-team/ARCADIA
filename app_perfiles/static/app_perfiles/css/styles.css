@@ -11381,7 +11381,8 @@ footer.footer {
   background-image:url("../assets/img/logout.png");
 }
 
-/* ----------------------------- boton logout ------------------------------------------*/
+
+/* ----------------------------- boton data ------------------------------------------*/
 
 .btn-success-data {
   color: #fff;
@@ -11399,6 +11400,7 @@ footer.footer {
   transition: 0.2s;
   background-image:url("../assets/img/data-button.png");
 }
+
 /*-------------------Css Original de ARCADIA (no frameworks)-----------  */
 
 
