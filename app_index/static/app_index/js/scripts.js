@@ -19,6 +19,22 @@ $(document).ready(function() {
       var imagePath = "/static/app_index/avatares/"+imageID+".png";
       console.log(imagePath);
       $('#actualizarImagen').attr('src', imagePath);
+      var csrftoken = Cookies.get('csrftoken');
+      $.ajax({
+          url: "/userpanel/",
+          method: "POST",
+          data: {
+              'imageID': imageID,
+              'csrfmiddlewaretoken': csrftoken
+          },
+          dataType: 'json',
+          success: function(response){
+            $campo.text(response.val); // Cambiar contenido del campo con la respuesta de Django
+          }
+      });
+
+
+
     });
     $(document).on('blur', '.clickedit input', function() {
       var clickedElement = $(this).closest('.clickedit');

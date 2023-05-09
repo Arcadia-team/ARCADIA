@@ -15,7 +15,6 @@ from app_perfiles.models import UserProfile
 #Para crear perfil default: 
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from app_perfiles.models import UserProfile
 from django.contrib.auth.models import User
 
 #Buscador
@@ -37,6 +36,25 @@ import plotly.graph_objs as go
 from plotly.offline import plot
 from plotly.subplots import make_subplots
 import re
+
+
+def userpanel(request):
+    if request.method == 'POST':
+        imageID = request.POST.get('imageID')
+        user = request.user.username
+        print(imageID)
+        print(user)
+        if imageID == 'pacman':
+            idimagen = 1
+        elif imageID == 'ghost':
+            idimagen = 2
+        usuario = UserProfile.objects.get(avatar_id=idimagen).values('avatar_id__id')
+        print(usuario)
+
+
+        return HttpResponse("Import añadido")
+            
+
 
 
 def adminpanel(request):
@@ -169,9 +187,6 @@ def adminpanel3(request):
 
                     valores5 = Score.objects.filter(game_id=juego).values('user_profile_id','score','date_played').order_by('-score')[ultimo_caracter_int]
                     print('valores5' +str(valores5))
-
-
-
 
                     mi_objeto = Score(user_profile_id=variableParaIF[0]['user_id'],score=valores5['score'],date_played=valores5['date_played'],game_id=juego)
                     print(mi_objeto)
