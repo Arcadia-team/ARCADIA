@@ -9,8 +9,8 @@ fps = 70,
 snake = [],
 snakeLength = 5,
 cellSize = 20,
-snakeColor = '#3498db',
-foodColor = '#ff3636',
+snakeColor = '#FF33FF',
+foodColor = '#FFFF33',
 foodX = [],
 foodY = [],
 food = {
@@ -192,7 +192,7 @@ function game(){
 	};
 
    ctx.beginPath();
-   setBackground('#fff', '#eee');
+   setBackground('#303030', '#3A3A3A');
    scoreIs.innerHTML = score;
    drawSnake();
    drawFood();
