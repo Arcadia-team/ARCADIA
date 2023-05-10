@@ -24,10 +24,17 @@ def tetris(request):
 
 def tetris2(request):
     score = request.POST.get('score') 
-    user_id = request.user.id
-    VariableScore = Score(score=score,game_id=3,user_profile_id=user_id)
-    VariableScore.save()
-    return HttpResponse('query enviada')
+    score = int(score)
+    if score != 0:
+        user_id = request.user.id
+        comprobarScore = Score.objects.filter(score=score,user_profile_id=user_id,game_id=3).values('id')
+        if len(comprobarScore) == 0:
+            VariableScore = Score(score=score,game_id=3,user_profile_id=user_id)
+            VariableScore.save()
+            return HttpResponse('query enviada')
+        else:
+            return HttpResponse('query no enviada, score repetido')
+    return HttpResponse('query no enviada, score es 0')
 
 def bubbleshooter(request):
     #numPartidas = Game.objects.get(id=7)
@@ -44,13 +51,17 @@ def snake(request):
 def snake2(request):
     score = request.POST.get('score')
     if score != '0':
-        print('asdasd')
         user_id = request.user.id
         #user_ip = request.META.get('REMOTE_ADDR')
         #print(user_ip)
-        VariableScore = Score(score=score,game_id=1,user_profile_id=user_id)
-        VariableScore.save()
-    return HttpResponse('query enviada')
+        comprobarScore = Score.objects.filter(score=score,user_profile_id=user_id,game_id=1).values('id')
+        if len(comprobarScore) == 0:
+            VariableScore = Score(score=score,game_id=1,user_profile_id=user_id)
+            VariableScore.save()
+            return HttpResponse('query enviada')
+        else:
+            return HttpResponse('query no enviada, score repetido')
+    return HttpResponse('query no enviada, score es 0')
         
 
 def pong(request):
@@ -61,11 +72,17 @@ def pong(request):
 
 def pong2(request):
     score = request.POST.get('score') 
-    user_id = request.user.id
-    VariableScore = Score(score=score,game_id=7,user_profile_id=user_id)
-    VariableScore.save()
-    return HttpResponse('query enviada')
 
+    if score != 0:
+        user_id = request.user.id
+        comprobarScore = Score.objects.filter(score=score,user_profile_id=user_id,game_id=7).values('id')
+        if len(comprobarScore) == 0:
+            VariableScore = Score(score=score,game_id=7,user_profile_id=user_id)
+            VariableScore.save()
+            return HttpResponse('query enviada')
+        else:
+            return HttpResponse('query no enviada, score repetido')
+    return HttpResponse('query no enviada, score es 0')
 def pacman(request):
     numPartidas = Game.objects.get(id=2)
     numPartidas.numPartidas = F('numPartidas') + 1
@@ -74,10 +91,16 @@ def pacman(request):
 
 def pacman2(request):
     score = request.POST.get('score') 
-    user_id = request.user.id
-    VariableScore = Score(score=score,game_id=2,user_profile_id=user_id)
-    VariableScore.save()
-    return HttpResponse('query enviada')
+    if score != 0:
+        user_id = request.user.id
+        comprobarScore = Score.objects.filter(score=score,user_profile_id=user_id,game_id=2).values('id')
+        if len(comprobarScore) == 0:
+            VariableScore = Score(score=score,game_id=2,user_profile_id=user_id)
+            VariableScore.save()
+            return HttpResponse('query enviada')
+        else:
+            return HttpResponse('query no enviada, score repetido')
+    return HttpResponse('query no enviada, score es 0')
 
 def spaceinvaders(request):
     return render(request, "app_games/spaceinvaders.html")
@@ -96,10 +119,16 @@ def asteroid(request):
 
 def asteroid2(request):
     score = request.POST.get('score')  
-    user_id = request.user.id
-    VariableScore = Score(score=score,game_id=5,user_profile_id=user_id)
-    VariableScore.save()
-    return HttpResponse('query enviada')
+    if score != 0:
+        user_id = request.user.id
+        comprobarScore = Score.objects.filter(score=score,user_profile_id=user_id,game_id=5).values('id')
+        if len(comprobarScore) == 0:
+            VariableScore = Score(score=score,game_id=5,user_profile_id=user_id)
+            VariableScore.save()
+            return HttpResponse('query enviada')
+        else:
+            return HttpResponse('query no enviada, score repetido')
+    return HttpResponse('query no enviada, score es 0')
 
 def dinosaur(request):
     numPartidas = Game.objects.get(id=4)
@@ -108,10 +137,14 @@ def dinosaur(request):
     return render(request, "app_games/dinosaur.html")
 
 def dinosaur2(request):
-    
     score = request.POST.get('score') 
-    user_id = request.user.id
-    VariableScore = Score(score=score,game_id=4,user_profile_id=user_id)
-    VariableScore.save()
-
-    return HttpResponse('query enviada')
+    if score != 0:
+        user_id = request.user.id
+        comprobarScore = Score.objects.filter(score=score,user_profile_id=user_id,game_id=4).values('id')
+        if len(comprobarScore) == 0:
+            VariableScore = Score(score=score,game_id=4,user_profile_id=user_id)
+            VariableScore.save()
+            return HttpResponse('query enviada')
+        else:
+            return HttpResponse('query no enviada, score repetido')
+    return HttpResponse('query no enviada, score es 0')

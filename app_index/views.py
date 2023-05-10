@@ -57,9 +57,6 @@ def userpanel(request):
         elif imageID == 'ghostrojo':
             idimagen = 7
         usuario = UserProfile.objects.filter(user_id__username=user).values('avatar_id').update(avatar_id=idimagen)
-        print(usuario)
-
-
         return HttpResponse("Import añadido")
             
 
@@ -92,7 +89,7 @@ def adminpanel(request):
         )
         fig.update_layout(
             height=600,
-            width=800,
+            width=600,
             margin=dict(l=50, r=50, t=50, b=50)
             # otras propiedades...
         )
