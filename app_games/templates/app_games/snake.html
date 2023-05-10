@@ -1,8 +1,10 @@
-{% extends "app_index/plantillaJuegos.html" %}
+{% extends "app_games/plantillaSnake.html" %}
 {% load static %}
 {% block content %}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+
+
+<script src="{% static 'app_games/snake/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'app_games/snake/js.cookie.min.js' %}"></script>
 
 <title>Snake</title>
 
