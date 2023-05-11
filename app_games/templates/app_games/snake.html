@@ -9,10 +9,8 @@
 <title>Snake</title>
 
 <link rel="stylesheet" href="{% static 'app_games/snake/css.css' %}">
-	{% csrf_token %}
-	<div class="score" id="score">0</div>
-	
-		<canvas id="canvas" height="581px" width="581px" style="margin-top:115px;"></canvas>
+	{% csrf_token %}	
+		<canvas id="canvas" height="641px" width="641px" style="margin-top:4.5%;"></canvas>
 	</div>
 <script type="application/javascript" src="{% static 'app_games/snake/js.js'%}"></script>
 {% endblock %}

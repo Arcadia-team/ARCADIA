@@ -22,6 +22,8 @@
         <section class=" text-center " id="pag" >
 			<div id="juego" class="row h-100 w-100" >
 				<img src="" class=" maquina h-100 w-50"  >
+				<div class="text-score container-score">Score: </div>
+				<div class="score container-score" id="score">0</div>
 				{% block content %}
 				
 				{% endblock %}
@@ -60,7 +62,7 @@
 			min-height:100vh;
 			max-height:100vh;
 			min-width:150vh;
-			max-width:150vh;
+			max-width:180vh;
 		}
 
 		.inte{
