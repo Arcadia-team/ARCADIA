@@ -1,12 +1,12 @@
 from django.urls import path
-from app_games.views import games, tetris, snake, pong, bubbleshooter, pacman, spaceinvaders, slope, asteroid, dinosaur, snake2, dinosaur2, tetris2, asteroid2, pacman2, pong2
+from app_games.views import games, tetris, snake, pong, flappybird, pacman, spaceinvaders, slope, asteroid, dinosaur, snake2, dinosaur2, tetris2, asteroid2, pacman2, pong2
 
 urlpatterns = [
     
     path('', games, name="games"),
     path('tetris/', tetris, name="tetris"),
     path('tetris2/', tetris2, name="tetris2"),
-    path('bubbleshooter/', bubbleshooter, name="bubbleshooter"),
+    path('flappybird/', flappybird, name="flappybird"),
     path('snake/', snake, name="snake"),
     path('snake2/', snake2, name="snake2"),
     path('pong/', pong, name="pong"),

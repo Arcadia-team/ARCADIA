@@ -36,11 +36,11 @@ def tetris2(request):
             return HttpResponse('query no enviada, score repetido')
     return HttpResponse('query no enviada, score es 0')
 
-def bubbleshooter(request):
+def flappybird(request):
     #numPartidas = Game.objects.get(id=7)
     #numPartidas.numPartidas = F('numPartidas') + 1
     #numPartidas.save()
-    return render(request, "app_games/bubbleshooter.html")
+    return render(request, "app_games/flappybird.html")
 
 def snake(request):
     numPartidas = Game.objects.get(id=1)
