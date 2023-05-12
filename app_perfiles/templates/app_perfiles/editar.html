@@ -59,11 +59,12 @@
     <a style="color: transparent;" class="btn btn-success-logout rounded m-2 p-2" href="{% url 'logout' %}">LOGIOUTT</a>
       
     <!-- Formulario -->
-    <form class="position-relative js-octocaptcha-parent" method="post">
+    <form style="" class="position-relative js-octocaptcha-parent" method="post">
       <div class="js-continue-step-container signup-continue-step-container mt-4">
         
         {% csrf_token %}
-
+       
+        <br>
         <!-- Avatar IMAGES-->
         <img src="{% static 'app_index/avatares/pacman.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="pacman" style="cursor: pointer;"> </a>
         <img src="{% static 'app_index/avatares/ghostazulfuerte.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="ghostazulfuerte" style="cursor: pointer;"> </a>
@@ -76,9 +77,10 @@
 
         
         <br>
+        <br>
         <!-- Label -->
         <div>
-          <label for="email" class="labels-signup letrasamarillas">
+          <label for="email" style=" margin-left: 10px;" class="labels-signup letrasamarillas">
             Bio
           </label>
         </div>
@@ -94,7 +96,7 @@
         <!-- Username inputs -->
         <div class="js-continue-step-container signup-continue-step-container">
           <div class="mt-4">
-            <label for="login" class="labels-signup letrasamarillas">
+            <label for="login" style=" margin-left: 10px;" class="labels-signup letrasamarillas">
               Website
             </label>
           </div>
@@ -103,14 +105,19 @@
               {{form.website}}
             </div>
           </div>
+          <br>
         </div>
         
-        <br>
+       
         <br>
         <input type="submit" value="SAVE" class="signup-submit-button width-full py-2 js-octocaptcha-form-submit" />
-      
       </div> 
     </form>  
+    
+   
+      
+  
+  
 </div>
   
 </div>
@@ -119,6 +126,9 @@
   </div>
 
   </div>
+  <br>
+  <br>
+  <br>
 
 
 {% endblock contenido_no_heredado %}   
