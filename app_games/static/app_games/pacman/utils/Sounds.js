@@ -63,7 +63,7 @@ var Sounds = (function () {
         
         soundFiles.forEach(function (sound) {
             self[sound] = function () {
-                audio = new Audio("audio/" + sound + self.format);
+                audio = new Audio(imageBasePath + sound + self.format);
                 if (self.format && !self.mute) {
                     audio.play();
                 }

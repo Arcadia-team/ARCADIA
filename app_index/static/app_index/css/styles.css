@@ -11461,7 +11461,7 @@ footer.footer {
   cursor:pointer;
 }
 .fotobomberman{
-  background-image: url('../assets/img/bomberman.png');
+  background-image: url('../assets/img/bomberman3.png');
   background-repeat: no-repeat;
   width: 50%;
   margin: auto;
@@ -11496,10 +11496,10 @@ footer.footer {
   cursor:pointer;
 }
 
-.fotobubbleshooter{
-  background-image: url('../assets/img/boobleshooterimagen.png');
+.fotoflappybird{
+  background-image: url('../assets/img/flappybird.png');
   background-repeat: no-repeat;
-  width: 20%;
+  width: 50%;
   margin: auto;
   cursor:pointer;
 }

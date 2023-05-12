@@ -13,9 +13,10 @@ def rankings(request):
     slope = Score.objects.filter(game_id='6').order_by('-score')[:3]
     pong = Score.objects.filter(game_id='7').order_by('-score')[:3]
     bomberman = Score.objects.filter(game_id='8').order_by('-score')[:3]
+    flappybird = Score.objects.filter(game_id='9').order_by('-score')[:3]
     
 
-    return render(request, "app_rankings/rankings.html", {'snake':snake, 'tetris':tetris, 'pacman':pacman, 'dinosaur':dinosaur, 'asteroid':asteroid, 'slope':slope, 'pong':pong, 'bomberman':bomberman })
+    return render(request, "app_rankings/rankings.html", {'snake':snake, 'tetris':tetris, 'pacman':pacman, 'dinosaur':dinosaur, 'asteroid':asteroid, 'slope':slope, 'pong':pong, 'bomberman':bomberman, 'flappybird':flappybird, })
 
 #RANKING - POR JUEGO
 def ranking(request):
@@ -46,4 +47,6 @@ def ranking(request):
         if boton_id == 'BOMBERMAN':
             pong = Score.objects.filter(game_id='8').order_by('-score')[:10]
             return render(request, 'app_rankings/ranking.html', {'boton_id': boton_id,'pong': pong,'boton_id_foto':boton_id_foto})
-
+        if boton_id == 'FLAPPYBIRD':
+            pong = Score.objects.filter(game_id='9').order_by('-score')[:10]
+            return render(request, 'app_rankings/ranking.html', {'boton_id': boton_id,'pong': pong,'boton_id_foto':boton_id_foto})

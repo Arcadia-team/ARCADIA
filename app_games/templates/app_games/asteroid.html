@@ -1,4 +1,4 @@
-{% extends "app_index/plantillaJuegos.html" %}
+
 {% load static %}
 
 {% block content %}
@@ -6,6 +6,7 @@
 <html>
   <head>
     <script type="application/javascript" src="{% static 'app_games/asteroid/jquery-1.4.1.min.js'%}"></script>
+    <link rel="icon" type="image/png" href="{% static 'app_index/assets/img/asteroid.png'%}">
     <script type="application/javascript" src="{% static 'app_games/asteroid/vector_battle_regular.typeface.js'%}"></script>
     <script type="application/javascript" src="{% static 'app_games/asteroid/ipad.js'%}"></script>
     <script type="application/javascript" src="{% static 'app_games/asteroid/game.js'%}"></script>

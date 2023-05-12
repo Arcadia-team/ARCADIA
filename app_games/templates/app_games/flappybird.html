@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FlappyBird</title>
+    <link rel="icon" type="image/png" href="{% static 'app_index/assets/img/faviconflappybird.png'%}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
     
     <link rel="stylesheet" href="{% static 'app_games/flappybird/style.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
@@ -15,7 +18,7 @@
         var imageBasePath = "{% static 'app_games/flappybird/img/' %}";
         var imageBasePath2 = "{% static 'app_games/flappybird/sfx/' %}";
     </script>
-    <canvas id="canvas" width="276" height="414"></canvas>
+    <canvas id="canvas"></canvas>
     
     <script type="application/javascript" src="{% static 'app_games/flappybird/game.js'%}"></script>
 </body>

@@ -6,6 +6,53 @@
 
 <title>Rankings</title>
     
+<button onclick="topFunction()" id="myBtn" title="Volver arriba">Volver arriba</button>
+  
+<script>
+  // Mostrar el botón cuando se haya desplazado una cierta distancia desde la parte superior de la página
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("myBtn").style.display = "block";
+    } else {
+      document.getElementById("myBtn").style.display = "none";
+    }
+  }
+  
+  // Volver al principio de la página cuando se haga clic en el botón
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+<style>
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      color: white;
+      cursor: pointer;
+    }
+    
+    #myBtn::before {
+      content: "\2191"; /* Código Unicode para la flecha hacia arriba */
+      font-size: 24px;
+    }
+    
+    #myBtn:hover {
+      color: #777;
+    }
+  </style>
+
+
+
 <!-- Icons Grid-->
 <section class="bg-light">
     <div class="container">
@@ -243,6 +290,35 @@
                     {% csrf_token %}
 
                     <input type="hidden" id="boton_id" value="BOMBERMAN" name="boton_id">
+                    <button type="submit" class="btn btn-primary botonVerMasRakings">Ver más</button>
+                </form>
+            
+            </div>
+            <div class="col-md-5 fondoPurpura alturadiv2">
+                <div class="fotoflappybird num1ranking"></div>
+                <h1 class="letrasamarillas">Flappy Bird</h1>
+                {% for objeto in flappybird %}
+                <table class="">
+                    <thead>
+                        <tr class="letrasamarillas">
+                            <th>Posición</th>
+                            <th>Nombre</th>
+                            <th>Pais</th>
+                            <th>Puntuación</th>
+                        </tr>
+                    </thead>
+                    <tr class="fondoBlanco borde3px">
+                        <td class="borde3px tamañotablas">{{ forloop.counter }}</td>
+                        <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
+                        <td class="borde3px tamañotablas">ESP</td>
+                        <td class="borde3px tamañotablas">{{objeto.score}}</td>
+                    </tr>
+                </table>
+                {% endfor %} 
+                <form method="post" action="{% url 'ranking' %}">
+                    {% csrf_token %}
+
+                    <input type="hidden" id="boton_id" value="FLAPPYBIRD" name="boton_id">
                     <button type="submit" class="btn btn-primary botonVerMasRakings">Ver más</button>
                 </form>
             

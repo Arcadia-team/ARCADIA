@@ -42,6 +42,21 @@ def flappybird(request):
     #numPartidas.save()
     return render(request, "app_games/flappybird.html")
 
+def flappybird2(request):
+    score = request.POST.get('score') 
+    print(score)
+    score = int(score)
+    if score != 0:
+        user_id = request.user.id
+        comprobarScore = Score.objects.filter(score=score,user_profile_id=user_id,game_id=9).values('id')
+        if len(comprobarScore) == 0:
+            VariableScore = Score(score=score,game_id=9,user_profile_id=user_id)
+            VariableScore.save()
+            return HttpResponse('query enviada')
+        else:
+            return HttpResponse('query no enviada, score repetido')
+    return HttpResponse('query no enviada, score es 0')
+
 def snake(request):
     numPartidas = Game.objects.get(id=1)
     numPartidas.numPartidas = F('numPartidas') + 1

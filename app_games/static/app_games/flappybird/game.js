@@ -3,6 +3,7 @@ const scrn = document.getElementById("canvas");
 const sctx = scrn.getContext("2d");
 scrn.width = 800; // Ancho del lienzo
 scrn.height = 600; // Alto del lienzo
+var saveScore = 0;
 
 scrn.tabIndex = 1;
 scrn.addEventListener("click", () => {
@@ -32,11 +33,14 @@ scrn.onkeydown = function keyDown(e) {
       case state.getReady:
         state.curr = state.Play;
         SFX.start.play();
+        saveScore = 0;
         break;
       case state.Play:
         bird.flap();
+        saveScore = 0;
         break;
       case state.gameOver:
+        saveScore = 0;
         state.curr = state.getReady;
         bird.speed = 0;
         bird.y = 100;
@@ -70,8 +74,8 @@ const gnd = {
   y: 0,
   draw: function () {
     this.y = parseFloat(scrn.height - this.sprite.height);
-    const groundWidth = this.sprite.width ;
-    const numTiles = Math.ceil(scrn.width / groundWidth);
+    const groundWidth = this.sprite.width;
+    const numTiles = Math.ceil(scrn.width);
 
     for (let i = 0; i < numTiles; i++) {
       const xPos = this.x + i * groundWidth;
@@ -79,7 +83,7 @@ const gnd = {
     }
   },
   update: function () {
-    if (state.curr == state.Play) return;
+    if (state.curr !== state.Play) return;
     this.x -= 1; // Ajusta el desplazamiento horizontal del suelo según tus necesidades
     this.x %= this.sprite.width; // Reinicia la posición del suelo cuando se haya desplazado completamente
   },
@@ -295,11 +299,30 @@ const UI = {
         sctx.lineWidth = "2";
         sctx.font = "40px Squada One";
         let sc = `SCORE :     ${this.score.curr}`;
+        if (saveScore == 0){
+          saveScore = 1;
+          var csrftoken = Cookies.get('csrftoken');
+          $.ajax({
+            url: "/games/flappybird2/",
+            method: "POST",
+            data: {
+              'score': this.score.curr,
+              'csrfmiddlewaretoken': csrftoken
+            },
+            dataType: 'json',
+            success: function(response) {
+              console.log(response);
+            }
+          });
+        }
+
         try {
           this.score.best = Math.max(
             this.score.curr,
             localStorage.getItem("best")
+            
           );
+
           localStorage.setItem("best", this.score.best);
           let bs = `BEST  :     ${this.score.best}`;
           sctx.fillText(sc, scrn.width / 2 - 80, scrn.height / 2 + 0);
