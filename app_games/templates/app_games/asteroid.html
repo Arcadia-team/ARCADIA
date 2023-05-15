@@ -1,20 +1,18 @@
-
+{% extends "app_games/plantillaAsteroid.html" %}
 {% load static %}
-
 {% block content %}
 
 <html>
   <head>
     <script type="application/javascript" src="{% static 'app_games/asteroid/jquery-1.4.1.min.js'%}"></script>
-    <link rel="icon" type="image/png" href="{% static 'app_index/assets/img/asteroid.png'%}">
     <script type="application/javascript" src="{% static 'app_games/asteroid/vector_battle_regular.typeface.js'%}"></script>
     <script type="application/javascript" src="{% static 'app_games/asteroid/ipad.js'%}"></script>
     <script type="application/javascript" src="{% static 'app_games/asteroid/game.js'%}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+    <script src="{% static 'app_games/asteroid/jquery-3.6.0.min.js'%}"></script>
+    <script src="{% static 'app_games/asteroid/js.cookie.min.js'%}"></script>
 
     <style>
-      #canvas { border:1px solid black; top:0px; left:0px; }
+      #canvas { border:1px solid black; top:10px; left:0px; }
       .button { position:absolute; border:1px solid black; }
       #left-controls { position:absolute; left:1px; bottom:0px; display:none; }
       #right-controls { position:absolute; right:1px; bottom:0px; display:none; }
@@ -27,15 +25,19 @@
   <body>
     <div id="game-container">
       {% csrf_token %}
-      <canvas id="canvas" width="800" height="610" style="position: absolute;margin-left:300px;margin-top:105px;background-color: white;"></canvas>
-      <div id="left-controls">
-        <div id="up" class='button'>THRUST</div>
-        <div id="left" class='button'>LEFT</div>
-        <div id="right" class='button'>RIGHT</div>
-      </div>
-      <div id="right-controls">
-        <div id="space" class='button'>FIRE</div>
-      </div>
+      <canvas id="canvas" width="765px" height="640px" style="margin-top:3.8%; margin-left: 30%; position: absolute; background-color: grey;">
+        
+        <div id="left-controls">
+          <div id="up" class='button'>THRUST</div>
+          <div id="left" class='button'>LEFT</div>
+          <div id="right" class='button'>RIGHT</div>
+        </div>
+        <div id="right-controls">
+          <div id="space" class='button'>FIRE</div>
+        </div>
+      
+      </canvas>
+    
     </div>
   </body>
 </html>
