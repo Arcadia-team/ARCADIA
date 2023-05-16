@@ -1,5 +1,5 @@
 
-{% extends "app_index/plantillaJuegos.html" %}
+{% extends "app_games/plantillaPong.html" %}
 {% load static %}
 {% block content %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -7,7 +7,7 @@
 
 <link rel="stylesheet" href="{% static 'app_games/pong/css/styles.css' %}">
 {% csrf_token %}
-<canvas class="bg-dark" height="599px" width="599px" style="position: absolute;margin-top:115px;" ></canvas>
+<canvas class="bg-dark" height="500x" width="600px" style="position: absolute; margin-top:14vh;" ></canvas>
 
 <script type="application/javascript" src="{% static 'app_games/pong/js/pong.js'%}"></script>
 

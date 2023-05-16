@@ -7,9 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Snake</title>
+        <title>Pong</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{% static 'app_index/assets/img/snake.png'%}" />
+        <link rel="icon" type="image/x-icon" href="{% static 'app_index/assets/img/fotopong.png'%}" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
         <!-- Google fonts-->
@@ -22,8 +22,6 @@
         <section class=" text-center " id="pag" >
 			<div id="juego" class="row h-100 w-100" >
 				<img src="" class=" maquina h-100 w-50"  >
-				<div class="text-score container-score">SCORE: </div>
-				<div class="score container-score" id="score">0</div>
 				{% block content %}
 				
 				{% endblock %}
@@ -61,8 +59,8 @@
 		.maquina{
 			min-height:100vh;
 			max-height:100vh;
-			min-width:150vh;
-			max-width:180vh;
+			min-width:185vh;
+			max-width:185vh;
 		}
 
 		.inte{
