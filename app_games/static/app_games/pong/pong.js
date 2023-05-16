@@ -29,13 +29,13 @@ var Ball = {
 var Paddle = {
   new: function (side) {
     return {
-      width: 18,
-      height: 70,
+      width: 10,
+      height: 10,
       x: side === 'left' ? 150 : this.canvas.width - 150,
       y: (this.canvas.height / 2) - 35,
       score: 0,
       move: DIRECTION.IDLE,
-      speed: 10
+      speed: 1
     };
   }
 };
@@ -61,7 +61,7 @@ var Game = {
     this.running = this.over = false;
     this.turn = this.paddle;
     this.timer = this.round = 0;
-    this.color = '#2c3e50';
+    this.color = '#212529';
 
     Pong.menu();
     Pong.listen();
@@ -81,7 +81,7 @@ var Game = {
     );
 
     // Change the canvas color;
-    Pong.context.fillStyle = '#ffffff';
+    Pong.context.fillStyle = 'pink';
 
     // Draw the end game menu text ('Game Over' and 'Winner')
     Pong.context.fillText(text,
