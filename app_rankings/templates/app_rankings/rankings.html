@@ -5,29 +5,31 @@
 {% block contenido_no_heredado %}
 
 <title>Rankings</title>
-    
-<button onclick="topFunction()" id="myBtn" title="Volver arriba">Volver arriba</button>
-  
+<button onclick="scrollToTop()" id="scrollBtn" title="Ir arriba">Subir arriba</button>
+
+
+
 <script>
-  // Mostrar el botón cuando se haya desplazado una cierta distancia desde la parte superior de la página
-  window.onscroll = function() {scrollFunction()};
-  
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      document.getElementById("myBtn").style.display = "block";
-    } else {
-      document.getElementById("myBtn").style.display = "none";
-    }
+  // Función para desplazarse hasta arriba
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-  
-  // Volver al principio de la página cuando se haga clic en el botón
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+
+  // Mostrar el botón cuando se desplaza cierta distancia hacia abajo
+  window.onscroll = function() {
+    showScrollBtn();
+  };
+
+  function showScrollBtn() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById('scrollBtn').style.display = 'block';
+    } else {
+      document.getElementById('scrollBtn').style.display = 'none';
+    }
   }
 </script>
 <style>
-    #myBtn {
+    #scrollBtn {
       display: none;
       position: fixed;
       bottom: 20px;
@@ -36,22 +38,27 @@
       font-size: 18px;
       border: none;
       outline: none;
-      background-color: transparent;
+      background-color: #555;
       color: white;
       cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
     }
-    
-    #myBtn::before {
-      content: "\2191"; /* Código Unicode para la flecha hacia arriba */
-      font-size: 24px;
+
+    #scrollBtn:hover {
+      background-color: #777;
     }
-    
-    #myBtn:hover {
-      color: #777;
+
+    /* Media queries para hacer el botón responsive */
+    @media (max-width: 600px) {
+      #scrollBtn {
+        bottom: 10px;
+        right: 10px;
+        font-size: 14px;
+        padding: 10px;
+      }
     }
   </style>
-
-
 
 <!-- Icons Grid-->
 <section class="bg-light">

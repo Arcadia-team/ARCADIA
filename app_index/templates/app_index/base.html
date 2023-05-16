@@ -78,29 +78,27 @@
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">About</a></li>
+                            <li class="list-inline-item"><a href="/">Home</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contact</a></li>
+                            <li class="list-inline-item"><a href="/games/">Games</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                            <li class="list-inline-item"><a href="/rankings/">Rankings</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                            {% if user.is_staff == 1 %}
+                            <li class="list-inline-item"><a href="/adminpanel/">Adminpanel</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="/update-user/">Edit User</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            {% else %}
+                            <li class="list-inline-item"><a href="/login/">Login</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            {% endif %}
+                            
+                            
                         </ul>
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; Arcadia Project 2022 by Martí Fernández / Juanfran Muñoz / Bryan Preciado.</p>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; Arcadia Project 2023 by Martí Fernández / Juanfran Muñoz / Bryan Preciado.</p>
                     </div>
-                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
         </footer>

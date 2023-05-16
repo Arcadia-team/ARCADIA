@@ -13,6 +13,9 @@ function redirigir(li){
 
 
 
+
+
+
 $(document).ready(function() {
     $('.clicklogopanelUser').click(function() {
       var imageID = $(this).attr('id');
@@ -32,9 +35,6 @@ $(document).ready(function() {
             $campo.text(response.val); // Cambiar contenido del campo con la respuesta de Django
           }
       });
-
-
-
     });
     $(document).on('blur', '.clickedit input', function() {
       var clickedElement = $(this).closest('.clickedit');
@@ -56,7 +56,6 @@ $(document).ready(function() {
       input.focus();
     });
     $(document).on('keydown', 'input[type="text"]', function(event) {
-      console.log(event.which)
       var $campo = $(this).closest('td'); // Obtener la referencia al campo
       
       // Agregar el evento 'blur' al campo
@@ -92,10 +91,11 @@ $(document).ready(function() {
         var fila = $(this).parent().parent(); // Obtener la fila de la tabla
       }
     });
-    
 
-    $('#letra').on('keyup', function(event){
-        var contenido = $("#letra").val();
+
+    $('#letra').on('keyup', function(event){   
+      
+        event.preventDefault();
         if ((event.key !== ultimaLetra)  || (event.key == 'Backspace')) {
           if((soloLetras.test(event.key)) || (event.key == 'Backspace')){ //Compruebo si son letras
             if(event.key !== 'Backspace')
@@ -104,7 +104,8 @@ $(document).ready(function() {
             }else if(contenido.length == 0)
             {
               palabra = "";
-            }else
+            }
+            else
             {
               palabra = palabra.slice(0, palabra.length - 1); //compruebo si lo que pone el usuario es diferente a la tecla de borrar 
             } 

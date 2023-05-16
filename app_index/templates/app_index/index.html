@@ -15,11 +15,11 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <h1 style="font-family: arcadeFont; font-size: 180%;" class="mb-5"> Search your games! </h1>
-                            <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN" method="POST">
                                 <div style="font-family: arcadeFont;"class="row">
                                     <div class="col">
                                         {% csrf_token %}
-                                        <input class="form-control form-control-lg" id="letra" type="text" placeholder="Pacman..." />
+                                        <input class="form-control form-control-lg" id="letra" placeholder="Pacman..."/>
                                         <div id="mi-lista"></div>
                                     </div>
                                 </div>
@@ -35,22 +35,27 @@
                 <h1 style="font-family: arcadeFont;font-size: 180%;" class="homeJuegosPopulares">POPULAR GAMES</h1>
                 <div class="row">
                     <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 fondoPurpura">
-                            <div class="features-icons-icon {{fototop1}}" id="IDfotoTop1"></div>
-                            <h3 class="letrasamarillas" id="IDLetrasTop1">{{top1}}</h3>
-                        </div>
+                        <a href="{% url top1 %}">
+                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 fondoPurpura">
+                                <div class="features-icons-icon {{fototop1}}" id="IDfotoTop1"></div>
+                                <h3 class="letrasamarillas" id="IDLetrasTop1">{{top1}}</h3>
+                            </div>
+                        </a>
                     </div>
                     <div class="col-lg-4">
-                        
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 fondoPurpura">
-                            <div class="features-icons-icon d-flex {{fototop2}}"></div>
-                            <h3 class="letrasamarillas">{{top2}}</h3>
-                        </div>
+                        <a href="{% url top2 %}">
+                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 fondoPurpura">
+                                <div class="features-icons-icon d-flex {{fototop2}}"></div>
+                                <h3 class="letrasamarillas">{{top2}}</h3>
+                            </div>
+                        </a>
                     </div>
                     <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-0 mb-lg-3 fondoPurpura">
-                            <div class="features-icons-icon d-flex {{fototop3}}"></div>
-                            <h3 class="letrasamarillas">{{top3}}</h3>
+                        <a href="{% url top2 %}">
+                            <div class="features-icons-item mx-auto mb-0 mb-lg-3 fondoPurpura">
+                                <div class="features-icons-icon d-flex {{fototop3}}"></div>
+                                <h3 class="letrasamarillas">{{top3}}</h3>
+                        <a href="{% url top2 %}">
                         </div>
                     </div>
                 </div>
