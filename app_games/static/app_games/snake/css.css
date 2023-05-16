@@ -9,13 +9,42 @@ body {
     background: -webkit-linear-gradient(top, #7fc5c9, #deabbe);
     text-align: center;
 }
-.score {
-    font-family: verdana;
-    font-size: 2em;
-    position: relative;
-    color: #fff;
+
+@font-face {
+    font-family: ARKANOID;
+    src: url("Arka_solid.ttf");
+  }
+
+  .container-score{
+    max-width: 2vh;
+    max-height: 2vh;
+   
+    min-width: 2vh;
+    min-height: 2vh;
+  }
+ 
+  .text-score {
+    font-family: "Arka_solid.ttf";
+    position: absolute;
+    bottom: 0;
+    left: 47.6%;
+    transform: translateX(-45%);
+    font-size: 2vh;
+    color: white;
+    padding: 20.82vh;
+  }
+  .score {
+    font-family: "Arka_solid.ttf";
+    position: absolute;
+    bottom: 0;
+    left: 51.5%;
+    transform: translateX(-43%);
+    font-size: 2vh;
+    color: white;
+    padding: 20.92vh;
 }
-canvas {
+
+  canvas {
     display: block;
     position: absolute;
     margin: auto;
@@ -23,4 +52,9 @@ canvas {
     bottom: 0;
     right: 0;
     left: 0;
+    max-width: 67vh;
+    max-height: 67vh;
+    min-width: 67vh;
+    min-height: 67vh;
+    
 }
