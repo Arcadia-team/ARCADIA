@@ -18,11 +18,11 @@ var Ball = {
     return {
       width: 18,
       height: 18,
-      x: (this.canvas.width / 2) - 9,
-      y: (this.canvas.height / 2) - 9,
+      x: (this.canvas.width / 2) ,
+      y: (this.canvas.height / 2) ,
       moveX: DIRECTION.IDLE,
       moveY: DIRECTION.IDLE,
-      speed: incrementedSpeed || 9
+      speed: incrementedSpeed || 3
     };
   }
 };

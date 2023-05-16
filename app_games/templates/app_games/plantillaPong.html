@@ -7,9 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Landing Page - Start Bootstrap Theme</title>
+        <title>Pong</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="{% static 'app_index/assets/img/fotopong.png'%}" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
         <!-- Google fonts-->
@@ -56,18 +56,11 @@
 			align-items:top;
 			
 		}
-		canvas{
-			min-height:68vh;
-			max-height:68vh;
-			min-width:90vh;
-			max-width:90vh;
-			margin-top:6.5vh;
-		}
 		.maquina{
 			min-height:100vh;
 			max-height:100vh;
-			min-width:150vh;
-			max-width:150vh;
+			min-width:185vh;
+			max-width:185vh;
 		}
 
 		.inte{
@@ -84,7 +77,7 @@
 		</style>
 		 <!-- Fondos aleatorios JS-->
 		<script type= "text/javascript">
-			var fondos=["{% static 'app_index/assets/img/arcade2.gif' %}","{% static 'app_index/assets/img/station.gif' %}","{% static 'app_index/assets/img/retro.gif' %}"];
+			var fondos=["{% static 'app_index/assets/img/arcade2.gif' %}","{% static 'app_index/assets/img/retro.gif' %}"];
 			var maquinas=["{% static 'app_index/assets/img/maquina.png' %}"];
 			function arcade() {
 				var image = fondos[Math.floor(Math.random()*fondos.length)];
