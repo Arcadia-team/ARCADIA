@@ -60,8 +60,9 @@ def bomberman(request):
     return render(request, "app_games/bomberman.html")
 
 def bomberman2(request):
-    
-    score = request.POST.get('score')
+    print('entra')
+    score = request.POST.get('score') 
+    print(score)
     return HttpResponse('query no enviada, score es 0')
 
 
