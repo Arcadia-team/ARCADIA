@@ -230,10 +230,6 @@ def inicio(request):
     partida3 = partidas[2].lower()
     fototop3 = 'foto'+partida3
 
-    print(partida1)
-    print(partida2)
-    print(partida3)
-
     return render(request, "app_index/index.html",{'top1':partida1,'top2':partida2,'top3':partida3,'fototop1':fototop1,'fototop2':fototop2,'fototop3':fototop3})
 
 
@@ -269,11 +265,13 @@ def signup_request(request):
         form = SignUpForm(request.POST)
         
         if form.is_valid():
+            
             #guardamos info user y procedemos a crear perfil con foto.
             form.save()
             
             #Redirige a inicio dando la bienvenida
-            return render(request,"app_index/index.html",{"mensaje":"User created, ¡Welcome to Arcadia!"})
+            #return render(request,"app_index/index.html",{"mensaje":"User created, ¡Welcome to Arcadia!"})
+            return redirect(reverse('inicio'))
         
         mensaje="Please check your signup credentials and try again!"  
      
