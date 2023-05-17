@@ -230,6 +230,10 @@ def inicio(request):
     partida3 = partidas[2].lower()
     fototop3 = 'foto'+partida3
 
+    print(partida1)
+    print(partida2)
+    print(partida3)
+
     return render(request, "app_index/index.html",{'top1':partida1,'top2':partida2,'top3':partida3,'fototop1':fototop1,'fototop2':fototop2,'fototop3':fototop3})
 
 
