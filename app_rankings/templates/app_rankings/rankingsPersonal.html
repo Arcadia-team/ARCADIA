@@ -5,60 +5,7 @@
 {% block contenido_no_heredado %}
 
 <title>Rankings</title>
-<button onclick="scrollToTop()" id="scrollBtn" title="Ir arriba">Subir arriba</button>
 
-
-
-<script>
-  // Función para desplazarse hasta arriba
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  // Mostrar el botón cuando se desplaza cierta distancia hacia abajo
-  window.onscroll = function() {
-    showScrollBtn();
-  };
-
-  function showScrollBtn() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      document.getElementById('scrollBtn').style.display = 'block';
-    } else {
-      document.getElementById('scrollBtn').style.display = 'none';
-    }
-  }
-</script>
-<style>
-    #scrollBtn {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 30px;
-      z-index: 99;
-      font-size: 18px;
-      border: none;
-      outline: none;
-      background-color: #555;
-      color: white;
-      cursor: pointer;
-      padding: 15px;
-      border-radius: 4px;
-    }
-
-    #scrollBtn:hover {
-      background-color: #777;
-    }
-
-    /* Media queries para hacer el botón responsive */
-    @media (max-width: 600px) {
-      #scrollBtn {
-        bottom: 10px;
-        right: 10px;
-        font-size: 14px;
-        padding: 10px;
-      }
-    }
-  </style>
 
 <!-- Icons Grid-->
 <section class="bg-light">

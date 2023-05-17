@@ -44,7 +44,6 @@ def flappybird(request):
 
 def flappybird2(request):
     score = request.POST.get('score') 
-    print(score)
     score = int(score)
     if score != 0:
         user_id = request.user.id
@@ -56,6 +55,15 @@ def flappybird2(request):
         else:
             return HttpResponse('query no enviada, score repetido')
     return HttpResponse('query no enviada, score es 0')
+
+def bomberman(request):
+    return render(request, "app_games/bomberman.html")
+
+def bomberman2(request):
+    
+    score = request.POST.get('score')
+    return HttpResponse('query no enviada, score es 0')
+
 
 def snake(request):
     numPartidas = Game.objects.get(id=1)
