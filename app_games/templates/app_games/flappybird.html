@@ -1,4 +1,6 @@
 {% load static %}
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +20,9 @@
         var imageBasePath = "{% static 'app_games/flappybird/img/' %}";
         var imageBasePath2 = "{% static 'app_games/flappybird/sfx/' %}";
     </script>
-    <canvas id="canvas"></canvas>
+    <div  class="inte d-flex align-items-start justify-content-center" ><canvas id="canvas"></canvas></div>
     
     <script type="application/javascript" src="{% static 'app_games/flappybird/game.js'%}"></script>
 </body>
 </html>
+{% endblock content %}
