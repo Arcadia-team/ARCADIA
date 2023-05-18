@@ -11571,6 +11571,13 @@ footer.footer {
 .letrasamarillas{
   color:yellow;
   text-align: center;
+  
+}
+.letrasamarillas_juegos{
+  color:yellow;
+  text-align: center;
+  font-family: "ArcadeFont";
+  font-size: medium;
 }
 
 .homeJuegosPopulares{
