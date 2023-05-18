@@ -78,19 +78,21 @@
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="/">Home</a></li>
+                            <li class="list-inline-item"><a href="{% url 'inicio' %}">Home</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="/games/">Games</a></li>
+                            <li class="list-inline-item"><a href="{% url 'games' %}">Games</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="/rankings/">Rankings</a></li>
+                            <li class="list-inline-item"><a href="{% url 'rankings' %}">Rankings</a></li>
                             <li class="list-inline-item">⋅</li>
-                            {% if user.is_staff == 1 %}
-                            <li class="list-inline-item"><a href="/adminpanel/">Adminpanel</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="/update-user/">Edit User</a></li>
+                            {% if user.is_authenticated %}
+                            <li class="list-inline-item"><a href="{% url 'account' %}">Edit User</a></li>
                             <li class="list-inline-item">⋅</li>
                             {% else %}
-                            <li class="list-inline-item"><a href="/login/">Login</a></li>
+                            <li class="list-inline-item"><a href="{% url 'login' %}">Login</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            {% endif %}
+                            {% if user.is_staff == 1 %}
+                            <li class="list-inline-item"><a href="/adminpanel/">Adminpanel</a></li>
                             <li class="list-inline-item">⋅</li>
                             {% endif %}
                             
