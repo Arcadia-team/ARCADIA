@@ -8,7 +8,7 @@
 <html class="height-full">
   <head>
     <meta charset="utf-8">
-    <title>User Data</title>
+    <title>{{user.username}}</title>
     <link rel="icon" type="image/x-icon" href="{% static 'app_index/assets/favicon.ico' %}" />
 
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -19,14 +19,16 @@
     <link rel="stylesheet" href="{% static 'app_perfiles/css/style-signup/signup3.css' %}" />
     
     <!-- Java Script -->
-    <script type="application/javascript" src="{% static 'app_perfiles/js/scripts-signup/script1.js' %}"></script>
-    <script type="application/javascript" src="{% static 'app_perfiles/js/scripts-signup/script2.js' %}"></script>
-    <script type="application/javascript" src="{% static 'app_perfiles/js/scripts-signup/script3.js' %}"></script>
-    <script type="application/javascript" src="{% static 'app_perfiles/js/scripts-signup/script4.js' %}"></script>
-    <script type="application/javascript" src="{% static 'app_perfiles/js/scripts-signup/script5.js' %}"></script>
-    <script type="application/javascript" src="{% static 'app_perfiles/js/scripts-signup/script6.js' %}"></script>
-    <script type="application/javascript" src="{% static 'app_perfiles/js/scripts-signup/script7.js' %}"></script>
-    <script type="application/javascript" src="{% static 'app_perfiles/js/scripts-signup/script8.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script1.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script2.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script3.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script4.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script5.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script6.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script7.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts-signup/script8.js' %}"></script>
+    <script src="{% static 'app_index/js/jquery-3.6.0.min.js' %}"></script>
+    <script type="application/javascript" src="{% static 'app_index/js/scripts.js'%}"></script>
   </head>
 
 
@@ -58,13 +60,23 @@
       </typing-effect>
 
     <!-- Buttons -->
-    <a style="color: transparent;" class="btn btn-success-data rounded m-2 p-2" href="{% url 'profile' %}">LOGIOUTT</a>
+    <a style="color: transparent;" class="btn btn-success-data rounded m-2 p-2" href="{% url 'rankings' %}">LOGIOUTT</a>
     <a style="color: transparent;" class="btn btn-success-logout rounded m-2 p-2" href="{% url 'logout' %}">LOGIOUTT</a>
 
       <!-- Formulario -->
     <form style="width: 80%;" class="position-relative js-octocaptcha-parent" method="post">
       {% csrf_token %}
       <div class="js-continue-step-container signup-continue-step-container mt-4">
+
+        <!-- Avatar IMAGES-->
+        <img src="{% static 'app_index/avatares/pacman.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="pacman" style="cursor: pointer;"> </a>
+        <img src="{% static 'app_index/avatares/ghostazulfuerte.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="ghostazulfuerte" style="cursor: pointer;"> </a>
+        <img src="{% static 'app_index/avatares/ghostazul.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="ghostazul" style="cursor: pointer;"> </a>
+        <img src="{% static 'app_index/avatares/ghostrojo.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="ghostrojo" style="cursor: pointer;"> </a>
+        <img src="{% static 'app_index/avatares/ghostverde.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="ghostverde" style="cursor: pointer;"> </a>
+        <img src="{% static 'app_index/avatares/ghostrosa.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="ghostrosa" style="cursor: pointer;"> </a>
+        <img src="{% static 'app_index/avatares/ghostnaranja.png' %}" width="50px" class="rounded-circle clicklogopanelUser" id="ghostnaranja" style="cursor: pointer;"> </a>
+        
 
         <!-- Username inputs -->
         <div class="js-continue-step-container signup-continue-step-container">
@@ -94,54 +106,9 @@
             {{form.email}}
           </div>
         </div>
-        
       <br>
       
-    <!-- PASSWORDS -->
-
-    <!-- Label -->
-    <div>
-      <label for="email" class="labels-signup">
-        Old Password
-      </label>
-    </div>
     
-    <!-- Input -->
-    <div class="d-flex flex-items-center flex-column flex-sm-row">
-      <div class="d-flex flex-items-center width-full">
-        {{form.old_password}}
-      </div>
-    </div>
-
-    <br>
-    <!-- Label -->
-    <div>
-      <label for="email" class="labels-signup">
-        New Password
-      </label>
-    </div>
-    
-    <!-- Input -->
-    <div class="d-flex flex-items-center flex-column flex-sm-row">
-      <div class="d-flex flex-items-center width-full">
-        {{form.new_password1}}
-      </div>
-    </div>
-    
-    <br>
-    <!-- Label -->
-    <div>
-      <label for="email" class="labels-signup">
-        Repeat Password
-      </label>
-    </div>
-    
-    <!-- Input -->
-    <div class="d-flex flex-items-center flex-column flex-sm-row">
-      <div class="d-flex flex-items-center width-full">
-        {{form.new_password2}}
-      </div>
-    </div>
   <br>
   <br>
       <input type="submit" value="SAVE" class="signup-submit-button width-full py-2 js-octocaptcha-form-submit" />
