@@ -37,7 +37,7 @@
 
                     <!-- Login / Logout comprueba si has iniciado sesion -->
                     {% if user.is_authenticated %}
-                            <a href="{% url 'profile' %}"> 
+                            <a href="{% url 'account' %}"> 
                                 {% if user.userprofile.avatar_id == 1 %}
                                 <img src="{% static 'app_index/avatares/pacman.png' %}" width="50px" class="rounded-circle" id="actualizarImagen"> </a>
                                 {% elif user.userprofile.avatar_id == 2 %}
