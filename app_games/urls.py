@@ -1,5 +1,5 @@
 from django.urls import path
-from app_games.views import games, tetris, snake, pong, flappybird, pacman, spaceinvaders, slope, asteroid, dinosaur, snake2, dinosaur2, tetris2, asteroid2, pacman2, pong2, flappybird2, bomberman, bomberman2
+from app_games.views import games, tetris, snake, pong, flappybird, pacman, slope, asteroid, dinosaur, snake2, dinosaur2, tetris2, asteroid2, pacman2, pong2, flappybird2, bomberman, bomberman2
 
 urlpatterns = [
     
@@ -14,7 +14,6 @@ urlpatterns = [
     path('pong2/', pong2, name="pong2"),
     path('pacman/', pacman, name="pacman"),
     path('pacman2/', pacman2, name="pacman2"),
-    path('spaceinvaders/', spaceinvaders, name="spaceinvaders"),
     path('slope/', slope, name="slope"),
     path('asteroid/', asteroid, name="asteroid"),
     path('asteroid2/', asteroid2, name="asteroid2"),
