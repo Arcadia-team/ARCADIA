@@ -56,6 +56,8 @@ def userpanel(request):
             idimagen = 6
         elif imageID == 'ghostrojo':
             idimagen = 7
+        elif imageID == 'ghostblanco':
+            idimagen = 8
         usuario = UserProfile.objects.filter(user_id__username=user).values('avatar_id').update(avatar_id=idimagen)
         return HttpResponse("Import añadido")
             

@@ -52,6 +52,8 @@
                                 <img src="{% static 'app_index/avatares/ghostverde.png' %}" width="50px" class="rounded-circle" id="actualizarImagen"> </a>
                                 {% elif user.userprofile.avatar_id == 7 %}
                                 <img src="{% static 'app_index/avatares/ghostrojo.png' %}" width="50px" class="rounded-circle" id="actualizarImagen"> </a>
+                                {% elif user.userprofile.avatar_id == 8 %}
+                                <img src="{% static 'app_index/avatares/ghostblanco.png' %}" width="50px" class="rounded-circle" id="actualizarImagen"> </a>
                                 {% endif %}
                     {% else %}
                         <a style="color: transparent;" class="btn btn-success rounded m-2 p-2" href="{% url 'login' %}">LOGIN</a>
