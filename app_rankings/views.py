@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from app_games.models import Score
+from app_games.models import Score 
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -14,9 +16,29 @@ def rankings(request):
     pong = Score.objects.filter(game_id='7').order_by('-score')[:3]
     bomberman = Score.objects.filter(game_id='8').order_by('-score')[:3]
     flappybird = Score.objects.filter(game_id='9').order_by('-score')[:3]
-    
 
     return render(request, "app_rankings/rankings.html", {'snake':snake, 'tetris':tetris, 'pacman':pacman, 'dinosaur':dinosaur, 'asteroid':asteroid, 'slope':slope, 'pong':pong, 'bomberman':bomberman, 'flappybird':flappybird, })
+
+
+#RANKINGS - General
+@login_required
+def rankings_personal(request):
+    user = request.user.id
+    snake = Score.objects.filter(game_id='1', user_profile_id=user).order_by('-score')[:3]
+    pacman = Score.objects.filter(game_id='2', user_profile_id=user).order_by('-score')[:3]
+    tetris = Score.objects.filter(game_id='3', user_profile_id=user).order_by('-score')[:3]
+    dinosaur = Score.objects.filter(game_id='4', user_profile_id=user).order_by('-score')[:3]
+    asteroid = Score.objects.filter(game_id='5', user_profile_id=user).order_by('-score')[:3]
+    slope = Score.objects.filter(game_id='6', user_profile_id=user).order_by('-score')[:3]
+    pong = Score.objects.filter(game_id='7', user_profile_id=user).order_by('-score')[:3]
+    bomberman = Score.objects.filter(game_id='8',user_profile_id=user).order_by('-score')[:3]
+    flappybird = Score.objects.filter(game_id='9', user_profile_id=user).order_by('-score')[:3]
+
+    return render(request, "app_rankings/rankingsPersonal.html", {'snake':snake, 'tetris':tetris, 'pacman':pacman, 'dinosaur':dinosaur, 'asteroid':asteroid, 'slope':slope, 'pong':pong, 'bomberman':bomberman, 'flappybird':flappybird, })
+
+
+
+
 
 #RANKING - POR JUEGO
 def ranking(request):
