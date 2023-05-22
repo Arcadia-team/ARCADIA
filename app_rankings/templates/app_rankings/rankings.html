@@ -62,7 +62,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotosnake num1ranking" href="{}"></div>
+                <div class="fotosnake num1ranking">
+                    <a href="{% url 'snake' %}">
+                        <img src="{% static 'app_index/assets/img/snake.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Snake</h1>
                 {% for objeto in snake %}
                 <table class="">
@@ -98,7 +102,11 @@
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotopacman num1ranking"></div>
+                <div class="fotopacman num1ranking">
+                    <a href="{% url 'pacman' %}">
+                        <img src="{% static 'app_index/assets/img/pacman.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Pacman</h1>
                 {% for objeto in pacman %}
                 <table class="">
@@ -135,7 +143,11 @@
             
             </div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fototetris num1ranking"></div>
+                <div class="fototetris num1ranking">
+                    <a href="{% url 'tetris' %}">
+                        <img src="{% static 'app_index/assets/img/tetris.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Tetris</h1>
                 {% for objeto in tetris %}
                 <table class="">
@@ -173,7 +185,11 @@
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotodinosaur num1ranking"></div>
+                <div class="fotodinosaur num1ranking">
+                    <a href="{% url 'dinosaur' %}">
+                        <img src="{% static 'app_index/assets/img/dinosaur.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Dinosaur</h1>
                 {% for objeto in dinosaur %}
                 <table class="">
@@ -210,7 +226,11 @@
             
             </div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotoasteroid num1ranking"></div>
+                <div class="fotoasteroid num1ranking">
+                    <a href="{% url 'asteroid' %}">
+                        <img src="{% static 'app_index/assets/img/asteroid.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Asteroid</h1>
                 {% for objeto in asteroid %}
                 <table class="">
@@ -248,7 +268,11 @@
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotoslope num1ranking"></div>
+                <div class="fotoslope num1ranking">
+                    <a href="{% url 'slope' %}">
+                        <img src="{% static 'app_index/assets/img/slope.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Slope</h1>
                 {% for objeto in slope %}
                 <table class="">
@@ -285,7 +309,11 @@
             
             </div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotopong num1ranking"></div>
+                <div class="fotopong num1ranking">
+                    <a href="{% url 'pong' %}">
+                        <img src="{% static 'app_index/assets/img/fotopong.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Pong</h1>
                 {% for objeto in pong %}
                 <table class="">
@@ -324,7 +352,11 @@
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotobomberman num1ranking"></div>
+                <div class="fotobomberman num1ranking">
+                    <a href="{% url 'bomberman' %}">
+                        <img src="{% static 'app_index/assets/img/bomberman3.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Bomberman</h1>
                 {% for objeto in bomberman %}
                 <table class="">
