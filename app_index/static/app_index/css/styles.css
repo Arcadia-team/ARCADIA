@@ -11383,19 +11383,19 @@ footer.footer {
 
 /* ----------------------------- boton data ------------------------------------------*/
 
-.btn-success-data {
+.btn-success-rank {
   color: #fff;
   background-image:url("../assets/img/rank-button.png");
   background-repeat:no-repeat;
   background-position:center;
 }
 
-.btn-check-data:checked + .btn-success-data, .btn-check-data:active + .btn-success-data, .btn-success-data:active {
+.btn-check-data:checked + .btn-success-rank, .btn-check-data:active + .btn-success-rank, .btn-success-rank:active {
   transition: 0.3s;
   background-image:url("../assets/img/rank-button-press.png");
 }
 
-.btn-success-data:disabled {
+.btn-success-rank:disabled {
   transition: 0.2s;
   background-image:url("../assets/img/rank-button.png");
 }
