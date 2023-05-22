@@ -5,6 +5,7 @@
 {% block contenido_no_heredado %}
 
 <title>Rankings</title>
+
 <style>
     #scrollBtn {
       display: none;
@@ -27,6 +28,7 @@
       }
     }
   </style>
+
   <!-- Botón para subir arriba -->
   <a href="#" onclick="scrollToTop()">
     <img src="{% static 'app_index/assets/flechaAmarilla.png'%}" id="scrollBtn">
@@ -54,12 +56,13 @@
 
 
 
-<!-- Icons Grid-->
+<!-- Tabla boostrap de 3-->
+
 <section class="bg-light">
     <div class="container">
         <div class="row">
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotosnake num1ranking"></div>
+                <div class="fotosnake num1ranking" href="{}"></div>
                 <h1 class="letrasamarillas">Snake</h1>
                 {% for objeto in snake %}
                 <table class="">
@@ -71,7 +74,15 @@
                         </tr>
                     </thead>
                     <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">{{ forloop.counter }}</td>
+                        <td class="borde3px tamañotablas">
+                            {% if forloop.counter == 1 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo1.png'%}">
+                            {% elif forloop.counter == 2 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo2.png'%}">
+                            {% else %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo3.png'%}">
+                            {% endif %}
+                        </td>
                         <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
                         <td class="borde3px tamañotablas">{{objeto.score}}</td>
                     </tr>
@@ -100,7 +111,15 @@
                         </tr>
                     </thead>
                     <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">{{ forloop.counter }}</td>
+                        <td class="borde3px tamañotablas">
+                            {% if forloop.counter == 1 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo1.png'%}">
+                            {% elif forloop.counter == 2 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo2.png'%}">
+                            {% else %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo3.png'%}">
+                            {% endif %}
+                        </td>
                         <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
                         
                         <td class="borde3px tamañotablas">{{objeto.score}}</td>
@@ -129,7 +148,15 @@
                         </tr>
                     </thead>
                     <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">{{ forloop.counter }}</td>
+                        <td class="borde3px tamañotablas">
+                            {% if forloop.counter == 1 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo1.png'%}">
+                            {% elif forloop.counter == 2 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo2.png'%}">
+                            {% else %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo3.png'%}">
+                            {% endif %}
+                        </td>
                         <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
                         
                         <td class="borde3px tamañotablas">{{objeto.score}}</td>
@@ -159,7 +186,15 @@
                         </tr>
                     </thead>
                     <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">{{ forloop.counter }}</td>
+                        <td class="borde3px tamañotablas">
+                            {% if forloop.counter == 1 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo1.png'%}">
+                            {% elif forloop.counter == 2 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo2.png'%}">
+                            {% else %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo3.png'%}">
+                            {% endif %}
+                        </td>
                         <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
                         
                         <td class="borde3px tamañotablas">{{objeto.score}}</td>
@@ -188,7 +223,15 @@
                         </tr>
                     </thead>
                     <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">{{ forloop.counter }}</td>
+                        <td class="borde3px tamañotablas">
+                            {% if forloop.counter == 1 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo1.png'%}">
+                            {% elif forloop.counter == 2 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo2.png'%}">
+                            {% else %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo3.png'%}">
+                            {% endif %}
+                        </td>
                         <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
                         
                         <td class="borde3px tamañotablas">{{objeto.score}}</td>
@@ -218,7 +261,15 @@
                         </tr>
                     </thead>
                     <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">{{ forloop.counter }}</td>
+                        <td class="borde3px tamañotablas">
+                            {% if forloop.counter == 1 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo1.png'%}">
+                            {% elif forloop.counter == 2 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo2.png'%}">
+                            {% else %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo3.png'%}">
+                            {% endif %}
+                        </td>
                         <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
                         
                         <td class="borde3px tamañotablas">{{objeto.score}}</td>
@@ -247,7 +298,15 @@
                         </tr>
                     </thead>
                     <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">{{ forloop.counter }}</td>
+                        <td class="borde3px tamañotablas">
+                            {% if forloop.counter == 1 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo1.png'%}">
+                            {% elif forloop.counter == 2 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo2.png'%}">
+                            {% else %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo3.png'%}">
+                            {% endif %}
+                        </td>
                         <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
                         
                         <td class="borde3px tamañotablas">{{objeto.score}}</td>
@@ -278,7 +337,15 @@
                         </tr>
                     </thead>
                     <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">{{ forloop.counter }}</td>
+                        <td class="borde3px tamañotablas">
+                            {% if forloop.counter == 1 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo1.png'%}">
+                            {% elif forloop.counter == 2 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo2.png'%}">
+                            {% else %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo3.png'%}">
+                            {% endif %}
+                        </td>
                         <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
                         
                         <td class="borde3px tamañotablas">{{objeto.score}}</td>
@@ -307,7 +374,15 @@
                         </tr>
                     </thead>
                     <tr class="fondoBlanco borde3px">
-                        <td class="borde3px tamañotablas">{{ forloop.counter }}</td>
+                        <td class="borde3px tamañotablas">
+                            {% if forloop.counter == 1 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo1.png'%}">
+                            {% elif forloop.counter == 2 %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo2.png'%}">
+                            {% else %}
+                                <img src="{% static 'app_index/assets/img/medallas/trofeo3.png'%}">
+                            {% endif %}
+                        </td>
                         <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
                         
                         <td class="borde3px tamañotablas">{{objeto.score}}</td>
