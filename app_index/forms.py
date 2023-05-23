@@ -8,7 +8,20 @@ class SignUpForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username','email','password1','password2']
-        
+
+    #Comprobación de existencia de email:
+    def is_valid(self):
+        valid = super().is_valid()
+        if not valid:
+            return valid
+
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists():
+            self.add_error('email', 'This email is already registered.')
+            return False
+        return True
+    
+    # Estilo de los campos
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
