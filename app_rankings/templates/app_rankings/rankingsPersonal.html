@@ -4,16 +4,56 @@
 
 {% block contenido_no_heredado %}
 
-
 <title>{{user.username}} Rank </title>
 
+<style>
+    #scrollBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+</style>
 
-<!-- Icons Grid-->
+  <!-- Botón para subir arriba -->
+  <a href="#" onclick="scrollToTop()">
+    <img src="{% static 'app_index/assets/flechaAmarilla.png'%}" id="scrollBtn">
+  </a>
+
+  <script>
+    // Función para desplazarse hasta arriba
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Mostrar el botón cuando se desplaza cierta distancia hacia abajo
+    window.onscroll = function() {
+      showScrollBtn();
+    };
+
+    function showScrollBtn() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById('scrollBtn').style.display = 'block';
+      } else {
+        document.getElementById('scrollBtn').style.display = 'none';
+      }
+    }
+  </script>
+
+<!-- Tabla boostrap de 3-->
 <section class="bg-light">
     <div class="container">
         <div class="row">
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotosnake num1ranking"></div>
+                <div class="fotosnake num1ranking">
+                    <a href="{% url 'snake' %}">
+                        <img src="{% static 'app_index/assets/img/snake.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Snake</h1>
                 {% for objeto in snake %}
                 <table class="">
@@ -21,7 +61,6 @@
                         <tr class="letrasamarillas">
                             <th>Position</th>
                             <th>Name</th>
-                            
                             <th>Score</th>
                         </tr>
                     </thead>
@@ -36,17 +75,19 @@
                             {% endif %}
                         </td>
                         <td class="borde3px tamañotablas">{{objeto.user_profile}}</td>
-                        
                         <td class="borde3px tamañotablas">{{objeto.score}}</td>
                     </tr>
                 </table>
                 {% endfor %} 
-                
-            
             </div>
+
             <div class="col-md-2"></div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotopacman num1ranking"></div>
+                <div class="fotopacman num1ranking">
+                    <a href="{% url 'pacman' %}">
+                        <img src="{% static 'app_index/assets/img/pacman.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Pacman</h1>
                 {% for objeto in pacman %}
                 <table class="">
@@ -74,11 +115,15 @@
                     </tr>
                 </table>
                 {% endfor %} 
-               
+                
             
             </div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fototetris num1ranking"></div>
+                <div class="fototetris num1ranking">
+                    <a href="{% url 'tetris' %}">
+                        <img src="{% static 'app_index/assets/img/tetris.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Tetris</h1>
                 {% for objeto in tetris %}
                 <table class="">
@@ -106,12 +151,16 @@
                     </tr>
                 </table>
                 {% endfor %} 
-               
+                
             
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotodinosaur num1ranking"></div>
+                <div class="fotodinosaur num1ranking">
+                    <a href="{% url 'dinosaur' %}">
+                        <img src="{% static 'app_index/assets/img/dinosaur.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Dinosaur</h1>
                 {% for objeto in dinosaur %}
                 <table class="">
@@ -139,11 +188,15 @@
                     </tr>
                 </table>
                 {% endfor %} 
-                
+               
             
             </div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotoasteroid num1ranking"></div>
+                <div class="fotoasteroid num1ranking">
+                    <a href="{% url 'asteroid' %}">
+                        <img src="{% static 'app_index/assets/img/asteroid.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Asteroid</h1>
                 {% for objeto in asteroid %}
                 <table class="">
@@ -171,12 +224,16 @@
                     </tr>
                 </table>
                 {% endfor %} 
-               
+                
             
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotoslope num1ranking"></div>
+                <div class="fotoslope num1ranking">
+                    <a href="{% url 'slope' %}">
+                        <img src="{% static 'app_index/assets/img/slope.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Slope</h1>
                 {% for objeto in slope %}
                 <table class="">
@@ -204,11 +261,15 @@
                     </tr>
                 </table>
                 {% endfor %} 
-                
+               
             
             </div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotopong num1ranking"></div>
+                <div class="fotopong num1ranking">
+                    <a href="{% url 'pong' %}">
+                        <img src="{% static 'app_index/assets/img/fotopong.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Pong</h1>
                 {% for objeto in pong %}
                 <table class="">
@@ -236,13 +297,17 @@
                     </tr>
                 </table>
                 {% endfor %} 
-               
+             
                   
 
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotobomberman num1ranking"></div>
+                <div class="fotobomberman num1ranking">
+                    <a href="{% url 'bomberman' %}">
+                        <img src="{% static 'app_index/assets/img/bomberman3.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Bomberman</h1>
                 {% for objeto in bomberman %}
                 <table class="">
@@ -270,7 +335,7 @@
                     </tr>
                 </table>
                 {% endfor %} 
-               
+              
             
             </div>
             <div class="col-md-5 fondoPurpura alturadiv2">
@@ -302,7 +367,7 @@
                     </tr>
                 </table>
                 {% endfor %} 
-                
+               
             
             </div>
 

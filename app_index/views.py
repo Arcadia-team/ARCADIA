@@ -275,7 +275,8 @@ def signup_request(request):
             form.save()
             
             #Redirige a inicio dando la bienvenida
-            return render(request,"app_index/index.html",{"mensaje":"User created, ¡Welcome to Arcadia!"})
+            
+            return redirect(reverse('inicio'))
         
         mensaje="Please check your signup credentials and try again!"  
      
