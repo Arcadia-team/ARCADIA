@@ -393,7 +393,11 @@
             
             </div>
             <div class="col-md-5 fondoPurpura alturadiv2">
-                <div class="fotoflappybird num1ranking"></div>
+                <div class="fotoflappybird num1ranking">
+                    <a href="{% url 'flappybird' %}">
+                        <img src="{% static 'app_index/assets/img/flappybird.png' %}">
+                    </a>
+                </div>
                 <h1 class="letrasamarillas">Flappy Bird</h1>
                 {% for objeto in flappybird %}
                 <table class="">
